@@ -20,13 +20,22 @@
 
 <br/>
 
+<!-- SPOTIFY_CURRENT_PLAYLIST:START -->
 <div align="center">
-  <sub>
-    <strong>Current playlist:</strong> will appear after enabling workflow • 
-    <strong>Recently played:</strong> will be auto-updated • 
-    <strong>Top of the week:</strong> will be auto-updated
-  </sub>
+  <sub>Current playlist will appear here after the workflow runs.</sub>
+  
 </div>
+<!-- SPOTIFY_CURRENT_PLAYLIST:END -->
+
+<br/>
+
+## Recently Played (scroll)
+
+<!-- SPOTIFY_RECENTS:START -->
+<div align="center">
+  <sub>This carousel will populate with your recently played (public context first).</sub>
+</div>
+<!-- SPOTIFY_RECENTS:END -->
 
 <br/>
 
@@ -34,6 +43,45 @@
 
 - AI, robotics, embedded systems
 - Computer vision, control, reverse engineering
+
+<br/>
+
+## Top of the Week
+
+<!-- SPOTIFY_TOP_OF_WEEK:START -->
+<div align="center">
+  <sub>Will highlight your top short-term track here.</sub>
+</div>
+<!-- SPOTIFY_TOP_OF_WEEK:END -->
+
+<br/>
+
+## Top Tracks
+
+### Short Term
+<!-- SPOTIFY_TOP_SHORT:START -->
+<div align="center">
+  <sub>Short-term top tracks will appear here.</sub>
+</div>
+<!-- SPOTIFY_TOP_SHORT:END -->
+
+<br/>
+
+### Mid Term
+<!-- SPOTIFY_TOP_MID:START -->
+<div align="center">
+  <sub>Mid-term top tracks will appear here.</sub>
+</div>
+<!-- SPOTIFY_TOP_MID:END -->
+
+<br/>
+
+### Long Term
+<!-- SPOTIFY_TOP_LONG:START -->
+<div align="center">
+  <sub>Long-term top tracks will appear here.</sub>
+</div>
+<!-- SPOTIFY_TOP_LONG:END -->
 
 <br/>
 

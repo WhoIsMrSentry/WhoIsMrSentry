@@ -22,6 +22,8 @@ import requests
 # Note: Carousel is simulated with a horizontally scrollable HTML div of album arts.
 
 API_BASE = "https://api.spotify.com/v1"
+THUMB_SIZE = int(os.environ.get("SPOTIFY_THUMB_SIZE", "250"))
+SPACER_IMG = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
 
 
 def _token() -> str:
@@ -176,13 +178,17 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
             img = ((p.get("images") or [{}])[0]).get("url", "")
             cell_html = (
                 f'<a href="{url}" target="_blank">'
-                f'<img src="{img}" alt="{name}" width="140" height="140" />'
+                f'<img src="{img}" alt="{name}" width="{THUMB_SIZE}" height="{THUMB_SIZE}" />'
                 f'</a>'
-                f'<div><sub>{name}</sub></div>'
+                f'<div style="max-width:{THUMB_SIZE}px;word-wrap:break-word"><sub>{name}</sub></div>'
             )
             tds.append(f'<td align="center" valign="top">{cell_html}</td>')
         while len(tds) < cols:
-            tds.append('<td></td>')
+            tds.append(
+                f'<td align="center" valign="top">'
+                f'<img src="{SPACER_IMG}" width="{THUMB_SIZE}" height="{THUMB_SIZE}" style="opacity:0" />'
+                f'</td>'
+            )
         rows_html.append('<tr>' + ''.join(tds) + '</tr>')
 
     table = '<div align="center"><table>' + ''.join(rows_html) + '</table></div>'

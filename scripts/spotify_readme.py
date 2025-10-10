@@ -152,25 +152,44 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
     max_items = int(raw_max) if raw_max.isdigit() else 60
     chosen = chosen[:max_items]
 
-    tiles = []
-    for p in chosen:
-        name = p.get("name", "")
-        url = (p.get("external_urls") or {}).get("spotify", "")
-        img = ((p.get("images") or [{}])[0]).get("url", "")
-        tiles.append(
-            f'<a href="{url}" target="_blank" style="text-decoration:none;color:inherit">'
-            f'<img src="{img}" alt="{name}" width="140" height="140" '
-            f'style="object-fit:cover;border-radius:8px;border:2px solid #88001b;display:block"/>'
-            f'<div style="max-width:140px;word-wrap:break-word"><sub>{name}</sub></div>'
-            f'</a>'
-        )
+    # Balanced grid: choose columns ~= sqrt(n), rows ~= ceil(n/cols)
+    n = len(chosen)
+    if n == 0:
+        return '<div><sub>No playlists found.</sub></div>'
 
-    return (
+    cols = max(1, int(math.ceil(math.sqrt(n))))
+
+    # Build an HTML table for robust layout on GitHub README (no external CSS needed)
+    rows_html: List[str] = []
+    for r_start in range(0, n, cols):
+        row_items = chosen[r_start:r_start + cols]
+        tds: List[str] = []
+        for p in row_items:
+            name = p.get("name", "")
+            url = (p.get("external_urls") or {}).get("spotify", "")
+            img = ((p.get("images") or [{}])[0]).get("url", "")
+            square = (
+                f'<a href="{url}" target="_blank" style="text-decoration:none;color:inherit;display:block;text-align:center">'
+                f'<div style="width:140px;height:140px;border-radius:8px;border:2px solid #88001b;'
+                f'background-color:#000;background-image:url({img});background-size:cover;background-position:center;">'
+                f'</div>'
+                f'<div style="max-width:140px;word-wrap:break-word;margin-top:4px"><sub>{name}</sub></div>'
+                f'</a>'
+            )
+            tds.append(f'<td style="padding:0;vertical-align:top">{square}</td>')
+        # Pad row to full column count for consistent width
+        while len(tds) < cols:
+            tds.append('<td style="padding:0;vertical-align:top"><div style="width:140px;height:140px;opacity:0"></div></td>')
+        rows_html.append('<tr>' + ''.join(tds) + '</tr>')
+
+    table = (
         '<div align="center">'
-        '<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">'
-        + "".join(tiles)
-        + "</div></div>"
+        '<table role="grid" style="border-collapse:separate;border-spacing:10px;">'
+        + ''.join(rows_html) +
+        '</table>'
+        '</div>'
     )
+    return table
 
 
 def update_readme(readme_path: str, token: str, user_id: str):

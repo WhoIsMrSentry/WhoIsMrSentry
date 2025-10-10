@@ -21,6 +21,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
+      - name: Generate carousel SVGs
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+          SPOTIFY_IGNORE_ARTISTS: ${{ secrets.SPOTIFY_IGNORE_ARTISTS }}
+        run: |
+          python scripts/spotify_carousel_svg.py
+
       - name: Run updater
         # NOTE: Define the following repository secrets before enabling this workflow:
         # SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN, SPOTIFY_USER_ID
@@ -39,6 +48,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
-          git add README.md
+          git add README.md assets/*.svg || true
           git commit -m "chore(spotify): auto-update README sections" || echo "no changes"
           git push

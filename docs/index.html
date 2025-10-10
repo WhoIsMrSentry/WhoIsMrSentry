@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spotify 3D Carousel</title>
+  <style>
+    :root {
+      --primary: #88001b;
+      --bg: #0b0b0b;
+      --fg: #eaeaea;
+    }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif; background: var(--bg); color: var(--fg); }
+    header { display:flex; align-items:center; justify-content:space-between; padding: 12px 16px; border-bottom: 1px solid #222; }
+    h1 { font-size: 18px; margin: 0; }
+    .controls { display:flex; align-items:center; gap:8px; }
+    select, button { background:#111; color:var(--fg); border:1px solid var(--primary); border-radius:6px; padding:6px 10px; }
+    .scene { perspective: 1200px; height: calc(100vh - 64px); display: grid; place-items: center; }
+    .carousel { position: relative; width: 420px; height: 420px; transform-style: preserve-3d; transition: transform 0.8s ease; }
+    .card { position: absolute; top: 50%; left: 50%; transform-style: preserve-3d; width: 160px; height: 160px; margin: -80px; border-radius: 12px; overflow: hidden; border: 2px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,.4); background: #000; }
+    .card img { width: 100%; height: 100%; object-fit: cover; display:block; }
+    .caption { position:absolute; left:0; right:0; bottom:0; padding:6px 8px; background: linear-gradient(180deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.6) 60%); color:#fff; font-size:12px; line-height:1.2; }
+    .caption strong { color: #fff; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .caption small { color: #ddd; display:block; opacity:.9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hud { position: fixed; right: 12px; bottom: 12px; background:#111; border:1px solid #333; border-radius: 8px; padding:8px 10px; font-size: 12px; color:#bbb; }
+    .hud b { color:#fff }
+    a.link { color: var(--fg); text-decoration: none; border-bottom: 1px dotted var(--primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spotify Top – 3D Carousel</h1>
+    <div class="controls">
+      <label for="range">Range:</label>
+      <select id="range">
+        <option value="short_term">Short Term</option>
+        <option value="medium_term">Mid Term</option>
+        <option value="long_term">Long Term</option>
+      </select>
+      <button id="prev">◀</button>
+      <button id="next">▶</button>
+      <a class="link" href="https://github.com/SentryCoderDev/SentryCoderDev" target="_blank">Repo</a>
+    </div>
+  </header>
+
+  <div class="scene">
+    <div class="carousel" id="carousel"></div>
+  </div>
+
+  <div class="hud">Mode: <b id="mode">short_term</b> | Items: <b id="count">0</b></div>
+
+  <script>
+    const state = { data:null, mode:'short_term', angle:0 };
+    const carousel = document.getElementById('carousel');
+    const modeEl = document.getElementById('mode');
+    const countEl = document.getElementById('count');
+    const rangeSel = document.getElementById('range');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    async function load() {
+      const res = await fetch('./spotify_top.json', { cache:'no-store' });
+      state.data = await res.json();
+      render();
+    }
+
+    function render() {
+      const items = (state.data?.[state.mode]) || [];
+      modeEl.textContent = state.mode; countEl.textContent = items.length;
+      carousel.innerHTML = '';
+      const n = items.length || 1; const radius = 260; const step = 360 / n;
+      items.forEach((it, i) => {
+        const card = document.createElement('a');
+        card.className = 'card';
+        card.href = it.url; card.target = '_blank'; card.rel = 'noopener noreferrer';
+        const angle = i * step;
+        card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+        card.innerHTML = `<img src="${it.image}" alt="${it.name}"><div class='caption'><strong>${it.rank}. ${escapeHtml(it.name)}</strong><small>${escapeHtml(it.artists)} • plays: ${it.recentCount||0}</small></div>`;
+        carousel.appendChild(card);
+      });
+      carousel.style.transform = `rotateY(${state.angle}deg)`;
+    }
+
+    function escapeHtml(s){return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));}
+
+    rangeSel.addEventListener('change', ()=>{ state.mode = rangeSel.value; state.angle = 0; render(); });
+    prevBtn.addEventListener('click', ()=>{ state.angle -= 360/((state.data?.[state.mode]?.length)||12); render(); });
+    nextBtn.addEventListener('click', ()=>{ state.angle += 360/((state.data?.[state.mode]?.length)||12); render(); });
+
+    // simple autoplay
+    setInterval(()=>{ state.angle += 0.5; render(); }, 60);
+
+    load();
+  </script>
+</body>
+</html>

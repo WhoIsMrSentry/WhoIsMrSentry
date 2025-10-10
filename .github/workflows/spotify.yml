@@ -21,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run updater
+      - name: Run README updater
         # NOTE: Define the following repository secrets before enabling this workflow:
         # SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN, SPOTIFY_USER_ID
         # Optional: SPOTIFY_IGNORE_ARTISTS (JSON array), e.g. ["Artist A", "Artist B"]
@@ -30,15 +30,22 @@ jobs:
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
           SPOTIFY_USER_ID: ${{ secrets.SPOTIFY_USER_ID }}
-          SPOTIFY_IGNORE_ARTISTS: ${{ secrets.SPOTIFY_IGNORE_ARTISTS }}
           README_PATH: README.md
         run: |
           python scripts/spotify_readme.py
 
-      - name: Commit changes
+      - name: Build top tracks JSON for carousel
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: |
+          python scripts/spotify_top_json.py
+
+      - name: Commit changes (README + docs)
         run: |
           git config user.name github-actions
           git config user.email actions@github.com
-          git add README.md
+          git add README.md docs/spotify_top.json docs/index.html
           git commit -m "chore(spotify): auto-update README sections" || echo "no changes"
           git push

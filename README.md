@@ -58,10 +58,19 @@
 
 ## Top Tracks
 
+<div align="center">
+  <a href="https://sentrycoderdev.github.io/SentryCoderDev/" target="_blank">
+    <img src="https://img.shields.io/badge/Interactive%203D%20Carousel-88001b?style=for-the-badge&labelColor=000000&logo=spotify&logoColor=white" alt="Interactive 3D Carousel" />
+  </a>
+</div>
+
+<br/>
+
 ### Short Term
 <!-- SPOTIFY_TOP_SHORT:START -->
 <div align="center">
   <sub>Short-term top tracks will appear here.</sub>
+  
 </div>
 <!-- SPOTIFY_TOP_SHORT:END -->
 

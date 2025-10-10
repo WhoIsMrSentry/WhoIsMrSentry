@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top Tracks • 3D Carousel</title>
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#ffffff; color:#111; }
+    :root {
+      --primary: #88001b;
+      --secondary: #000000;
+      --cardW: clamp(240px, 40vw, 420px);
+      --cardH: clamp(240px, 40vw, 420px);
+    }
+    header { padding: 16px; display:flex; gap:12px; align-items:center; justify-content:space-between; border-bottom:1px solid #eee; }
+    .brand { font-weight:700; letter-spacing:0.3px; }
+    .mode { display:flex; gap:8px; align-items:center; }
+    .mode button { appearance:none; border:1px solid var(--primary); background:#fff; color:var(--primary); padding:6px 10px; border-radius:999px; cursor:pointer; font-weight:600; }
+    .mode button.active { background: var(--primary); color:#fff; }
+    main { display:flex; justify-content:center; align-items:center; padding:24px; }
+
+    .container { width: min(100%, 900px); }
+    .carousel { position:relative; width:100%; height: calc(var(--cardH) + 140px); display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .cards { position:relative; width:100%; height: var(--cardH); margin-bottom: 16px; perspective: 1000px; }
+
+    .card { position:absolute; width: var(--cardW); height: var(--cardH); left:0; right:0; margin:auto; transition: transform .45s ease, opacity .45s ease, box-shadow .2s; cursor:pointer; border-radius:14px; overflow:hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border:2px solid var(--primary); background:#000; display:flex; align-items:flex-end; }
+    .card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(1.05) contrast(1.05); }
+    .meta { position:relative; width:100%; padding:12px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.6) 35%, rgba(0,0,0,.85) 100%); color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.5); }
+    .title { font-weight:700; letter-spacing:.2px; }
+    .subtitle { opacity:.9; font-size:.95rem; }
+
+    .player { width:min(560px, 100%); background:#fff; border:1px solid #eee; border-radius:10px; padding:10px 12px; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+    .upper-part { display:flex; gap:10px; align-items:center; min-height:36px; }
+    .counts { margin-left:auto; color:#555; font-size:.9rem; }
+    .progress { height:4px; background:#eee; border-radius:4px; overflow:hidden; margin-top:10px; }
+    .progress span { display:block; height:100%; background: var(--primary); width:60%; }
+
+    /* Positions for 3 cards; we will generate more via JS if needed */
+    .pos-left  { transform: translateX(-46%) scale(.82) rotateY(14deg); opacity:.65; z-index:0; }
+    .pos-right { transform: translateX( 46%) scale(.82) rotateY(-14deg); opacity:.65; z-index:0; }
+    .pos-center{ transform: translateX(0) scale(1); opacity:1; z-index:1; }
+
+    footer { text-align:center; padding:24px; color:#555; }
+    a { color: var(--primary); }
+
+    @media (prefers-color-scheme: dark) {
+      body { background:#0f0f0f; color:#eaeaea; }
+      header { border-color:#222; }
+      .player { background:#111; border-color:#222; }
+      .progress { background:#1d1d1d; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Top Tracks • Carousel</div>
+    <div class="mode" role="tablist" aria-label="Time range">
+      <button id="btn-short" class="active" data-range="short_term" role="tab" aria-selected="true" title="Short term">Short</button>
+      <button id="btn-mid" data-range="medium_term" role="tab" aria-selected="false" title="Medium term">Mid</button>
+      <button id="btn-long" data-range="long_term" role="tab" aria-selected="false" title="Long term">Long</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="carousel" aria-live="polite">
+        <div class="cards" id="cards"></div>
+        <div class="player">
+          <div class="upper-part">
+            <div class="play-icon" aria-hidden="true">▶</div>
+            <div class="song-info" id="song-info">
+              <div class="title" id="song-title">—</div>
+              <div class="subtitle" id="song-sub">—</div>
+            </div>
+            <div class="counts" id="song-counts">—</div>
+          </div>
+          <div class="progress"><span></span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <small>Theme: primary <span style="color:var(--primary)">#88001b</span>, secondary #000000 · Data updates via GitHub Actions</small>
+  </footer>
+
+  <script>
+    const DATA_URL = 'spotify_top.json';
+    const cardsEl = document.getElementById('cards');
+    const titleEl = document.getElementById('song-title');
+    const subEl   = document.getElementById('song-sub');
+    const cntEl   = document.getElementById('song-counts');
+
+    let data = { short_term: [], medium_term: [], long_term: [] };
+    let active = 'short_term';
+    let index = 0;
+
+    function fmtCount(n) {
+      if (n == null) return '– plays';
+      return n + ' plays';
+    }
+
+    async function loadData() {
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        data = await res.json();
+      } catch (e) {
+        console.error('Failed to load JSON', e);
+      }
+    }
+
+    function cardHtml(item, i) {
+      const pos = i === index ? 'pos-center' : (i === (index+1)%3 ? 'pos-right' : 'pos-left');
+      const img = item.image || '';
+      const name = item.name || 'Unknown';
+      const artists = (item.artists || []).join(', ');
+      return `
+        <div class="card ${pos}" data-i="${i}" tabindex="0" aria-label="${name} by ${artists}">
+          <img src="${img}" alt="${name}" />
+          <div class="meta">
+            <div class="title">${name}</div>
+            <div class="subtitle">${artists}</div>
+          </div>
+        </div>`;
+    }
+
+    function render() {
+      cardsEl.innerHTML = '';
+      const arr = data[active] || [];
+      const slice = arr.slice(index, index+3);
+      while (slice.length < 3 && arr.length > 0) {
+        slice.push(arr[(slice.length) % arr.length]);
+      }
+      slice.forEach((item, i) => {
+        cardsEl.insertAdjacentHTML('beforeend', cardHtml(item, i));
+      });
+      const current = slice[0] || {};
+      titleEl.textContent = current.name || '—';
+      subEl.textContent   = (current.artists || []).join(', ');
+      cntEl.textContent   = fmtCount(current.play_count);
+      bindCardEvents(arr);
+    }
+
+    function bindCardEvents(arr) {
+      const cardNodes = Array.from(document.querySelectorAll('.card'));
+      cardNodes.forEach((node, i) => {
+        node.addEventListener('click', () => {
+          index = (index + 1) % Math.max(arr.length, 1);
+          render();
+        });
+        node.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            index = (index + 1) % Math.max(arr.length, 1);
+            render();
+          }
+        });
+      });
+    }
+
+    function setActive(range) {
+      active = range;
+      index = 0;
+      document.querySelectorAll('.mode button').forEach(b => b.classList.toggle('active', b.dataset.range === range));
+      render();
+    }
+
+    async function init() {
+      await loadData();
+      setActive('short_term');
+      document.getElementById('btn-short').addEventListener('click', () => setActive('short_term'));
+      document.getElementById('btn-mid').addEventListener('click',   () => setActive('medium_term'));
+      document.getElementById('btn-long').addEventListener('click',  () => setActive('long_term'));
+    }
+
+    init();
+  </script>
+</body>
+</html>

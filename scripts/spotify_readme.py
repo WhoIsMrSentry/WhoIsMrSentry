@@ -143,9 +143,14 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
         return '<div><sub>No playlists found.</sub></div>'
 
     n = len(items)
-    half = os.environ.get("SPOTIFY_PLAYLIST_HALF", "first").lower().strip()
+    half = os.environ.get("SPOTIFY_PLAYLIST_HALF", "all").lower().strip()
     mid = math.ceil(n / 2)
-    chosen = items[:mid] if half != "second" else items[mid:]
+    if half == "first":
+        chosen = items[:mid]
+    elif half == "second":
+        chosen = items[mid:]
+    else:
+        chosen = items
 
     # Optional cap
     raw_max = os.environ.get("SPOTIFY_PLAYLIST_MAX", "").strip()
@@ -159,7 +164,8 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
 
     cols = max(1, int(math.ceil(math.sqrt(n))))
 
-    # Build an HTML table for robust layout on GitHub README (no external CSS needed)
+    # Build an HTML table without relying on CSS that GitHub may strip.
+    # Use <img width="140" height="140"> so thumbnails always render.
     rows_html: List[str] = []
     for r_start in range(0, n, cols):
         row_items = chosen[r_start:r_start + cols]
@@ -168,27 +174,18 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
             name = p.get("name", "")
             url = (p.get("external_urls") or {}).get("spotify", "")
             img = ((p.get("images") or [{}])[0]).get("url", "")
-            square = (
-                f'<a href="{url}" target="_blank" style="text-decoration:none;color:inherit;display:block;text-align:center">'
-                f'<div style="width:140px;height:140px;border-radius:8px;border:2px solid #88001b;'
-                f'background-color:#000;background-image:url({img});background-size:cover;background-position:center;">'
-                f'</div>'
-                f'<div style="max-width:140px;word-wrap:break-word;margin-top:4px"><sub>{name}</sub></div>'
+            cell_html = (
+                f'<a href="{url}" target="_blank">'
+                f'<img src="{img}" alt="{name}" width="140" height="140" />'
                 f'</a>'
+                f'<div><sub>{name}</sub></div>'
             )
-            tds.append(f'<td style="padding:0;vertical-align:top">{square}</td>')
-        # Pad row to full column count for consistent width
+            tds.append(f'<td align="center" valign="top">{cell_html}</td>')
         while len(tds) < cols:
-            tds.append('<td style="padding:0;vertical-align:top"><div style="width:140px;height:140px;opacity:0"></div></td>')
+            tds.append('<td></td>')
         rows_html.append('<tr>' + ''.join(tds) + '</tr>')
 
-    table = (
-        '<div align="center">'
-        '<table role="grid" style="border-collapse:separate;border-spacing:10px;">'
-        + ''.join(rows_html) +
-        '</table>'
-        '</div>'
-    )
+    table = '<div align="center"><table>' + ''.join(rows_html) + '</table></div>'
     return table
 
 

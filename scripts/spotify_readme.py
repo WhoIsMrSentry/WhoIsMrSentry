@@ -3,16 +3,14 @@ import json
 import base64
 import time
 from typing import List, Dict, Optional
+import math
 
 import requests
 
 # This script updates README.md placeholders with Spotify data
 # Features:
-# - Current playlist (if playing from a playlist and public)
-# - Recently played (carousel-like horizontal tiles)
-# - Top of the week (short term top track)
-# - Top tracks (short/mid/long)
-# - Artist ignore list (repo secret SPOTIFY_IGNORE_ARTISTS as JSON array)
+# - Playlists grid (half selectable)
+# - Artist ignore list (still supported but used in tops previously)
 #
 # Requirements (secrets):
 # - SPOTIFY_CLIENT_ID
@@ -78,127 +76,89 @@ def _artist_blocked(track: Dict, ignore: List[str]) -> bool:
 
 
 def current_playlist_html(token: str, user_id: str, ignore: List[str]) -> str:
-    # Get current playing
+    # Kept for potential future use; not used in the simplified README flow
     try:
         data = _get(f"{API_BASE}/me/player/currently-playing", token)
     except requests.HTTPError:
-        return '<div><sub>No current playback.</sub></div>'
-
+        return ''
     if not data or not data.get("is_playing"):
-        return '<div><sub>Not playing right now.</sub></div>'
-
+        return ''
     item = data.get("item") or {}
-    # Do NOT filter in current playlist section (user requested it visible even if ignored in tops)
-
-    context = data.get("context") or {}
-    context_type = context.get("type")
-    href = (context.get("external_urls") or {}).get("spotify") or data.get("item", {}).get("external_urls", {}).get("spotify", "")
-
-    cover = ""
-    if item.get("album", {}).get("images"):
-        cover = item["album"]["images"][0]["url"]
-
-    title = item.get("name", "Unknown")
+    href = (item.get("external_urls") or {}).get("spotify", "")
+    cover = (item.get("album", {}).get("images") or [{}])[0].get("url", "")
+    title = item.get("name", "")
     artist = ", ".join(a.get("name", "") for a in item.get("artists", []))
-    subtitle = f"{artist}"
-    label = "playlist" if context_type == "playlist" else "track"
-
     return (
         f'<div style="display:inline-flex;align-items:center;gap:12px">'
         f'<a href="{href}" target="_blank"><img src="{cover}" alt="cover" height="64" style="border:1px solid #88001b;border-radius:6px"/></a>'
         f'<div style="text-align:left">'
         f'<div><strong>{title}</strong></div>'
-        f'<div><sub>{subtitle} • {label}</sub></div>'
+        f'<div><sub>{artist}</sub></div>'
         f'</div>'
         f'</div>'
     )
 
 
 def recents_carousel_html(token: str, ignore: List[str], limit: int = 20) -> str:
-    data = _get(f"{API_BASE}/me/player/recently-played", token, params={"limit": limit})
-    items = data.get("items", [])
-    # sort by most recent (already ordered), keep public contexts if any
-    tiles = []
-    for it in items:
-        track = it.get("track", {})
-        if not track:
-            continue
-        album = track.get("album", {})
-        img = (album.get("images") or [{}])[0].get("url", "")
-        url = (track.get("external_urls") or {}).get("spotify", "")
-        title = track.get("name", "")
-        tiles.append(
-            f'<a href="{url}" target="_blank">'
-            f'<img src="{img}" alt="{title}" height="84" width="84" '
-            f'style="border:2px solid #88001b;border-radius:50%;object-fit:cover"/>'
-            f'</a>'
-        )
-
-    if not tiles:
-        return '<div><sub>No recent plays.</sub></div>'
-
-    return (
-        '<div style="display:flex;gap:8px;overflow-x:auto;padding:6px;scrollbar-width:thin">'
-        + "".join(tiles)
-        + "</div>"
-    )
+    return ''
 
 
 def top_tracks_html(token: str, ignore: List[str], term: str, limit: int = 10) -> str:
-    data = _get(f"{API_BASE}/me/top/tracks", token, params={"time_range": term, "limit": limit})
-    items = data.get("items", [])
-    tiles = []
-    for t in items:
-        # Apply ignore only for top sections
-        if _artist_blocked(t, ignore):
-            continue
-        album = t.get("album", {})
-        img = (album.get("images") or [{}])[0].get("url", "")
-        url = (t.get("external_urls") or {}).get("spotify", "")
-        title = t.get("name", "")
-        tiles.append(f'<a href="{url}" target="_blank"><img src="{img}" alt="{title}" height="96" style="border:2px solid #88001b;border-radius:6px"/></a>')
+    return ''
 
-    if not tiles:
-        return '<div><sub>No top tracks.</sub></div>'
+
+def playlists_html(token: str) -> str:
+    # Fetch all user playlists (paginated)
+    items: List[Dict] = []
+    limit = 50
+    offset = 0
+    while True:
+        data = _get(f"{API_BASE}/me/playlists", token, params={"limit": limit, "offset": offset})
+        batch = data.get("items", [])
+        if not batch:
+            break
+        items.extend(batch)
+        if not data.get("next"):
+            break
+        offset += limit
+
+    if not items:
+        return '<div><sub>No playlists found.</sub></div>'
+
+    n = len(items)
+    half = os.environ.get("SPOTIFY_PLAYLIST_HALF", "first").lower().strip()
+    mid = math.ceil(n / 2)
+    chosen = items[:mid] if half != "second" else items[mid:]
+
+    # Optional cap
+    raw_max = os.environ.get("SPOTIFY_PLAYLIST_MAX", "").strip()
+    max_items = int(raw_max) if raw_max.isdigit() else 60
+    chosen = chosen[:max_items]
+
+    tiles = []
+    for p in chosen:
+        name = p.get("name", "")
+        url = (p.get("external_urls") or {}).get("spotify", "")
+        img = ((p.get("images") or [{}])[0]).get("url", "")
+        tiles.append(
+            f'<a href="{url}" target="_blank" style="text-decoration:none;color:inherit">'
+            f'<img src="{img}" alt="{name}" width="140" height="140" '
+            f'style="object-fit:cover;border-radius:8px;border:2px solid #88001b;display:block"/>'
+            f'<div style="max-width:140px;word-wrap:break-word"><sub>{name}</sub></div>'
+            f'</a>'
+        )
 
     return (
-        '<div style="display:flex;gap:10px;overflow-x:auto;padding:6px;scroll-snap-type:x mandatory">'
+        '<div align="center">'
+        '<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">'
         + "".join(tiles)
-        + "</div>"
+        + "</div></div>"
     )
 
 
 def update_readme(readme_path: str, token: str, user_id: str):
-    ignore = _get_ignore_list()
-
-    current_html = current_playlist_html(token, user_id, ignore)
-    recents_html = recents_carousel_html(token, ignore, limit=50)
-    top_short = top_tracks_html(token, ignore, term="short_term", limit=20)
-    top_mid = top_tracks_html(token, ignore, term="medium_term", limit=20)
-    top_long = top_tracks_html(token, ignore, term="long_term", limit=20)
-
-    # Top of the week = first of short-term list (if any)
-    top_week = '<div><sub>No data.</sub></div>'
-    try:
-        data = _get(f"{API_BASE}/me/top/tracks", token, params={"time_range": "short_term", "limit": 1})
-        items = data.get("items", [])
-        if items and not _artist_blocked(items[0], ignore):
-            t = items[0]
-            img = (t.get("album", {}).get("images") or [{}])[0].get("url", "")
-            url = (t.get("external_urls") or {}).get("spotify", "")
-            title = t.get("name", "")
-            artist = ", ".join(a.get("name", "") for a in t.get("artists", []))
-            top_week = (
-                f'<div style="display:inline-flex;align-items:center;gap:12px">'
-                f'<a href="{url}" target="_blank"><img src="{img}" alt="{title}" height="72" style="border:2px solid #88001b;border-radius:6px"/></a>'
-                f'<div style="text-align:left">'
-                f'<div><strong>{title}</strong></div>'
-                f'<div><sub>{artist}</sub></div>'
-                f'</div>'
-                f'</div>'
-            )
-    except Exception:
-        pass
+    # Only update playlists block as requested
+    playlists = playlists_html(token)
 
     def _replace(section: str, new_html: str, text: str) -> str:
         start = f"<!-- {section}:START -->"
@@ -210,12 +170,7 @@ def update_readme(readme_path: str, token: str, user_id: str):
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    content = _replace("SPOTIFY_CURRENT_PLAYLIST", current_html, content)
-    content = _replace("SPOTIFY_RECENTS", recents_html, content)
-    content = _replace("SPOTIFY_TOP_OF_WEEK", top_week, content)
-    content = _replace("SPOTIFY_TOP_SHORT", top_short, content)
-    content = _replace("SPOTIFY_TOP_MID", top_mid, content)
-    content = _replace("SPOTIFY_TOP_LONG", top_long, content)
+    content = _replace("SPOTIFY_PLAYLISTS", playlists, content)
 
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(content)

@@ -28,6 +28,7 @@
 <div align="center">
   <sub>Your playlists will render here. Configure which half to show with SPOTIFY_PLAYLIST_HALF.</sub>
 </div>
+<!-- SPOTIFY_PLAYLISTS:END -->
 
 <br/>
 

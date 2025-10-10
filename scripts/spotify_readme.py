@@ -107,20 +107,37 @@ def top_tracks_html(token: str, ignore: List[str], term: str, limit: int = 10) -
     return ''
 
 
-def playlists_html(token: str) -> str:
-    # Fetch all user playlists (paginated)
+def playlists_html(token: str, user_id: Optional[str] = None) -> str:
+    # Fetch playlists with fallback:
+    # 1) /me/playlists (requires OAuth; returns public + private if scoped)
+    # 2) /users/{user_id}/playlists (returns public playlists for that user)
+
+    def _fetch_all(url: str) -> List[Dict]:
+        items: List[Dict] = []
+        limit = 50
+        offset = 0
+        while True:
+            data = _get(url, token, params={"limit": limit, "offset": offset})
+            batch = data.get("items", [])
+            if not batch:
+                break
+            items.extend(batch)
+            if not data.get("next"):
+                break
+            offset += limit
+        return items
+
     items: List[Dict] = []
-    limit = 50
-    offset = 0
-    while True:
-        data = _get(f"{API_BASE}/me/playlists", token, params={"limit": limit, "offset": offset})
-        batch = data.get("items", [])
-        if not batch:
-            break
-        items.extend(batch)
-        if not data.get("next"):
-            break
-        offset += limit
+    try:
+        items = _fetch_all(f"{API_BASE}/me/playlists")
+    except requests.HTTPError:
+        items = []
+
+    if not items and user_id:
+        try:
+            items = _fetch_all(f"{API_BASE}/users/{user_id}/playlists")
+        except requests.HTTPError:
+            items = []
 
     if not items:
         return '<div><sub>No playlists found.</sub></div>'
@@ -158,14 +175,29 @@ def playlists_html(token: str) -> str:
 
 def update_readme(readme_path: str, token: str, user_id: str):
     # Only update playlists block as requested
-    playlists = playlists_html(token)
+    playlists = playlists_html(token, user_id=user_id or None)
 
     def _replace(section: str, new_html: str, text: str) -> str:
         start = f"<!-- {section}:START -->"
         end = f"<!-- {section}:END -->"
         if start in text and end in text:
-            return text.split(start)[0] + start + "\n" + new_html + "\n" + end + text.split(end)[1]
-        return text
+            # Replace content between markers
+            before = text.split(start)[0]
+            after = text.split(end)[1]
+            return before + start + "\n" + new_html + "\n" + end + after
+        # If markers missing, try to inject after '## Playlists' header
+        insertion = start + "\n" + new_html + "\n" + end
+        lines = text.splitlines()
+        for i, line in enumerate(lines):
+            if line.strip().lower().startswith("## playlists"):
+                # insert after this header and a blank line if present
+                insert_at = i + 1
+                # skip any empty line directly after header
+                while insert_at < len(lines) and lines[insert_at].strip() == "":
+                    insert_at += 1
+                return "\n".join(lines[:insert_at] + ["", insertion, ""] + lines[insert_at:])
+        # Otherwise append at the end
+        return text.rstrip() + "\n\n" + insertion + "\n"
 
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()

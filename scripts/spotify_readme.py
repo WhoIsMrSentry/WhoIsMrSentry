@@ -44,9 +44,21 @@ def _token() -> str:
 
 
 def _get(url: str, token: str, params: Optional[Dict] = None) -> Dict:
-    r = requests.get(url, headers={"Authorization": f"Bearer {token}"}, params=params, timeout=20)
+    r = requests.get(
+        url,
+        headers={"Authorization": f"Bearer {token}"},
+        params=params,
+        timeout=20,
+    )
+    # 204 No Content: Spotify returns this when nothing is playing
+    if r.status_code == 204 or not r.content:
+        return {}
     r.raise_for_status()
-    return r.json()
+    try:
+        return r.json()
+    except ValueError:
+        # Unexpected empty/non-JSON body
+        return {}
 
 
 def _get_ignore_list() -> List[str]:

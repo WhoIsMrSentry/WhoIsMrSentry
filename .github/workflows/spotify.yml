@@ -1,5 +1,9 @@
 name: Update Spotify Sections
 
+concurrency:
+  group: spotify-update-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   schedule:
     - cron: "*/30 * * * *" # every 30 minutes
@@ -10,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,10 +40,26 @@ jobs:
         run: |
           python scripts/spotify_readme.py
 
-      - name: Commit changes
+      - name: Commit and push changes safely
+        shell: bash
         run: |
+          set -e
           git config user.name github-actions
           git config user.email actions@github.com
           git add README.md
-          git commit -m "chore(spotify): auto-update README sections" || echo "no changes"
-          git push
+          if git diff --cached --quiet; then
+            echo "no changes"
+            exit 0
+          fi
+          git commit -m "chore(spotify): auto-update README sections"
+          # Rebase on latest remote to avoid non-fast-forward
+          git pull --rebase origin "${GITHUB_REF_NAME}" || git pull --rebase || true
+          # Retry push a couple of times in case of race
+          for i in 1 2 3; do
+            if git push; then
+              echo "push ok"
+              break
+            fi
+            echo "push failed, retrying ($i)"; sleep 2
+            git pull --rebase origin "${GITHUB_REF_NAME}" || git pull --rebase || true
+          done

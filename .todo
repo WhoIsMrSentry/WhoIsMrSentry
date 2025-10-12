@@ -1,0 +1,6 @@
+TODO:
+1. Revamp README hero/about sections with richer personal story and modern layout.
+2. Modernize “Now Playing” block (larger artwork, background accent, highlight track info).
+3. Ensure Spotify playlist grid renders at 250x250 via updater script and rerun to refresh README.
+4. Update Stats section styling so cards use #88001b background and contrasting text.
+5. Remove accidental temp/ directory once workflow verified.

@@ -1,14 +1,34 @@
 <div align="center">
   <h1>Emir Hamurcu</h1>
-  <p style="font-size:1.1rem;">Robotics &amp; AI systems engineer crafting dependable autonomy and decoding complex hardware.</p>
+  <p>Robotics &amp; AI systems engineer crafting dependable autonomy and decoding complex hardware.</p>
   <p><strong>AI • Robotics • Reverse Engineering</strong></p>
 
-  <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:14px 0 6px;">
-    <span style="background:#88001b;color:#fff;padding:6px 16px;border-radius:999px;font-size:0.9rem;">Edge AI Pipelines</span>
-    <span style="background:#88001b;color:#fff;padding:6px 16px;border-radius:999px;font-size:0.9rem;">Mechatronics &amp; Robotics</span>
-    <span style="background:#88001b;color:#fff;padding:6px 16px;border-radius:999px;font-size:0.9rem;">Reverse Engineering</span>
-    <span style="background:#88001b;color:#fff;padding:6px 16px;border-radius:999px;font-size:0.9rem;">Autonomous Systems Safety</span>
-  </div>
+  <table style="margin:10px auto 6px auto;">
+    <tr>
+      <td>
+        <a href="https://img.shields.io/badge/Edge%20AI%20Pipelines-88001b?label=%20&labelColor=000000&style=flat" target="_blank">
+          <img alt="Edge AI Pipelines" src="https://img.shields.io/badge/Edge%20AI%20Pipelines-88001b?label=%20&labelColor=000000&style=flat&color=88001b&logo=dots&logoColor=ffffff" />
+        </a>
+      </td>
+      <td>
+        <a href="https://img.shields.io/badge/Mechatronics%20%26%20Robotics-88001b?label=%20&labelColor=000000&style=flat" target="_blank">
+          <img alt="Mechatronics &amp; Robotics" src="https://img.shields.io/badge/Mechatronics%20%26%20Robotics-88001b?label=%20&labelColor=000000&style=flat&color=88001b" />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://img.shields.io/badge/Reverse%20Engineering-88001b?label=%20&labelColor=000000&style=flat" target="_blank">
+          <img alt="Reverse Engineering" src="https://img.shields.io/badge/Reverse%20Engineering-88001b?label=%20&labelColor=000000&style=flat&color=88001b" />
+        </a>
+      </td>
+      <td>
+        <a href="https://img.shields.io/badge/Autonomous%20Systems%20Safety-88001b?label=%20&labelColor=000000&style=flat" target="_blank">
+          <img alt="Autonomous Systems Safety" src="https://img.shields.io/badge/Autonomous%20Systems%20Safety-88001b?label=%20&labelColor=000000&style=flat&color=88001b" />
+        </a>
+      </td>
+    </tr>
+  </table>
 
   <a href="https://github.com/SentryCoderDev/SentryBOT" target="_blank">
     <img alt="SentryBOT" src="https://img.shields.io/badge/SentryBOT-Open%20Source-88001b?style=flat-square&labelColor=000000" />
@@ -33,10 +53,16 @@ When I'm not tuning control loops, I'm learning from sci-fi, synthesizing soundt
 
 <div align="center">
   <!-- Update UID if needed, then grant permission at https://spotify-github-profile.kittinanx.com/api/login -->
-  <a href="https://spotify-github-profile.kittinanx.com/api/view?uid=31kjcplwkuy57z6yk44b6qyfaq4u&redirect=true" title="Open in Spotify" style="display:inline-block;max-width:720px;width:100%;background:linear-gradient(135deg,#88001b,#20000a);padding:24px;border-radius:20px;border:1px solid #88001b;box-shadow:0 18px 45px rgba(136,0,27,0.35);">
-    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31kjcplwkuy57z6yk44b6qyfaq4u&cover_image=true&theme=novatorem&show_offline=false&background_color=000000&bar_color=88001b&bar_color_cover=true" alt="Spotify Now Playing" style="width:100%;border-radius:12px;display:block;" />
-  </a>
-  <p style="margin-top:12px;color:#4a0010;"><sub>Auto-updated every ~30 minutes via GitHub Actions</sub></p>
+  <table style="width:100%;max-width:720px;margin:0 auto;background-color:#1a0006;border:1px solid #88001b;">
+    <tr>
+      <td style="padding:18px;text-align:center;">
+        <a href="https://spotify-github-profile.kittinanx.com/api/view?uid=31kjcplwkuy57z6yk44b6qyfaq4u&redirect=true" title="Open in Spotify">
+          <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31kjcplwkuy57z6yk44b6qyfaq4u&cover_image=true&theme=novatorem&show_offline=false&background_color=000000&bar_color=88001b&bar_color_cover=true" alt="Spotify Now Playing" style="width:100%;max-width:680px;" />
+        </a>
+      </td>
+    </tr>
+  </table>
+  <p><sub>Auto-updated every ~30 minutes via GitHub Actions</sub></p>
 </div>
 
 <br/>
@@ -82,13 +108,21 @@ When I'm not tuning control loops, I'm learning from sci-fi, synthesizing soundt
 
 ## Stats
 
-<div align="center" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;background:#88001b;padding:24px;border-radius:18px;border:1px solid #52000f;max-width:760px;margin:auto;box-shadow:0 12px 34px rgba(136,0,27,0.35);">
-  <a href="https://github.com/SentryCoderDev" style="display:inline-block;">
-    <img height="170" src="https://github-readme-stats.vercel.app/api?username=SentryCoderDev&show_icons=true&hide_title=true&hide_border=true&title_color=ffffff&text_color=f5f5f5&icon_color=f5f5f5&bg_color=88001b" alt="GitHub Stats" />
-  </a>
-  <a href="https://github.com/SentryCoderDev" style="display:inline-block;">
-    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SentryCoderDev&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b" alt="Top Languages" />
-  </a>
+<div align="center">
+  <table style="background-color:#88001b;border:1px solid #52000f;margin:0 auto;">
+    <tr>
+      <td style="padding:12px;text-align:center;">
+        <a href="https://github.com/SentryCoderDev">
+          <img height="170" src="https://github-readme-stats.vercel.app/api?username=SentryCoderDev&show_icons=true&hide_title=true&hide_border=true&title_color=ffffff&text_color=f5f5f5&icon_color=f5f5f5&bg_color=88001b" alt="GitHub Stats" />
+        </a>
+      </td>
+      <td style="padding:12px;text-align:center;">
+        <a href="https://github.com/SentryCoderDev">
+          <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SentryCoderDev&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b" alt="Top Languages" />
+        </a>
+      </td>
+    </tr>
+  </table>
 </div>
 
 <br/>

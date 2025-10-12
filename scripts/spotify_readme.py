@@ -178,7 +178,8 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
             img = ((p.get("images") or [{}])[0]).get("url", "")
             cell_html = (
                 f'<a href="{url}" target="_blank">'
-                f'<img src="{img}" alt="{name}" width="{THUMB_SIZE}" height="{THUMB_SIZE}" />'
+                f'<img src="{img}" alt="{name}" width="{THUMB_SIZE}" height="{THUMB_SIZE}" '
+                f'style="width:{THUMB_SIZE}px;height:{THUMB_SIZE}px;object-fit:cover;border:1px solid #52000f;background-color:#1a0006;" />'
                 f'</a>'
                 f'<div style="max-width:{THUMB_SIZE}px;word-wrap:break-word"><sub>{name}</sub></div>'
             )
@@ -186,7 +187,8 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
         while len(tds) < cols:
             tds.append(
                 f'<td align="center" valign="top">'
-                f'<img src="{SPACER_IMG}" width="{THUMB_SIZE}" height="{THUMB_SIZE}" style="opacity:0" />'
+                f'<img src="{SPACER_IMG}" width="{THUMB_SIZE}" height="{THUMB_SIZE}" '
+                f'style="width:{THUMB_SIZE}px;height:{THUMB_SIZE}px;opacity:0;" />'
                 f'</td>'
             )
         rows_html.append('<tr>' + ''.join(tds) + '</tr>')

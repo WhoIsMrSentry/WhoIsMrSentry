@@ -26,6 +26,14 @@ THUMB_SIZE = int(os.environ.get("SPOTIFY_THUMB_SIZE", "250"))
 SPACER_IMG = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
 
 
+def _int_env(name: str, default: int) -> int:
+    raw = os.environ.get(name, "").strip()
+    if raw.isdigit():
+        value = int(raw)
+        return value if value > 0 else default
+    return default
+
+
 def _token() -> str:
     cid = os.environ["SPOTIFY_CLIENT_ID"]
     csec = os.environ["SPOTIFY_CLIENT_SECRET"]
@@ -155,16 +163,21 @@ def playlists_html(token: str, user_id: Optional[str] = None) -> str:
         chosen = items
 
     # Optional cap
+    cols_hint = _int_env("SPOTIFY_PLAYLIST_COLS", 5)
+    rows_hint = _int_env("SPOTIFY_PLAYLIST_ROWS", 4)
     raw_max = os.environ.get("SPOTIFY_PLAYLIST_MAX", "").strip()
-    max_items = int(raw_max) if raw_max.isdigit() else 60
+    if raw_max.isdigit():
+        max_items = int(raw_max)
+    else:
+        max_items = cols_hint * rows_hint if rows_hint > 0 else cols_hint * 4
+    max_items = max_items if max_items > 0 else 20
     chosen = chosen[:max_items]
 
-    # Balanced grid: choose columns ~= sqrt(n), rows ~= ceil(n/cols)
     n = len(chosen)
     if n == 0:
         return '<div><sub>No playlists found.</sub></div>'
 
-    cols = max(1, int(math.ceil(math.sqrt(n))))
+    cols = max(1, min(cols_hint, n))
 
     # Build an HTML table without relying on CSS that GitHub may strip.
     # Use <img width="140" height="140"> so thumbnails always render.

@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Emir Hamurcu</h1>
-  <p>Robotics &amp; AI systems engineer crafting dependable autonomy and decoding complex hardware.</p>
-  <p><strong>AI • Robotics • Reverse Engineering</strong></p>
+  <h3>Robotics & AI Systems Engineer | Maker</h3>
+  <p><em>"When you rest, you rust."</em></p>
 
   <table style="margin:10px auto 6px auto;">
     <tr>
@@ -37,22 +37,57 @@
 
 <br/>
 
-## About
+## 👨‍💻 About Me
 
-I'm Emir Hamurcu, a robotics and AI engineer who loves blending low-level hardware with high-level intelligence. I prototype autonomous machines, embed neural models on edge devices, and reverse-engineer closed systems so they become transparent and reliable.
+I'm **Emir Hamurcu**, a robotics and AI engineer based in **Hatay, Turkey**. My journey began at age 4 by disassembling electronics, and by 6th grade, I was writing my first C++ code. I specialize in blending low-level hardware with high-level intelligence to build transparent and reliable autonomous systems.
 
-- 🚀 Founder of the open-source SentryBOT initiative for self-hosted robotics automation.
-- 🧠 Designing perception stacks that mix classical CV, transformers, and sensor fusion for harsh environments.
-- 🛠️ Delivering full product pipelines: data engineering, model training, MLOps, embedded deployment, and field telemetry.
-
-When I'm not tuning control loops, I'm learning from sci-fi, synthesizing soundtracks, and sketching new product ideas that push human-robot collaboration forward.
+The 2023 earthquakes were a turning point in my life, reinforcing my resilience and dedication to science. I believe in constant learning and hard work—my philosophy is **"When you rest, you rust."**
 
 <br/>
 
-## Now Playing
+
+## 🚀 Tech Stack
 
 <div align="center">
-  <!-- Update UID if needed, then grant permission at https://spotify-github-profile.kittinanx.com/api/login -->
+
+**Languages**
+<br/>
+<img src="https://img.shields.io/badge/Python-88001b?logo=python&logoColor=white&style=flat&labelColor=000000" alt="Python" />
+<img src="https://img.shields.io/badge/C%2B%2B-88001b?logo=cplusplus&logoColor=white&style=flat&labelColor=000000" alt="C++" />
+<img src="https://img.shields.io/badge/C%23-88001b?logo=csharp&logoColor=white&style=flat&labelColor=000000" alt="C#" />
+<img src="https://img.shields.io/badge/JavaScript-88001b?logo=javascript&logoColor=white&style=flat&labelColor=000000" alt="JavaScript" />
+<img src="https://img.shields.io/badge/SQL-88001b?logo=postgresql&logoColor=white&style=flat&labelColor=000000" alt="SQL" />
+
+<br/>**AI & Computer Vision**<br/>
+<img src="https://img.shields.io/badge/TensorFlow-88001b?logo=tensorflow&logoColor=white&style=flat&labelColor=000000" alt="TensorFlow" />
+<img src="https://img.shields.io/badge/OpenCV-88001b?logo=opencv&logoColor=white&style=flat&labelColor=000000" alt="OpenCV" />
+<img src="https://img.shields.io/badge/Ollama-88001b?logo=ollama&logoColor=white&style=flat&labelColor=000000" alt="Ollama" />
+
+<br/>**Hardware & Tools**<br/>
+<img src="https://img.shields.io/badge/Arduino-88001b?logo=arduino&logoColor=white&style=flat&labelColor=000000" alt="Arduino" />
+<img src="https://img.shields.io/badge/Raspberry%20Pi-88001b?logo=raspberrypi&logoColor=white&style=flat&labelColor=000000" alt="Raspberry Pi" />
+<img src="https://img.shields.io/badge/Espressif-88001b?logo=espressif&logoColor=white&style=flat&labelColor=000000" alt="ESP32" />
+<img src="https://img.shields.io/badge/Fusion%20360-88001b?logo=autodesk&logoColor=white&style=flat&labelColor=000000" alt="Fusion 360" />
+<img src="https://img.shields.io/badge/Docker-88001b?logo=docker&logoColor=white&style=flat&labelColor=000000" alt="Docker" />
+<img src="https://img.shields.io/badge/Linux-88001b?logo=linux&logoColor=white&style=flat&labelColor=000000" alt="Linux" />
+
+</div>
+
+<br/>
+
+## 🧠 Interests
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Neuroscience-88001b?style=for-the-badge&labelColor=000000" alt="Neuroscience" />
+  <img src="https://img.shields.io/badge/Philosophy-88001b?style=for-the-badge&labelColor=000000" alt="Philosophy" />
+  <img src="https://img.shields.io/badge/Writer-88001b?style=for-the-badge&labelColor=000000" alt="Writer" />
+</div>
+
+<br/>
+
+## 🎧 Now Playing
+
+<div align="center">
   <table width="100%" style="max-width:720px;margin:0 auto;border:0;" cellspacing="0" cellpadding="0">
     <tr>
       <td bgcolor="#88001b" style="border:1px solid #52000f;padding:18px;text-align:center;">
@@ -67,38 +102,7 @@ When I'm not tuning control loops, I'm learning from sci-fi, synthesizing soundt
 
 <br/>
 
-
-## Tech Stack
-
-<div align="center">
-
-<img src="https://img.shields.io/badge/Python-88001b?logo=python&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Python" />
-<img src="https://img.shields.io/badge/C%2B%2B-88001b?logo=cplusplus&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="C++" />
-<img src="https://img.shields.io/badge/C-88001b?logo=c&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="C" />
-<img src="https://img.shields.io/badge/FastAPI-88001b?logo=fastapi&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="FastAPI" />
-<img src="https://img.shields.io/badge/Docker-88001b?logo=docker&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Docker" />
-<img src="https://img.shields.io/badge/Arduino-88001b?logo=arduino&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Arduino" />
-<img src="https://img.shields.io/badge/Espressif-88001b?logo=espressif&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="ESP32/ESP8266" />
-<img src="https://img.shields.io/badge/OpenCV-88001b?logo=opencv&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="OpenCV" />
-<img src="https://img.shields.io/badge/TensorFlow-88001b?logo=tensorflow&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="TensorFlow" />
-<img src="https://img.shields.io/badge/Raspberry%20Pi-88001b?logo=raspberrypi&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Raspberry Pi" />
-<img src="https://img.shields.io/badge/Fusion%20360-88001b?logo=autodesk&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Fusion 360" />
-<img src="https://img.shields.io/badge/Linux-88001b?logo=linux&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Linux" />
-<img src="https://img.shields.io/badge/Windows-88001b?logo=windows&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Windows" />
-<img src="https://img.shields.io/badge/Bash-88001b?logo=gnubash&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Bash" />
-<img src="https://img.shields.io/badge/VirtualBox-88001b?logo=virtualbox&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="VirtualBox" />
-<img src="https://img.shields.io/badge/VMware-88001b?logo=vmware&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="VMware" />
-<img src="https://img.shields.io/badge/Visual%20Studio-88001b?logo=visualstudio&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Visual Studio" />
-<img src="https://img.shields.io/badge/SSMS-88001b?logo=microsoftsqlserver&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="SSMS" />
-<img src="https://img.shields.io/badge/Ubuntu-88001b?logo=ubuntu&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Ubuntu" />
-<img src="https://img.shields.io/badge/GitHub%20Actions-88001b?logo=githubactions&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="CI/CD" />
-<img src="https://img.shields.io/badge/Ollama-88001b?logo=ollama&logoColor=white&style=flat&labelColor=000000&logoWidth=30" alt="Ollama" />
-
-</div>
-
-<br/>
-
-## Stats
+## 📊 Stats
 
 <div align="center">
   <table bgcolor="#88001b" style="margin:0 auto;border:1px solid #52000f;" cellspacing="0" cellpadding="0">
@@ -119,7 +123,7 @@ When I'm not tuning control loops, I'm learning from sci-fi, synthesizing soundt
 
 <br/>
 
-## Commit Snake
+## 🐍 Commit Snake
 
 <div align="center">
   <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">
@@ -132,7 +136,7 @@ When I'm not tuning control loops, I'm learning from sci-fi, synthesizing soundt
   </table>
 </div>
 
-## Links
+## 🔗 Links
 
 <div align="center">
   <a href="https://www.linkedin.com/in/whoismrsentry/" target="_blank">

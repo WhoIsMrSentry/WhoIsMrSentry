@@ -14,13 +14,13 @@ jobs:
       - name: Generate snake (dark)
         uses: Platane/snk@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: WhoIsMrSentry
           outputs: |
             dist/snake_dark.svg?palette=github-dark&color_snake=#88001b&color_dots=#330008
       - name: Generate snake (light)
         uses: Platane/snk@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: WhoIsMrSentry
           outputs: |
             dist/snake.svg?palette=github-light&color_snake=#88001b&color_dots=#f5d7dd
       - name: Push to output branch

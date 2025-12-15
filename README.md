@@ -30,7 +30,7 @@
     </tr>
   </table>
 
-  <a href="https://github.com/SentryCoderDev/SentryBOT" target="_blank">
+  <a href="https://github.com/WhoIsMrSentry/SentryBOT" target="_blank">
     <img alt="SentryBOT" src="https://img.shields.io/badge/SentryBOT-Open%20Source-88001b?style=flat-square&labelColor=000000" />
   </a>
 </div>
@@ -108,13 +108,13 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
   <table bgcolor="#88001b" style="margin:0 auto;border:1px solid #52000f;" cellspacing="0" cellpadding="0">
     <tr>
       <td style="padding:12px;text-align:center;">
-        <a href="https://github.com/SentryCoderDev">
-          <img height="170" src="https://github-readme-stats.vercel.app/api?username=SentryCoderDev&show_icons=true&hide_title=true&hide_border=true&title_color=ffffff&text_color=f5f5f5&icon_color=f5f5f5&bg_color=88001b" alt="GitHub Stats" />
+        <a href="https://github.com/WhoIsMrSentry">
+          <img height="170" src="https://github-readme-stats.vercel.app/api?username=WhoIsMrSentry&show_icons=true&hide_title=true&hide_border=true&title_color=ffffff&text_color=f5f5f5&icon_color=f5f5f5&bg_color=88001b" alt="GitHub Stats" />
         </a>
       </td>
       <td style="padding:12px;text-align:center;">
-        <a href="https://github.com/SentryCoderDev">
-          <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SentryCoderDev&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b" alt="Top Languages" />
+        <a href="https://github.com/WhoIsMrSentry">
+          <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WhoIsMrSentry&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b" alt="Top Languages" />
         </a>
       </td>
     </tr>
@@ -130,7 +130,7 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
     <tr>
       <td>
         <!-- Will show after enabling the snake workflow -->
-        <img alt="commit snake" src="https://raw.githubusercontent.com/SentryCoderDev/SentryCoderDev/output/snake_dark.svg" />
+        <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" />
       </td>
     </tr>
   </table>
@@ -145,7 +145,7 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
   <a href="https://dev.to/sentrycoderdev" target="_blank">
     <img src="https://img.shields.io/badge/dev.to-88001b?style=for-the-badge&logo=dev.to&logoColor=white&labelColor=000000" alt="dev.to" />
   </a>
-  <a href="https://github.com/SentryCoderDev" target="_blank">
+  <a href="https://github.com/WhoIsMrSentry" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-88001b?style=for-the-badge&logo=github&logoColor=white&labelColor=000000" alt="GitHub" />
   </a>
   <a href="https://instagram.com/sentrycoder.developer" target="_blank">
@@ -159,7 +159,7 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
 <br/>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=SentryCoderDev&style=flat-square&color=88001b" alt="profile views" />
+  <img src="https://komarev.com/ghpvc/?username=WhoIsMrSentry&style=flat-square&color=88001b" alt="profile views" />
 </div>
 
 <!-- Minimal English copy, two-color theme (primary: #88001b, secondary: #000000). -->

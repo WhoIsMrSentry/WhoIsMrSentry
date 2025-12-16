@@ -20,6 +20,11 @@ README_PATH = ROOT / "README.md"
 MARKER_START = "<!-- SPOTIFY_SECTION:START -->"
 MARKER_END = "<!-- SPOTIFY_SECTION:END -->"
 PLACEHOLDER = "<p style=\"margin:0;\"><em>Unable to pull Spotify data right now.</em></p>"
+DEBUG = bool(os.getenv("SPOTIFY_DEBUG"))
+def _log_debug(message: str) -> None:
+    if DEBUG:
+        print(f"[spotify-debug] {message}")
+
 
 
 class SpotifyConfigError(RuntimeError):
@@ -255,6 +260,7 @@ def _update_readme(html_block: str) -> None:
 def main() -> None:
     try:
         token = _build_token()
+        _log_debug("Access token fetched successfully.")
         payload = _retrieve_payload(token)
     except SpotifyConfigError as exc:
         print(exc)
@@ -263,15 +269,20 @@ def main() -> None:
 
     headers = {"Authorization": f"Bearer {token}"}
     if not payload:
+        _log_debug("Spotify returned no playback data (204 or empty history).")
         _update_readme(PLACEHOLDER)
         return
 
     track = _extract_track(payload)
     if not track:
+        _log_debug("Payload did not include track information.")
         _update_readme(PLACEHOLDER)
         return
 
     playlist = _build_playlist(headers, payload, track)
+    _log_debug(
+        f"Injecting track '{track['name']}' by {track['artists']} from '{playlist['name']}'."
+    )
     html_block = _format_html(track, playlist, payload)
     _update_readme(html_block)
 

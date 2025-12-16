@@ -106,13 +106,13 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
       </div>
     </a>
     <a href="https://open.spotify.com/playlist/6aWGyd4TtNjHOKzSdCcaGW" title="Open Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz." style="display:block;border-radius:24px;overflow:hidden;background:#0b0005;border:2px solid #ff0047;box-shadow:0 12px 30px rgba(255,0,71,0.25);text-decoration:none;">
-      <img src="https://image-cdn-fa.spotifycdn.com/image/ab67706c0000da84edc15ce8d653871663bcab5a" alt="Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz. artwork" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;" />
+      <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84edc15ce8d653871663bcab5a" alt="Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz. artwork" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;" />
       <div style="padding:12px 18px 18px;text-align:left;">
         <p style="margin:0;font-size:12px;letter-spacing:0.35em;text-transform:uppercase;color:#ff86a7;">Playlist Art</p>
       </div>
     </a>
   </div>
-  <p style="margin-top:16px;font-size:12px;color:#bbbbbb;"><em>Updated 2025-12-16 22:47 UTC</em></p>
+  <p style="margin-top:16px;font-size:12px;color:#bbbbbb;"><em>Updated 2025-12-16 22:55 UTC</em></p>
 </div>
 <!-- SPOTIFY_SECTION:END -->
       </td>

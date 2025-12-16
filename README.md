@@ -93,13 +93,16 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
       <td bgcolor="#88001b" style="border:1px solid #52000f;padding:18px;text-align:center;border-radius:26px;box-shadow:0 0 25px rgba(0,0,0,0.45);">
         <!-- SPOTIFY_SECTION:START -->
 <div style="color:#f5f5f5;text-align:center;">
-  <p style="margin:0 0 8px 0;"><strong>Now Playing:</strong> <a href="https://open.spotify.com/track/2lKQLI68lmCs0MUVLM5sAk" style="color:#f5f5f5;">The Black Hand</a> — Antony Genn, Martin Slattery</p>
-  <p style="margin:0 0 12px 0;"><strong>Playlist:</strong> <a href="https://open.spotify.com/playlist/6aWGyd4TtNjHOKzSdCcaGW" style="color:#f5f5f5;">Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz.</a></p>
-  <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:flex-start;">
-    <a href="https://open.spotify.com/track/2lKQLI68lmCs0MUVLM5sAk" title="Listen to The Black Hand"><img src="https://i.scdn.co/image/ab67616d0000b2730c0cecdab2ff7a186a01841c" alt="The Black Hand cover art" height="160" style="border:1px solid #52000f;border-radius:12px;" /></a>
-    <a href="https://open.spotify.com/playlist/6aWGyd4TtNjHOKzSdCcaGW" title="Open Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz."><img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84edc15ce8d653871663bcab5a" alt="Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz. artwork" height="160" style="border:1px solid #52000f;border-radius:12px;" /></a>
+  <p style="margin:0 0 2px 0;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:#a8ff60;">Now Playing</p>
+  <p style="margin:0 0 8px 0;font-size:20px;font-weight:700;"><a href="https://open.spotify.com/track/4F5fGk2QnAHC3Iky49lLlk" style="color:#f5f5f5;text-decoration:none;">Going Back Home To Small Heath</a></p>
+  <p style="margin:0 0 12px 0;font-size:15px;color:#cccccc;">Antony Genn, Martin Slattery</p>
+  <p style="margin:0 0 4px 0;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:#ffb3c1;">Playlist</p>
+  <p style="margin:0 0 16px 0;font-size:17px;font-weight:600;"><a href="https://open.spotify.com/playlist/6aWGyd4TtNjHOKzSdCcaGW" style="color:#f5f5f5;text-decoration:none;">Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz.</a></p>
+  <div style="display:flex;justify-content:center;gap:28px;flex-wrap:wrap;">
+    <a href="https://open.spotify.com/track/4F5fGk2QnAHC3Iky49lLlk" title="Listen to Going Back Home To Small Heath" style="flex:1 1 240px;max-width:300px;display:block;"><img src="https://i.scdn.co/image/ab67616d0000b2730c0cecdab2ff7a186a01841c" alt="Going Back Home To Small Heath cover art" style="width:100%;max-width:280px;height:220px;object-fit:cover;border:2px solid #39ff14;border-radius:16px;box-shadow:0 0 12px rgba(57,255,20,0.4);" /></a>
+    <a href="https://open.spotify.com/playlist/6aWGyd4TtNjHOKzSdCcaGW" title="Open Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz." style="flex:1 1 240px;max-width:300px;display:block;"><img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84edc15ce8d653871663bcab5a" alt="Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz. artwork" style="width:100%;max-width:280px;height:220px;object-fit:cover;border:2px solid #ff0047;border-radius:16px;box-shadow:0 0 12px rgba(255,0,71,0.35);" /></a>
   </div>
-  <p style="margin-top:12px;font-size:12px;"><em>Updated 2025-12-16 22:31 UTC</em></p>
+  <p style="margin-top:14px;font-size:12px;color:#bbbbbb;"><em>Updated 2025-12-16 22:36 UTC</em></p>
 </div>
 <!-- SPOTIFY_SECTION:END -->
       </td>

@@ -44,4 +44,3 @@ jobs:
           git commit -m "chore: refresh Spotify now playing block"
           git pull --rebase origin "$BRANCH_NAME"
           git push origin HEAD:"$BRANCH_NAME"
-          pull_strategy: REBASE

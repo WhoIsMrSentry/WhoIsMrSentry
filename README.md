@@ -88,9 +88,9 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
 ## 🎧 Now Playing
 
 <div align="center">
-  <table width="100%" style="max-width:720px;margin:0 auto;border:0;" cellspacing="0" cellpadding="0">
+  <table width="100%" style="max-width:720px;margin:0 auto;border:0;border-collapse:separate;border-spacing:0;" cellspacing="0" cellpadding="0">
     <tr>
-      <td bgcolor="#88001b" style="border:1px solid #52000f;padding:18px;text-align:center;">
+      <td bgcolor="#88001b" style="border:1px solid #52000f;padding:18px;text-align:center;border-radius:26px;box-shadow:0 0 25px rgba(0,0,0,0.45);">
         <!-- SPOTIFY_SECTION:START -->
         <p style="margin:0;"><em>Unable to pull Spotify data right now.</em></p>
         <!-- SPOTIFY_SECTION:END -->

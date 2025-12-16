@@ -92,8 +92,16 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
     <tr>
       <td bgcolor="#88001b" style="border:1px solid #52000f;padding:18px;text-align:center;border-radius:26px;box-shadow:0 0 25px rgba(0,0,0,0.45);">
         <!-- SPOTIFY_SECTION:START -->
-        <p style="margin:0;"><em>Unable to pull Spotify data right now.</em></p>
-        <!-- SPOTIFY_SECTION:END -->
+<div style="color:#f5f5f5;text-align:center;">
+  <p style="margin:0 0 8px 0;"><strong>Now Playing:</strong> <a href="https://open.spotify.com/track/2lKQLI68lmCs0MUVLM5sAk" style="color:#f5f5f5;">The Black Hand</a> — Antony Genn, Martin Slattery</p>
+  <p style="margin:0 0 12px 0;"><strong>Playlist:</strong> <a href="https://open.spotify.com/playlist/6aWGyd4TtNjHOKzSdCcaGW" style="color:#f5f5f5;">Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz.</a></p>
+  <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:flex-start;">
+    <a href="https://open.spotify.com/track/2lKQLI68lmCs0MUVLM5sAk" title="Listen to The Black Hand"><img src="https://i.scdn.co/image/ab67616d0000b2730c0cecdab2ff7a186a01841c" alt="The Black Hand cover art" height="160" style="border:1px solid #52000f;border-radius:12px;" /></a>
+    <a href="https://open.spotify.com/playlist/6aWGyd4TtNjHOKzSdCcaGW" title="Open Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz."><img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84edc15ce8d653871663bcab5a" alt="Doğduğunuz Aileyi seçmezsiniz, Ama Kurduğunuz Aileyi Seçebilirsiniz. artwork" height="160" style="border:1px solid #52000f;border-radius:12px;" /></a>
+  </div>
+  <p style="margin-top:12px;font-size:12px;"><em>Updated 2025-12-16 22:31 UTC</em></p>
+</div>
+<!-- SPOTIFY_SECTION:END -->
       </td>
     </tr>
   </table>

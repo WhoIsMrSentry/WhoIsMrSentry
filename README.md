@@ -105,7 +105,7 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
       </td>
     </tr>
   </table>
-  <p><sub>Auto-updated every ~30 minutes via GitHub Actions with playlist names and cover art.</sub></p>
+  <p><sub>Auto-updated every ~10 minutes via GitHub Actions with playlist names and cover art.</sub></p>
 </div>
 
 <br/>

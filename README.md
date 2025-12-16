@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Emir Hamurcu</h1>
-  <h3>Robotics & AI Systems Engineer | Maker</h3>
+  <h3>Robotics & AI Hobbyist | Concept Crafter</h3>
   <p><em>"When you rest, you rust."</em></p>
 
   <table style="margin:10px auto 6px auto;">
@@ -39,7 +39,7 @@
 
 ## 👨‍💻 About Me
 
-I'm **Emir Hamurcu**, a robotics and AI engineer based in **Hatay, Turkey**. My journey began at age 4 by disassembling electronics, and by 6th grade, I was writing my first C++ code. I specialize in blending low-level hardware with high-level intelligence to build transparent and reliable autonomous systems.
+I'm **Emir Hamurcu**, a hands-on robotics and AI hobbyist based in **Hatay, Turkey**. My journey began at age 4 by disassembling electronics, and by 6th grade, I was writing my first C++ code. I focus on crafting concepts and playful prototypes that blend low-level hardware with narrative-rich intelligence rather than formal engineering deliverables.
 
 The 2023 earthquakes were a turning point in my life, reinforcing my resilience and dedication to science. I believe in constant learning and hard work—my philosophy is **"When you rest, you rust."**
 
@@ -91,13 +91,13 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
   <table width="100%" style="max-width:720px;margin:0 auto;border:0;" cellspacing="0" cellpadding="0">
     <tr>
       <td bgcolor="#88001b" style="border:1px solid #52000f;padding:18px;text-align:center;">
-        <a href="https://spotify-github-profile.kittinanx.com/api/view?uid=31kjcplwkuy57z6yk44b6qyfaq4u&redirect=true" title="Open in Spotify">
-          <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31kjcplwkuy57z6yk44b6qyfaq4u&cover_image=true&theme=novatorem&show_offline=false&background_color=000000&bar_color=88001b&bar_color_cover=true" alt="Spotify Now Playing" style="width:100%;max-width:680px;border:1px solid #52000f;background-color:#1a0006;" />
-        </a>
+        <!-- SPOTIFY_SECTION:START -->
+        <p style="margin:0;"><em>Unable to pull Spotify data right now.</em></p>
+        <!-- SPOTIFY_SECTION:END -->
       </td>
     </tr>
   </table>
-  <p><sub>Auto-updated every ~30 minutes via GitHub Actions</sub></p>
+  <p><sub>Auto-updated every ~30 minutes via GitHub Actions with playlist names and cover art.</sub></p>
 </div>
 
 <br/>
@@ -148,7 +148,7 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
   <a href="https://github.com/WhoIsMrSentry" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-88001b?style=for-the-badge&logo=github&logoColor=white&labelColor=000000" alt="GitHub" />
   </a>
-  <a href="https://instagram.com/sentrycoder.developer" target="_blank">
+  <a href="https://instagram.com/whoismrsentry" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-88001b?style=for-the-badge&logo=instagram&logoColor=white&labelColor=000000" alt="Instagram" />
   </a>
   <a href="https://www.youtube.com/channel/UCXzt_TAVC_ls0hFLpV_ldMw" target="_blank">
@@ -159,7 +159,9 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
 <br/>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=WhoIsMrSentry&style=flat-square&color=88001b" alt="profile views" />
+  <img src="https://komarev.com/ghpvc/?username=WhoIsMrSentry&style=flat-square&color=88001b" alt="profile views (current handle)" />
+  <img src="https://komarev.com/ghpvc/?username=SentryCoderDev&style=flat-square&color=88001b" alt="profile views (legacy handle)" />
+  <p><sub>Current counter (left) restarted with the new handle; legacy stats (right) preserve the pre-rename traffic.</sub></p>
 </div>
 
 <!-- Minimal English copy, two-color theme (primary: #88001b, secondary: #000000). -->

@@ -85,32 +85,6 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
 
 <br/>
 
-## 🎧 Now Playing
-
-<div align="center">
-  <table width="100%" style="max-width:720px;margin:0 auto;border:0;border-collapse:separate;border-spacing:0;" cellspacing="0" cellpadding="0">
-    <tr>
-      <td bgcolor="#88001b" style="border:1px solid #52000f;padding:18px;text-align:center;border-radius:26px;box-shadow:0 0 25px rgba(0,0,0,0.45);">
-        <!-- SPOTIFY_SECTION:START -->
-<p style="margin:0;"><em>Unable to pull Spotify data right now.</em></p>
-<!-- SPOTIFY_SECTION:END -->
-      </td>
-    </tr>
-  </table>
-  <p><sub>Yerelde çalışan Spotify senkron scripti yeni veriyi çekip push ettiğinde otomatik güncellenir.</sub></p>
-</div>
-
-<br/>
-
-## 🛠 Yerel Spotify Senkronu
-
-- Bilgisayarında `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` ve `SPOTIFY_REFRESH_TOKEN` ortam değişkenlerini tanımla (Kullanıcı değişkenleri yeterli).
-- `python scripts/local_spotify_sync.py --interval 1200` komutunu çalıştırarak blokları 20 dakikada bir yenile; tek seferlik güncelleme için `--once` ekle.
-- Script önce `main` dalını rebase eder, [README.md](README.md) içindeki Spotify bölümünü günceller ve sadece değişiklik varsa commit + push yapar.
-- Komutu Windows Görev Zamanlayıcı'na veya bir systemd servisine ekleyerek arka planda otomatik çalışmasını sağlayabilirsin; böylece GitHub Actions dakikası harcamazsın.
-
-<br/>
-
 ## 📊 Stats
 
 <div align="center">

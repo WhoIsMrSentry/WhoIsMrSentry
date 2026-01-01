@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Emir Hamurcu</h1>
-  <h3>Robotics & AI Maker | Software Developer</h3>
+  <h3>Robotics & AI & Maker | Software Developer</h3>
   <p><em>"When you rest, you rust."</em></p>
 
   <table style="margin:10px auto 6px auto;">
@@ -140,12 +140,12 @@ Principle: **"When you rest, you rust."**
     <tr>
       <td style="padding:12px;text-align:center;">
         <a href="https://github.com/WhoIsMrSentry">
-          <img height="170" src="https://github-readme-stats.vercel.app/api?username=WhoIsMrSentry&show_icons=true&hide_title=true&hide_border=true&title_color=ffffff&text_color=f5f5f5&icon_color=f5f5f5&bg_color=88001b" alt="GitHub Stats" />
+          <img height="170" src="https://github-readme-stats.vercel.app/api?username=WhoIsMrSentry&show_icons=true&hide_title=true&hide_border=true&title_color=ffffff&text_color=f5f5f5&icon_color=f5f5f5&bg_color=88001b&cache_seconds=86400&v=2" alt="GitHub Stats" />
         </a>
       </td>
       <td style="padding:12px;text-align:center;">
         <a href="https://github.com/WhoIsMrSentry">
-          <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WhoIsMrSentry&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b" alt="Top Languages" />
+          <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WhoIsMrSentry&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b&cache_seconds=86400&v=2" alt="Top Languages" />
         </a>
       </td>
     </tr>

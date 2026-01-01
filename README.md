@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Emir Hamurcu</h1>
-  <h3>Robotics & AI Hobbyist | Concept Crafter</h3>
+  <h3>Robotics & AI Maker | Software Developer</h3>
   <p><em>"When you rest, you rust."</em></p>
 
   <table style="margin:10px auto 6px auto;">
@@ -37,11 +37,30 @@
 
 <br/>
 
-## 👨‍💻 About Me
+## 🧭 Table of Contents
 
-I'm **Emir Hamurcu**, a hands-on robotics and AI hobbyist based in **Hatay, Turkey**. My journey began at age 4 by disassembling electronics, and by 6th grade, I was writing my first C++ code. I focus on crafting concepts and playful prototypes that blend low-level hardware with narrative-rich intelligence rather than formal engineering deliverables.
+- [About](#about)
+- [Tech Stack](#tech-stack)
+- [Interests](#interests)
+- [Stats](#stats)
+- [Commit Snake](#commit-snake)
+- [Links](#links)
 
-The 2023 earthquakes were a turning point in my life, reinforcing my resilience and dedication to science. I believe in constant learning and hard work—my philosophy is **"When you rest, you rust."**
+## 👨‍💻 About
+
+I'm **Emir Hamurcu** — an embedded-systems-first maker/developer based in **Hatay, Turkey**, building robotics, computer vision, and applied AI that can survive real-world constraints.
+
+My favorite place to work: the **hardware–software boundary**. Shipping systems that actually run:
+
+- **Embedded systems:** MCU prototyping, sensor/actuator integration, serial comms, and hardware debugging.
+- **Embedded Linux:** SBC service layout, device configuration, measurable/observable runtime.
+- **Edge AI pipelines:** capture → preprocess → inference → postprocess → telemetry (deployment on constrained devices).
+- **Computer vision:** realtime constraints, calibration, failure modes, and field robustness.
+- **Reverse engineering:** protocol/system behavior analysis with a tooling-first mindset.
+
+Side tracks: **writing**, **philosophy**, **game development**, and **BCI / neurotech**.
+
+Principle: **"When you rest, you rust."**
 
 <br/>
 
@@ -55,21 +74,48 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
 <img src="https://img.shields.io/badge/Python-88001b?logo=python&logoColor=white&style=flat&labelColor=000000" alt="Python" />
 <img src="https://img.shields.io/badge/C%2B%2B-88001b?logo=cplusplus&logoColor=white&style=flat&labelColor=000000" alt="C++" />
 <img src="https://img.shields.io/badge/C%23-88001b?logo=csharp&logoColor=white&style=flat&labelColor=000000" alt="C#" />
+<img src="https://img.shields.io/badge/HTML-88001b?logo=html5&logoColor=white&style=flat&labelColor=000000" alt="HTML" />
+<img src="https://img.shields.io/badge/CSS-88001b?logo=css3&logoColor=white&style=flat&labelColor=000000" alt="CSS" />
 <img src="https://img.shields.io/badge/JavaScript-88001b?logo=javascript&logoColor=white&style=flat&labelColor=000000" alt="JavaScript" />
+
+<br/>**Backend & Databases**<br/>
+<img src="https://img.shields.io/badge/FastAPI-88001b?logo=fastapi&logoColor=white&style=flat&labelColor=000000" alt="FastAPI" />
 <img src="https://img.shields.io/badge/SQL-88001b?logo=postgresql&logoColor=white&style=flat&labelColor=000000" alt="SQL" />
+<img src="https://img.shields.io/badge/MSSQL-88001b?logo=microsoftsqlserver&logoColor=white&style=flat&labelColor=000000" alt="MSSQL" />
+<img src="https://img.shields.io/badge/Supabase-88001b?logo=supabase&logoColor=white&style=flat&labelColor=000000" alt="Supabase" />
 
 <br/>**AI & Computer Vision**<br/>
 <img src="https://img.shields.io/badge/TensorFlow-88001b?logo=tensorflow&logoColor=white&style=flat&labelColor=000000" alt="TensorFlow" />
+<img src="https://img.shields.io/badge/PyTorch-88001b?logo=pytorch&logoColor=white&style=flat&labelColor=000000" alt="PyTorch" />
 <img src="https://img.shields.io/badge/OpenCV-88001b?logo=opencv&logoColor=white&style=flat&labelColor=000000" alt="OpenCV" />
 <img src="https://img.shields.io/badge/Ollama-88001b?logo=ollama&logoColor=white&style=flat&labelColor=000000" alt="Ollama" />
+<img src="https://img.shields.io/badge/FAISS-88001b?logo=meta&logoColor=white&style=flat&labelColor=000000" alt="FAISS" />
+<img src="https://img.shields.io/badge/Teachable%20Machine-88001b?logo=google&logoColor=white&style=flat&labelColor=000000" alt="Teachable Machine" />
+
+<br/>**Workflow & Version Control**<br/>
+<img src="https://img.shields.io/badge/Git-88001b?logo=git&logoColor=white&style=flat&labelColor=000000" alt="Git" />
+<img src="https://img.shields.io/badge/GitHub-88001b?logo=github&logoColor=white&style=flat&labelColor=000000" alt="GitHub" />
+<img src="https://img.shields.io/badge/GitLab-88001b?logo=gitlab&logoColor=white&style=flat&labelColor=000000" alt="GitLab" />
+<img src="https://img.shields.io/badge/CI%2FCD-88001b?logo=githubactions&logoColor=white&style=flat&labelColor=000000" alt="CI/CD" />
+<img src="https://img.shields.io/badge/CLI-88001b?logo=powershell&logoColor=white&style=flat&labelColor=000000" alt="Command Line" />
+<img src="https://img.shields.io/badge/Bash-88001b?logo=gnubash&logoColor=white&style=flat&labelColor=000000" alt="Bash" />
+<img src="https://img.shields.io/badge/Shell-88001b?logo=gnubash&logoColor=white&style=flat&labelColor=000000" alt="Shell" />
 
 <br/>**Hardware & Tools**<br/>
 <img src="https://img.shields.io/badge/Arduino-88001b?logo=arduino&logoColor=white&style=flat&labelColor=000000" alt="Arduino" />
 <img src="https://img.shields.io/badge/Raspberry%20Pi-88001b?logo=raspberrypi&logoColor=white&style=flat&labelColor=000000" alt="Raspberry Pi" />
 <img src="https://img.shields.io/badge/Espressif-88001b?logo=espressif&logoColor=white&style=flat&labelColor=000000" alt="ESP32" />
 <img src="https://img.shields.io/badge/Fusion%20360-88001b?logo=autodesk&logoColor=white&style=flat&labelColor=000000" alt="Fusion 360" />
+<img src="https://img.shields.io/badge/Fritzing-88001b?logo=fritzing&logoColor=white&style=flat&labelColor=000000" alt="Fritzing" />
 <img src="https://img.shields.io/badge/Docker-88001b?logo=docker&logoColor=white&style=flat&labelColor=000000" alt="Docker" />
 <img src="https://img.shields.io/badge/Linux-88001b?logo=linux&logoColor=white&style=flat&labelColor=000000" alt="Linux" />
+<img src="https://img.shields.io/badge/Ubuntu-88001b?logo=ubuntu&logoColor=white&style=flat&labelColor=000000" alt="Ubuntu" />
+<img src="https://img.shields.io/badge/Kali%20Linux-88001b?logo=kalilinux&logoColor=white&style=flat&labelColor=000000" alt="Kali Linux" />
+<img src="https://img.shields.io/badge/VirtualBox-88001b?logo=virtualbox&logoColor=white&style=flat&labelColor=000000" alt="VirtualBox" />
+<img src="https://img.shields.io/badge/Blender-88001b?logo=blender&logoColor=white&style=flat&labelColor=000000" alt="Blender" />
+<img src="https://img.shields.io/badge/Audacity-88001b?logo=audacity&logoColor=white&style=flat&labelColor=000000" alt="Audacity" />
+<img src="https://img.shields.io/badge/Visual%20Studio-88001b?logo=visualstudio&logoColor=white&style=flat&labelColor=000000" alt="Visual Studio" />
+<img src="https://img.shields.io/badge/Jupyter%20Notebook-88001b?logo=jupyter&logoColor=white&style=flat&labelColor=000000" alt="Jupyter Notebook" />
 
 </div>
 
@@ -79,8 +125,10 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
 
 <div align="center">
   <img src="https://img.shields.io/badge/Neuroscience-88001b?style=for-the-badge&labelColor=000000" alt="Neuroscience" />
+  <img src="https://img.shields.io/badge/BCI%20%26%20Neurotech-88001b?style=for-the-badge&labelColor=000000" alt="BCI &amp; Neurotech" />
+  <img src="https://img.shields.io/badge/Game%20Development-88001b?style=for-the-badge&labelColor=000000" alt="Game Development" />
   <img src="https://img.shields.io/badge/Philosophy-88001b?style=for-the-badge&labelColor=000000" alt="Philosophy" />
-  <img src="https://img.shields.io/badge/Writer-88001b?style=for-the-badge&labelColor=000000" alt="Writer" />
+  <img src="https://img.shields.io/badge/Writing-88001b?style=for-the-badge&labelColor=000000" alt="Writing" />
 </div>
 
 <br/>
@@ -112,7 +160,7 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
   <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">
     <tr>
       <td>
-        <!-- Will show after enabling the snake workflow -->
+        <!-- Visible after enabling the snake workflow -->
         <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" />
       </td>
     </tr>
@@ -147,7 +195,7 @@ The 2023 earthquakes were a turning point in my life, reinforcing my resilience 
   <p><sub>Current counter (left) restarted with the new handle; legacy stats (right) preserve the pre-rename traffic.</sub></p>
 </div>
 
-<!-- Minimal English copy, two-color theme (primary: #88001b, secondary: #000000). -->
+<!-- Minimal copy, two-color theme (primary: #88001b, secondary: #000000). -->
 <br/>  
 
 

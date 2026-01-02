@@ -140,7 +140,7 @@ Principle: **"When you rest, you rust."**
 
 <div align="center">
   <a href="https://github.com/WhoIsMrSentry">
-    <img alt="GitHub Stats (Terminal Style)" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/github_stats.svg" />
+    <img width="900" alt="GitHub Stats (Terminal Style)" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/github_stats.svg" />
   </a>
 </div>
 

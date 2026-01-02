@@ -47,6 +47,43 @@ jobs:
       - name: Copy svg into repo
         run: cp _generator/github_stats.svg ./github_stats.svg
 
+      - name: Recolor svg background (red theme)
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          svg_path = Path('github_stats.svg')
+          tree = ET.parse(svg_path)
+          root = tree.getroot()
+
+          ns = {}
+          if root.tag.startswith('{'):
+            ns_uri = root.tag.split('}')[0][1:]
+            ns = {'svg': ns_uri}
+            rects = root.findall('.//svg:rect', ns)
+          else:
+            rects = root.findall('.//rect')
+
+          background = None
+          for rect in rects:
+            cls = rect.get('class', '')
+            if 'background' in cls or rect.get('id') in ('background', 'terminal-bg'):
+              background = rect
+              break
+
+          if background is None:
+            for rect in rects:
+              if rect.get('x', '0') == '0' and rect.get('y', '0') == '0' and rect.get('fill'):
+                background = rect
+                break
+
+          if background is not None:
+            background.set('fill', '#200009')
+
+          tree.write(svg_path, encoding='utf-8', xml_declaration=True)
+          PY
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"

@@ -37,15 +37,17 @@
 
 <br/>
 
-## 🧭 Table of Contents
+## WhoIsMrSentry
 
-- [About](#about)
-- [Tech Stack](#tech-stack)
-- [Interests](#interests)
-- [Stats](#stats)
-- [Commit Snake](#commit-snake)
-- [WhoIsMrSentry Snake Carve](#whoismrsentry-snake-carve)
-- [Links](#links)
+<div align="center">
+  <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">
+    <tr>
+      <td>
+        <img alt="WhoIsMrSentry snake carve" src="assets/whoismrsentry_snake_carve.svg" />
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## 👨‍💻 About
 
@@ -137,20 +139,9 @@ Principle: **"When you rest, you rust."**
 ## 📊 Stats
 
 <div align="center">
-  <table bgcolor="#88001b" style="margin:0 auto;border:1px solid #52000f;" cellspacing="0" cellpadding="0">
-    <tr>
-      <td style="padding:12px;text-align:center;">
-        <a href="https://github.com/WhoIsMrSentry">
-          <img height="170" src="https://github-readme-stats.vercel.app/api?username=WhoIsMrSentry&show_icons=true&hide_title=true&hide_border=true&title_color=ffffff&text_color=f5f5f5&icon_color=f5f5f5&bg_color=88001b&cache_seconds=86400&v=2" alt="GitHub Stats" />
-        </a>
-      </td>
-      <td style="padding:12px;text-align:center;">
-        <a href="https://github.com/WhoIsMrSentry">
-          <img height="170" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=WhoIsMrSentry&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b&cache_seconds=86400&v=2" alt="Top Languages" />
-        </a>
-      </td>
-    </tr>
-  </table>
+  <a href="https://github.com/WhoIsMrSentry">
+    <img alt="GitHub Stats (Terminal Style)" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/github_stats.svg" />
+  </a>
 </div>
 
 <br/>
@@ -169,18 +160,6 @@ Principle: **"When you rest, you rust."**
 </div>
 
 <br/>
-
-## 🐍 WhoIsMrSentry Snake Carve
-
-<div align="center">
-  <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">
-    <tr>
-      <td>
-        <img alt="WhoIsMrSentry snake carve" src="assets/whoismrsentry_snake_carve.svg" />
-      </td>
-    </tr>
-  </table>
-</div>
 
 ## 🔗 Links
 

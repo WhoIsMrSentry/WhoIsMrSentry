@@ -1,0 +1,62 @@
+name: Update GitHub Stats (Terminal Style)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Default from upstream template: daily at 02:47 UTC
+    - cron: "47 2 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-stats-terminal-style
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout profile repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Checkout generator repo
+        uses: actions/checkout@v4
+        with:
+          repository: yogeshwaran01/github-stats-terminal-style
+          path: _generator
+
+      - name: Install generator deps
+        working-directory: _generator
+        run: npm ci
+
+      - name: Generate stats svg
+        working-directory: _generator
+        env:
+          # Personal access token (PAT) must be stored as repository secret: GHT
+          GHT: ${{ secrets.GHT }}
+        run: |
+          node updater.js "${{ github.repository_owner }}" powershell
+
+      - name: Copy svg into repo
+        run: cp _generator/github_stats.svg ./github_stats.svg
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add github_stats.svg
+          git commit -m "chore: update github stats svg"
+          git push

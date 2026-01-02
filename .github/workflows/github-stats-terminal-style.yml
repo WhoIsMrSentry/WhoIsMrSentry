@@ -50,38 +50,88 @@ jobs:
       - name: Recolor svg background (red theme)
         run: |
           python3 - <<'PY'
+          import re
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
+          TARGET = '#200009'
           svg_path = Path('github_stats.svg')
+
+          # 1) Parse as XML and try to set the largest background rect.
           tree = ET.parse(svg_path)
           root = tree.getroot()
+
+          def _float(v: str | None, default: float = 0.0) -> float:
+            if not v:
+              return default
+            try:
+              return float(str(v).replace('px', ''))
+            except Exception:
+              return default
 
           ns = {}
           if root.tag.startswith('{'):
             ns_uri = root.tag.split('}')[0][1:]
             ns = {'svg': ns_uri}
             rects = root.findall('.//svg:rect', ns)
+            styles = root.findall('.//svg:style', ns)
           else:
             rects = root.findall('.//rect')
+            styles = root.findall('.//style')
 
-          background = None
+          # Set root background via style attribute (covers many generators)
+          root_style = root.get('style', '') or ''
+          if 'background' in root_style or 'background-color' in root_style:
+            root_style = re.sub(r'background-color\s*:\s*[^;]+', f'background-color:{TARGET}', root_style)
+            root_style = re.sub(r'background\s*:\s*[^;]+', f'background:{TARGET}', root_style)
+          else:
+            root_style = (root_style.rstrip(';') + f';background:{TARGET};background-color:{TARGET};').lstrip(';')
+          root.set('style', root_style)
+
+          # Choose the largest rect as background candidate
+          best = None
+          best_area = -1.0
           for rect in rects:
-            cls = rect.get('class', '')
-            if 'background' in cls or rect.get('id') in ('background', 'terminal-bg'):
-              background = rect
-              break
+            x = _float(rect.get('x'), 0.0)
+            y = _float(rect.get('y'), 0.0)
+            w = _float(rect.get('width'), 0.0)
+            h = _float(rect.get('height'), 0.0)
+            area = w * h
+            # Prefer top-left rects; still allow others if nothing matches
+            score = area
+            if x == 0.0 and y == 0.0:
+              score *= 1.2
+            if score > best_area:
+              best_area = score
+              best = rect
 
-          if background is None:
-            for rect in rects:
-              if rect.get('x', '0') == '0' and rect.get('y', '0') == '0' and rect.get('fill'):
-                background = rect
-                break
+          if best is not None and best_area > 0:
+            best.set('fill', TARGET)
+            # Also override inline style fill if present
+            style_attr = best.get('style', '') or ''
+            if 'fill' in style_attr:
+              style_attr = re.sub(r'fill\s*:\s*[^;]+', f'fill:{TARGET}', style_attr)
+            else:
+              style_attr = (style_attr.rstrip(';') + f';fill:{TARGET};').lstrip(';')
+            best.set('style', style_attr)
 
-          if background is not None:
-            background.set('fill', '#200009')
+          # 2) Patch CSS inside <style> tags if background fill is class-driven.
+          for st in styles:
+            if st.text:
+              css = st.text
+              # Common patterns: .background { fill: ... } / rect { fill: ... } / svg { background: ... }
+              css = re.sub(r'(background(?:-color)?\s*:\s*)([^;]+)', rf'\1{TARGET}', css, flags=re.IGNORECASE)
+              css = re.sub(r'(fill\s*:\s*)(#[0-9a-fA-F]{3,8}|rgba?\([^\)]+\)|[a-zA-Z]+)', rf'\1{TARGET}', css, flags=re.IGNORECASE)
+              st.text = css
 
           tree.write(svg_path, encoding='utf-8', xml_declaration=True)
+
+          # 3) As a last resort, do a light text-level patch for any remaining background hints.
+          raw = svg_path.read_text(encoding='utf-8', errors='ignore')
+          raw2 = re.sub(r'background-color\s*:\s*[^;"\']+', f'background-color:{TARGET}', raw, flags=re.IGNORECASE)
+          raw2 = re.sub(r'background\s*:\s*[^;"\']+', f'background:{TARGET}', raw2, flags=re.IGNORECASE)
+          if raw2 != raw:
+            svg_path.write_text(raw2, encoding='utf-8')
           PY
 
       - name: Commit and push if changed

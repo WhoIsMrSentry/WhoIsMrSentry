@@ -44,6 +44,7 @@
 - [Interests](#interests)
 - [Stats](#stats)
 - [Commit Snake](#commit-snake)
+- [WhoIsMrSentry Snake Carve](#whoismrsentry-snake-carve)
 - [Links](#links)
 
 ## 👨‍💻 About
@@ -145,7 +146,7 @@ Principle: **"When you rest, you rust."**
       </td>
       <td style="padding:12px;text-align:center;">
         <a href="https://github.com/WhoIsMrSentry">
-          <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WhoIsMrSentry&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b&cache_seconds=86400&v=2" alt="Top Languages" />
+          <img height="170" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=WhoIsMrSentry&layout=compact&hide_border=true&langs_count=8&title_color=ffffff&text_color=f5f5f5&bg_color=88001b&cache_seconds=86400&v=2" alt="Top Languages" />
         </a>
       </td>
     </tr>
@@ -162,6 +163,20 @@ Principle: **"When you rest, you rust."**
       <td>
         <!-- Visible after enabling the snake workflow -->
         <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" />
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br/>
+
+## 🐍 WhoIsMrSentry Snake Carve
+
+<div align="center">
+  <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">
+    <tr>
+      <td>
+        <img alt="WhoIsMrSentry snake carve" src="assets/whoismrsentry_snake_carve.svg" />
       </td>
     </tr>
   </table>

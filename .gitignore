@@ -1,0 +1,12 @@
+# Windows / Explorer noise
+[Dd]esktop.ini
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+*.lnk
+
+# Local folder icon artifacts
+folderico-*.ico
+
+# Generator outputs (temporary)
+assets/_gen_*.txt

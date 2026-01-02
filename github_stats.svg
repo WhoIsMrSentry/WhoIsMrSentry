@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="https://github.com/nbedos/termtosvg" xmlns:ns2="http://www.w3.org/1999/xlink" id="terminal" baseProfile="full" viewBox="0 0 500 430" width="550" version="1.1">
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="https://github.com/nbedos/termtosvg" xmlns:ns2="http://www.w3.org/1999/xlink" id="terminal" baseProfile="full" viewBox="0 0 500 430" width="550" version="1.1" style="background:#200009;background-color:#200009;">
     <ns0:defs>
         <ns1:template_settings>
             <ns1:screen_geometry columns="95" rows="21" />
@@ -76,27 +76,27 @@
             /* The colors defined below are the default 16 colors used for rendering text of the terminal. Adjust
                them as needed.
                gjm8 color theme (source: https://terminal.sexy/) */
-            .foreground {fill: #F6F6F7}
-            .background {fill: #052454}
-            .color0 {fill: #272822}
-            .color1 {fill: #f92672}
-            .green {fill: #1CFE3C}
-            .color3 {fill: #f4bf75}
-            .color4 {fill: #66d9ef}
-            .purple {fill: #D33682}
-            .color6 {fill: #EF2929}
-            .color7 {fill: #f8f8f2}
-            .color8 {fill: #75715e}
-            .color9 {fill: #fd971f}
-            .color10 {fill: #F6F6F7}
-            .color11 {fill: #49483e}
-            .color12 {fill: #F6F6F7}
-            .color13 {fill: #f5f4f1}
-            .orange {fill: #FEFE45}
-            .color15 {fill: #f9f8f5}
+            .foreground {fill: #200009}
+            .background {fill: #200009}
+            .color0 {fill: #200009}
+            .color1 {fill: #200009}
+            .green {fill: #200009}
+            .color3 {fill: #200009}
+            .color4 {fill: #200009}
+            .purple {fill: #200009}
+            .color6 {fill: #200009}
+            .color7 {fill: #200009}
+            .color8 {fill: #200009}
+            .color9 {fill: #200009}
+            .color10 {fill: #200009}
+            .color11 {fill: #200009}
+            .color12 {fill: #200009}
+            .color13 {fill: #200009}
+            .orange {fill: #200009}
+            .color15 {fill: #200009}
         </ns0:style>
     </ns0:defs>
-    <ns0:rect id="terminalui" class="background" width="100%" height="100%" ry="4.5826941" fill="#200009" />
+    <ns0:rect id="terminalui" class="background" width="100%" height="100%" ry="4.5826941" />
     <ns0:circle cx="24" cy="23" r="7" fill="#f92672" />
     <ns0:circle cx="44" cy="23" r="7" fill="#f4bf75" />
     <ns0:circle cx="64" cy="23" r="7" fill="#a6e22e" />
@@ -274,7 +274,7 @@
                 <ns0:text x="0" textLength="8" class="foreground">║</ns0:text>
                 <ns0:text x="8" textLength="120" class="purple"> Commits       </ns0:text>
                 <ns0:text x="128" textLength="8" class="foreground">│</ns0:text>
-                <ns0:text x="136" textLength="96" class="green"> 447        </ns0:text>
+                <ns0:text x="136" textLength="96" class="green"> 449        </ns0:text>
                 <ns0:text x="232" textLength="8" class="foreground">║</ns0:text>
             </ns0:g>
             <ns0:g id="g29">
@@ -406,7 +406,7 @@
         </ns0:defs>
         <ns0:g id="screen_view">
             <ns0:g>
-                <ns0:rect x="160" y="0" width="8" height="17" class="foreground" />
+                <ns0:rect x="160" y="0" width="8" height="17" class="foreground" fill="#200009" style="fill:#200009;" />
                 <ns0:use ns2:href="#g1" y="0" />
             </ns0:g>
             <ns0:g>

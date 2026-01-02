@@ -36,6 +36,28 @@ jobs:
         working-directory: _generator
         run: npm ci
 
+      - name: Patch theme colors (sentry red)
+        working-directory: _generator
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const themesPath = path.join('src', 'themes.json');
+          const themes = JSON.parse(fs.readFileSync(themesPath, 'utf8'));
+
+          // Keep the existing palette but move background to your README theme.
+          if (!themes.powershell) {
+            throw new Error('themes.json: missing "powershell" theme');
+          }
+
+          themes.powershell.back = '#200009';
+          themes.powershell.username = '#88001b';
+
+          fs.writeFileSync(themesPath, JSON.stringify(themes, null, 4) + '\n');
+          console.log('Patched powershell theme background/username.');
+          NODE
+
       - name: Generate stats svg
         working-directory: _generator
         env:
@@ -46,63 +68,6 @@ jobs:
 
       - name: Copy svg into repo
         run: cp _generator/github_stats.svg ./github_stats.svg
-
-      - name: Recolor svg background (red theme)
-        run: |
-          python3 - <<'PY'
-          import re
-          import xml.etree.ElementTree as ET
-          from pathlib import Path
-
-          TARGET = '#200009'
-          svg_path = Path('github_stats.svg')
-          tree = ET.parse(svg_path)
-          root = tree.getroot()
-
-          # Namespace handling
-          ns = {}
-          if root.tag.startswith('{'):
-            ns_uri = root.tag.split('}')[0][1:]
-            ns = {'svg': ns_uri}
-            rects = root.findall('.//svg:rect', ns)
-            styles = root.findall('.//svg:style', ns)
-          else:
-            rects = root.findall('.//rect')
-            styles = root.findall('.//style')
-
-          # 1) Force overall SVG background via root style (doesn't affect text colors)
-          root_style = root.get('style', '') or ''
-          # remove any existing background/background-color
-          root_style = re.sub(r'background-color\s*:\s*[^;]+;?', '', root_style, flags=re.IGNORECASE)
-          root_style = re.sub(r'background\s*:\s*[^;]+;?', '', root_style, flags=re.IGNORECASE)
-          root_style = (root_style.rstrip(';') + f';background:{TARGET};background-color:{TARGET};').lstrip(';')
-          root.set('style', root_style)
-
-          # 2) Set fill on rects that are explicitly background
-          for rect in rects:
-            cls = (rect.get('class') or '').lower()
-            if 'background' in cls:
-              rect.set('fill', TARGET)
-              # If inline style has fill, override it too
-              style_attr = rect.get('style') or ''
-              style_attr = re.sub(r'fill\s*:\s*[^;]+;?', '', style_attr, flags=re.IGNORECASE)
-              rect.set('style', (style_attr.rstrip(';') + f';fill:{TARGET};').lstrip(';'))
-
-          # 3) Patch only the `.background { fill: ... }` rule in CSS (avoid touching foreground/colors)
-          for st in styles:
-            if not st.text:
-              continue
-            css = st.text
-            css2 = re.sub(
-              r'(\.background\s*\{[^}]*?fill\s*:\s*)([^;\}]+)',
-              rf'\1{TARGET}',
-              css,
-              flags=re.IGNORECASE | re.DOTALL,
-            )
-            st.text = css2
-
-          tree.write(svg_path, encoding='utf-8', xml_declaration=True)
-          PY
 
       - name: Commit and push if changed
         run: |

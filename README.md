@@ -51,19 +51,19 @@
 
 ## 👨‍💻 About
 
-I'm **Emir Hamurcu** — an embedded-systems-first maker/developer based in **Hatay, Turkey**, building robotics, computer vision, and applied AI that can survive real-world constraints.
+I'm **Emir Hamurcu** — robotics, embedded systems, and edge AI.
 
-My favorite place to work: the **hardware–software boundary**. Shipping systems that actually run:
+Based in **Hatay, Turkey** — I build systems that run on real hardware, under real constraints.
 
-- **Embedded systems:** MCU prototyping, sensor/actuator integration, serial comms, and hardware debugging.
-- **Embedded Linux:** SBC service layout, device configuration, measurable/observable runtime.
-- **Edge AI pipelines:** capture → preprocess → inference → postprocess → telemetry (deployment on constrained devices).
-- **Computer vision:** realtime constraints, calibration, failure modes, and field robustness.
-- **Reverse engineering:** protocol/system behavior analysis with a tooling-first mindset.
+Focus: the **hardware–software boundary** (debuggable, measurable, deployable).
 
-Side tracks: **writing**, **philosophy**, **game development**, and **BCI / neurotech**.
-
-Principle: **"When you rest, you rust."**
+<div align="center">
+  <img src="https://img.shields.io/badge/Embedded%20Systems-88001b?style=for-the-badge&labelColor=000000" alt="Embedded Systems" />
+  <img src="https://img.shields.io/badge/Embedded%20Linux-88001b?style=for-the-badge&labelColor=000000" alt="Embedded Linux" />
+  <img src="https://img.shields.io/badge/Edge%20AI-88001b?style=for-the-badge&labelColor=000000" alt="Edge AI" />
+  <img src="https://img.shields.io/badge/Computer%20Vision-88001b?style=for-the-badge&labelColor=000000" alt="Computer Vision" />
+  <img src="https://img.shields.io/badge/Reverse%20Engineering-88001b?style=for-the-badge&labelColor=000000" alt="Reverse Engineering" />
+</div>
 
 <br/>
 
@@ -74,64 +74,52 @@ Principle: **"When you rest, you rust."**
 
 **Languages**
 <br/>
-<img src="https://img.shields.io/badge/Python-88001b?logo=python&logoColor=white&style=flat&labelColor=000000" alt="Python" />
-<img src="https://img.shields.io/badge/C%2B%2B-88001b?logo=cplusplus&logoColor=white&style=flat&labelColor=000000" alt="C++" />
-<img src="https://img.shields.io/badge/C%23-88001b?logo=csharp&logoColor=white&style=flat&labelColor=000000" alt="C#" />
-<img src="https://img.shields.io/badge/HTML-88001b?logo=html5&logoColor=white&style=flat&labelColor=000000" alt="HTML" />
-<img src="https://img.shields.io/badge/CSS-88001b?logo=css3&logoColor=white&style=flat&labelColor=000000" alt="CSS" />
-<img src="https://img.shields.io/badge/JavaScript-88001b?logo=javascript&logoColor=white&style=flat&labelColor=000000" alt="JavaScript" />
+<img height="32" src="https://img.shields.io/badge/Python-88001b?logo=python&logoColor=white&style=flat&labelColor=000000" alt="Python" />
+<img height="32" src="https://img.shields.io/badge/C%2B%2B-88001b?logo=cplusplus&logoColor=white&style=flat&labelColor=000000" alt="C++" />
+<img height="32" src="https://img.shields.io/badge/C%23-88001b?logo=csharp&logoColor=white&style=flat&labelColor=000000" alt="C#" />
+<img height="32" src="https://img.shields.io/badge/HTML-88001b?logo=html5&logoColor=white&style=flat&labelColor=000000" alt="HTML" />
+<img height="32" src="https://img.shields.io/badge/CSS-88001b?logo=css3&logoColor=ffffff&style=flat&labelColor=000000" alt="CSS" />
+<img height="32" src="https://img.shields.io/badge/JavaScript-88001b?logo=javascript&logoColor=white&style=flat&labelColor=000000" alt="JavaScript" />
 
 <br/>**Backend & Databases**<br/>
-<img src="https://img.shields.io/badge/FastAPI-88001b?logo=fastapi&logoColor=white&style=flat&labelColor=000000" alt="FastAPI" />
-<img src="https://img.shields.io/badge/SQL-88001b?logo=postgresql&logoColor=white&style=flat&labelColor=000000" alt="SQL" />
-<img src="https://img.shields.io/badge/MSSQL-88001b?logo=microsoftsqlserver&logoColor=white&style=flat&labelColor=000000" alt="MSSQL" />
-<img src="https://img.shields.io/badge/Supabase-88001b?logo=supabase&logoColor=white&style=flat&labelColor=000000" alt="Supabase" />
+<img height="32" src="https://img.shields.io/badge/FastAPI-88001b?logo=fastapi&logoColor=white&style=flat&labelColor=000000" alt="FastAPI" />
+<img height="32" src="https://img.shields.io/badge/SQL-88001b?logo=postgresql&logoColor=white&style=flat&labelColor=000000" alt="SQL" />
+<img height="32" src="https://img.shields.io/badge/MSSQL-88001b?logo=microsoftsqlserver&logoColor=ffffff&style=flat&labelColor=000000" alt="MSSQL" />
+<img height="32" src="https://img.shields.io/badge/Supabase-88001b?logo=supabase&logoColor=white&style=flat&labelColor=000000" alt="Supabase" />
 
 <br/>**AI & Computer Vision**<br/>
-<img src="https://img.shields.io/badge/TensorFlow-88001b?logo=tensorflow&logoColor=white&style=flat&labelColor=000000" alt="TensorFlow" />
-<img src="https://img.shields.io/badge/PyTorch-88001b?logo=pytorch&logoColor=white&style=flat&labelColor=000000" alt="PyTorch" />
-<img src="https://img.shields.io/badge/OpenCV-88001b?logo=opencv&logoColor=white&style=flat&labelColor=000000" alt="OpenCV" />
-<img src="https://img.shields.io/badge/Ollama-88001b?logo=ollama&logoColor=white&style=flat&labelColor=000000" alt="Ollama" />
-<img src="https://img.shields.io/badge/FAISS-88001b?logo=meta&logoColor=white&style=flat&labelColor=000000" alt="FAISS" />
-<img src="https://img.shields.io/badge/Teachable%20Machine-88001b?logo=google&logoColor=white&style=flat&labelColor=000000" alt="Teachable Machine" />
+<img height="32" src="https://img.shields.io/badge/TensorFlow-88001b?logo=tensorflow&logoColor=white&style=flat&labelColor=000000" alt="TensorFlow" />
+<img height="32" src="https://img.shields.io/badge/PyTorch-88001b?logo=pytorch&logoColor=white&style=flat&labelColor=000000" alt="PyTorch" />
+<img height="32" src="https://img.shields.io/badge/OpenCV-88001b?logo=opencv&logoColor=white&style=flat&labelColor=000000" alt="OpenCV" />
+<img height="32" src="https://img.shields.io/badge/Ollama-88001b?logo=ollama&logoColor=white&style=flat&labelColor=000000" alt="Ollama" />
+<img height="32" src="https://img.shields.io/badge/FAISS-88001b?logo=meta&logoColor=white&style=flat&labelColor=000000" alt="FAISS" />
+<img height="32" src="https://img.shields.io/badge/Teachable%20Machine-88001b?logo=google&logoColor=white&style=flat&labelColor=000000" alt="Teachable Machine" />
 
 <br/>**Workflow & Version Control**<br/>
-<img src="https://img.shields.io/badge/Git-88001b?logo=git&logoColor=white&style=flat&labelColor=000000" alt="Git" />
-<img src="https://img.shields.io/badge/GitHub-88001b?logo=github&logoColor=white&style=flat&labelColor=000000" alt="GitHub" />
-<img src="https://img.shields.io/badge/GitLab-88001b?logo=gitlab&logoColor=white&style=flat&labelColor=000000" alt="GitLab" />
-<img src="https://img.shields.io/badge/CI%2FCD-88001b?logo=githubactions&logoColor=white&style=flat&labelColor=000000" alt="CI/CD" />
-<img src="https://img.shields.io/badge/CLI-88001b?logo=powershell&logoColor=white&style=flat&labelColor=000000" alt="Command Line" />
-<img src="https://img.shields.io/badge/Bash-88001b?logo=gnubash&logoColor=white&style=flat&labelColor=000000" alt="Bash" />
-<img src="https://img.shields.io/badge/Shell-88001b?logo=gnubash&logoColor=white&style=flat&labelColor=000000" alt="Shell" />
+<img height="32" src="https://img.shields.io/badge/Git-88001b?logo=git&logoColor=white&style=flat&labelColor=000000" alt="Git" />
+<img height="32" src="https://img.shields.io/badge/GitHub-88001b?logo=github&logoColor=white&style=flat&labelColor=000000" alt="GitHub" />
+<img height="32" src="https://img.shields.io/badge/GitLab-88001b?logo=gitlab&logoColor=white&style=flat&labelColor=000000" alt="GitLab" />
+<img height="32" src="https://img.shields.io/badge/CI%2FCD-88001b?logo=githubactions&logoColor=white&style=flat&labelColor=000000" alt="CI/CD" />
+<img height="32" src="https://img.shields.io/badge/CLI-88001b?logo=windowsterminal&logoColor=ffffff&style=flat&labelColor=000000" alt="Command Line" />
+<img height="32" src="https://img.shields.io/badge/Bash-88001b?logo=gnubash&logoColor=white&style=flat&labelColor=000000" alt="Bash" />
+<img height="32" src="https://img.shields.io/badge/Shell-88001b?logo=gnubash&logoColor=white&style=flat&labelColor=000000" alt="Shell" />
 
 <br/>**Hardware & Tools**<br/>
-<img src="https://img.shields.io/badge/Arduino-88001b?logo=arduino&logoColor=white&style=flat&labelColor=000000" alt="Arduino" />
-<img src="https://img.shields.io/badge/Raspberry%20Pi-88001b?logo=raspberrypi&logoColor=white&style=flat&labelColor=000000" alt="Raspberry Pi" />
-<img src="https://img.shields.io/badge/Espressif-88001b?logo=espressif&logoColor=white&style=flat&labelColor=000000" alt="ESP32" />
-<img src="https://img.shields.io/badge/Fusion%20360-88001b?logo=autodesk&logoColor=white&style=flat&labelColor=000000" alt="Fusion 360" />
-<img src="https://img.shields.io/badge/Fritzing-88001b?logo=fritzing&logoColor=white&style=flat&labelColor=000000" alt="Fritzing" />
-<img src="https://img.shields.io/badge/Docker-88001b?logo=docker&logoColor=white&style=flat&labelColor=000000" alt="Docker" />
-<img src="https://img.shields.io/badge/Linux-88001b?logo=linux&logoColor=white&style=flat&labelColor=000000" alt="Linux" />
-<img src="https://img.shields.io/badge/Ubuntu-88001b?logo=ubuntu&logoColor=white&style=flat&labelColor=000000" alt="Ubuntu" />
-<img src="https://img.shields.io/badge/Kali%20Linux-88001b?logo=kalilinux&logoColor=white&style=flat&labelColor=000000" alt="Kali Linux" />
-<img src="https://img.shields.io/badge/VirtualBox-88001b?logo=virtualbox&logoColor=white&style=flat&labelColor=000000" alt="VirtualBox" />
-<img src="https://img.shields.io/badge/Blender-88001b?logo=blender&logoColor=white&style=flat&labelColor=000000" alt="Blender" />
-<img src="https://img.shields.io/badge/Audacity-88001b?logo=audacity&logoColor=white&style=flat&labelColor=000000" alt="Audacity" />
-<img src="https://img.shields.io/badge/Visual%20Studio-88001b?logo=visualstudio&logoColor=white&style=flat&labelColor=000000" alt="Visual Studio" />
-<img src="https://img.shields.io/badge/Jupyter%20Notebook-88001b?logo=jupyter&logoColor=white&style=flat&labelColor=000000" alt="Jupyter Notebook" />
+<img height="32" src="https://img.shields.io/badge/Arduino-88001b?logo=arduino&logoColor=white&style=flat&labelColor=000000" alt="Arduino" />
+<img height="32" src="https://img.shields.io/badge/Raspberry%20Pi-88001b?logo=raspberrypi&logoColor=white&style=flat&labelColor=000000" alt="Raspberry Pi" />
+<img height="32" src="https://img.shields.io/badge/Espressif-88001b?logo=espressif&logoColor=white&style=flat&labelColor=000000" alt="ESP32" />
+<img height="32" src="https://img.shields.io/badge/Fusion%20360-88001b?logo=autodesk&logoColor=white&style=flat&labelColor=000000" alt="Fusion 360" />
+<img height="32" src="https://img.shields.io/badge/Fritzing-88001b?logo=fritzing&logoColor=ffffff&style=flat&labelColor=000000" alt="Fritzing" />
+<img height="32" src="https://img.shields.io/badge/Docker-88001b?logo=docker&logoColor=white&style=flat&labelColor=000000" alt="Docker" />
+<img height="32" src="https://img.shields.io/badge/Linux-88001b?logo=linux&logoColor=white&style=flat&labelColor=000000" alt="Linux" />
+<img height="32" src="https://img.shields.io/badge/Ubuntu-88001b?logo=ubuntu&logoColor=white&style=flat&labelColor=000000" alt="Ubuntu" />
+<img height="32" src="https://img.shields.io/badge/Kali%20Linux-88001b?logo=kalilinux&logoColor=white&style=flat&labelColor=000000" alt="Kali Linux" />
+<img height="32" src="https://img.shields.io/badge/VirtualBox-88001b?logo=virtualbox&logoColor=white&style=flat&labelColor=000000" alt="VirtualBox" />
+<img height="32" src="https://img.shields.io/badge/Blender-88001b?logo=blender&logoColor=white&style=flat&labelColor=000000" alt="Blender" />
+<img height="32" src="https://img.shields.io/badge/Audacity-88001b?logo=audacity&logoColor=white&style=flat&labelColor=000000" alt="Audacity" />
+<img height="32" src="https://img.shields.io/badge/Visual%20Studio-88001b?logo=visualstudio&logoColor=ffffff&style=flat&labelColor=000000" alt="Visual Studio" />
+<img height="32" src="https://img.shields.io/badge/Jupyter%20Notebook-88001b?logo=jupyter&logoColor=white&style=flat&labelColor=000000" alt="Jupyter Notebook" />
 
-</div>
-
-<br/>
-
-## 🧠 Interests
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Neuroscience-88001b?style=for-the-badge&labelColor=000000" alt="Neuroscience" />
-  <img src="https://img.shields.io/badge/BCI%20%26%20Neurotech-88001b?style=for-the-badge&labelColor=000000" alt="BCI &amp; Neurotech" />
-  <img src="https://img.shields.io/badge/Game%20Development-88001b?style=for-the-badge&labelColor=000000" alt="Game Development" />
-  <img src="https://img.shields.io/badge/Philosophy-88001b?style=for-the-badge&labelColor=000000" alt="Philosophy" />
-  <img src="https://img.shields.io/badge/Writing-88001b?style=for-the-badge&labelColor=000000" alt="Writing" />
 </div>
 
 <br/>
@@ -179,15 +167,11 @@ Principle: **"When you rest, you rust."**
   <a href="https://www.youtube.com/channel/UCXzt_TAVC_ls0hFLpV_ldMw" target="_blank">
     <img src="https://img.shields.io/badge/YouTube-88001b?style=for-the-badge&logo=youtube&logoColor=white&labelColor=000000" alt="YouTube" />
   </a>
+  <br/>
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="profile views" />
 </div>
 
 <br/>
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=WhoIsMrSentry&style=flat-square&color=88001b" alt="profile views (current handle)" />
-  <img src="https://komarev.com/ghpvc/?username=SentryCoderDev&style=flat-square&color=88001b" alt="profile views (legacy handle)" />
-  <p><sub>Current counter (left) restarted with the new handle; legacy stats (right) preserve the pre-rename traffic.</sub></p>
-</div>
 
 <!-- Minimal copy, two-color theme (primary: #88001b, secondary: #000000). -->
 <br/>  

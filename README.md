@@ -1,4 +1,5 @@
 <div align="center">
+  <img alt="iko2" src="assets/iko2.gif" />
   <h1>Emir Hamurcu</h1>
   <h3>Robotics & AI & Maker | Software Developer</h3>
   <p><em>"When you rest, you rust."</em></p>

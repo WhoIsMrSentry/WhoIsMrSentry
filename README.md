@@ -1,25 +1,18 @@
 <div align="center">
-  <img alt="iko2" src="assets/iko2.gif" />
-  <h1>Emir Hamurcu</h1>
-  <h3>Robotics & AI & Maker | Software Developer</h3>
-  <p><em>"When you rest, you rust."</em></p>
-
-  
+  <img alt="iko2" src="assets/iko2.gif" />  
 </div>
 
 <br/>
 
 ## WhoIsMrSentry
 
+<br/>
 <div align="center">
-  <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">
-    <tr>
-      <td>
-        <img alt="WhoIsMrSentry snake carve" src="assets/whoismrsentry_snake_carve.svg" />
-      </td>
-    </tr>
-  </table>
+  <h1>Emir Hamurcu</h1>
+  <h3>Robotics & AI & Maker | Software Developer</h3>
+  <p><em>"When you rest, you rust."</em></p>
 </div>
+
 
 ## 👨‍💻 About
 
@@ -49,7 +42,6 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
     </p>
     <p style="margin-top:6px;text-align:center;">
       <img alt="SentryBOT" src="https://img.shields.io/badge/🤖_SentryBOT-Open%20Source-88001b?style=for-the-badge&labelColor=ffffff&logoColor=88001b" height="40" style="display:inline-block;border-radius:6px;" />
-      <span style="display:block;text-align:center;font-size:12px;margin-top:6px;color:#444;"><b>My flagship open-source robotics project</b></span>
     </p>
   </div>
 </div>

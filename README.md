@@ -4,34 +4,7 @@
   <h3>Robotics & AI & Maker | Software Developer</h3>
   <p><em>"When you rest, you rust."</em></p>
 
-  <!-- Specialty Areas - Bigger Cards -->
-  <table>
-    <tr>
-      <td align="center" width="200">
-        <img src="https://img.shields.io/badge/-Edge%20AI%20Pipelines-88001b?style=for-the-badge&labelColor=000000" alt="Edge AI Pipelines" height="40"/>
-      </td>
-      <td align="center" width="200">
-        <img src="https://img.shields.io/badge/-Mechatronics%20%26%20Robotics-88001b?style=for-the-badge&labelColor=000000" alt="Mechatronics & Robotics" height="40"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="200">
-        <img src="https://img.shields.io/badge/-Reverse%20Engineering-88001b?style=for-the-badge&labelColor=000000" alt="Reverse Engineering" height="40"/>
-      </td>
-      <td align="center" width="200">
-        <img src="https://img.shields.io/badge/-Autonomous%20Systems-88001b?style=for-the-badge&labelColor=000000" alt="Autonomous Systems" height="40"/>
-      </td>
-    </tr>
-  </table>
-
-  <br/>
-
-  <!-- SentryBOT - Featured Project -->
-  <a href="https://github.com/WhoIsMrSentry/SentryBOT" target="_blank">
-    <img alt="SentryBOT" src="https://img.shields.io/badge/🤖_SentryBOT-Open%20Source-88001b?style=for-the-badge&labelColor=000000&logoColor=white" height="50"/>
-  </a>
-  <br/>
-  <sub><b>My flagship open-source robotics project</b></sub>
+  
 </div>
 
 <br/>
@@ -57,11 +30,28 @@ Based in **Hatay, Turkey** — I build systems that run on real hardware, under 
 Focus: the **hardware–software boundary** (debuggable, measurable, deployable).
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Embedded%20Systems-88001b?style=for-the-badge&labelColor=000000" alt="Embedded Systems" />
-  <img src="https://img.shields.io/badge/Embedded%20Linux-88001b?style=for-the-badge&labelColor=000000" alt="Embedded Linux" />
-  <img src="https://img.shields.io/badge/Edge%20AI-88001b?style=for-the-badge&labelColor=000000" alt="Edge AI" />
-  <img src="https://img.shields.io/badge/Computer%20Vision-88001b?style=for-the-badge&labelColor=000000" alt="Computer Vision" />
-  <img src="https://img.shields.io/badge/Reverse%20Engineering-88001b?style=for-the-badge&labelColor=000000" alt="Reverse Engineering" />
+  <!-- Clean, consistent badges for About section -->
+  <div style="display:inline-block;text-align:left;max-width:900px;">
+    <p>
+      <img src="https://img.shields.io/badge/Embedded%20Systems-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Embedded Systems" />
+      <img src="https://img.shields.io/badge/Embedded%20Linux-2C8EBB?style=for-the-badge&logo=linux&logoColor=white" alt="Embedded Linux" />
+      <img src="https://img.shields.io/badge/Embedded%20Firmware%20(C)-007ACC?style=for-the-badge&logo=c&logoColor=white" alt="Embedded Firmware (C)" />
+    </p>
+    <p>
+      <img src="https://img.shields.io/badge/Edge%20AI%20%26%20Pipelines-6B46C1?style=for-the-badge&logo=tensorflow&logoColor=white" alt="Edge AI & Pipelines" />
+      <img src="https://img.shields.io/badge/Computer%20Vision-5C2D91?style=for-the-badge&logo=opencv&logoColor=white" alt="Computer Vision" />
+      <img src="https://img.shields.io/badge/Mechatronics%20%26%20Robotics-88001b?style=for-the-badge&logo=ros&logoColor=white" alt="Mechatronics & Robotics" />
+    </p>
+    <p>
+      <img src="https://img.shields.io/badge/Autonomous%20Systems-0A7F6F?style=for-the-badge&logo=raspberry-pi&logoColor=white" alt="Autonomous Systems" />
+      <img src="https://img.shields.io/badge/Reverse%20Engineering-0E5A8A?style=for-the-badge&logo=github&logoColor=white" alt="Reverse Engineering" />
+      <img src="https://img.shields.io/badge/Robotics%20Projects-2B3A67?style=for-the-badge&logo=github&logoColor=white" alt="Robotics Projects" />
+    </p>
+    <p style="margin-top:6px;text-align:center;">
+      <img alt="SentryBOT" src="https://img.shields.io/badge/🤖_SentryBOT-Open%20Source-88001b?style=for-the-badge&labelColor=ffffff&logoColor=88001b" height="40" style="display:inline-block;border-radius:6px;" />
+      <span style="display:block;text-align:center;font-size:12px;margin-top:6px;color:#444;"><b>My flagship open-source robotics project</b></span>
+    </p>
+  </div>
 </div>
 
 <br/>
@@ -71,50 +61,73 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <div align="center">
 
+<!-- Languages -->
 ### Languages
 <p>
-  <img src="https://img.shields.io/badge/Python-88001b?logo=python&logoColor=white&style=for-the-badge&labelColor=000000" alt="Python" height="35"/>
-  <img src="https://img.shields.io/badge/C++-88001b?logo=cplusplus&logoColor=white&style=for-the-badge&labelColor=000000" alt="C++" height="35"/>
-  <img src="https://img.shields.io/badge/C%23-88001b?logo=csharp&logoColor=white&style=for-the-badge&labelColor=000000" alt="C#" height="35"/>
-  <img src="https://img.shields.io/badge/JavaScript-88001b?logo=javascript&logoColor=white&style=for-the-badge&labelColor=000000" alt="JavaScript" height="35"/>
-  <img src="https://img.shields.io/badge/HTML-88001b?logo=html5&logoColor=white&style=for-the-badge&labelColor=000000" alt="HTML" height="35"/>
-  <img src="https://img.shields.io/badge/CSS-88001b?logo=css3&logoColor=ffffff&style=for-the-badge&labelColor=000000" alt="CSS" height="35"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=dotnet&logoColor=white" alt="C# (dotnet)" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css&logoColor=white" alt="CSS" />
+  <img src="https://img.shields.io/badge/Embedded_C-007ACC?style=for-the-badge&logo=c&logoColor=white" alt="Embedded C" />
 </p>
 
+<!-- Frontend & Web -->
+### Frontend & Web
+<p>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL" />
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass" />
+  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+</p>
+
+<!-- Backend & Databases -->
 ### Backend & Databases
 <p>
-  <img src="https://img.shields.io/badge/FastAPI-88001b?logo=fastapi&logoColor=white&style=for-the-badge&labelColor=000000" alt="FastAPI" height="35"/>
-  <img src="https://img.shields.io/badge/SQL-88001b?logo=postgresql&logoColor=white&style=for-the-badge&labelColor=000000" alt="SQL" height="35"/>
-  <img src="https://img.shields.io/badge/MSSQL-88001b?logo=microsoftsqlserver&logoColor=ffffff&style=for-the-badge&labelColor=000000" alt="MSSQL" height="35"/>
-  <img src="https://img.shields.io/badge/Supabase-88001b?logo=supabase&logoColor=white&style=for-the-badge&labelColor=000000" alt="Supabase" height="35"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Postgres-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="Postgres" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
+  <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="NGINX" />
 </p>
 
+<!-- AI & Computer Vision -->
 ### AI & Computer Vision
 <p>
-  <img src="https://img.shields.io/badge/TensorFlow-88001b?logo=tensorflow&logoColor=white&style=for-the-badge&labelColor=000000" alt="TensorFlow" height="35"/>
-  <img src="https://img.shields.io/badge/PyTorch-88001b?logo=pytorch&logoColor=white&style=for-the-badge&labelColor=000000" alt="PyTorch" height="35"/>
-  <img src="https://img.shields.io/badge/OpenCV-88001b?logo=opencv&logoColor=white&style=for-the-badge&labelColor=000000" alt="OpenCV" height="35"/>
-  <img src="https://img.shields.io/badge/Ollama-88001b?logo=ollama&logoColor=white&style=for-the-badge&labelColor=000000" alt="Ollama" height="35"/>
-  <img src="https://img.shields.io/badge/FAISS-88001b?logo=meta&logoColor=white&style=for-the-badge&labelColor=000000" alt="FAISS" height="35"/>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
+  <img src="https://img.shields.io/badge/OpenCV-5C2D91?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />
+  <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama" />
+  <img src="https://img.shields.io/badge/FAISS-0A66C2?style=for-the-badge&logo=facebook&logoColor=white" alt="FAISS" />
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter" />
 </p>
 
+<!-- Workflow & Version Control -->
 ### Workflow & Version Control
 <p>
-  <img src="https://img.shields.io/badge/Git-88001b?logo=git&logoColor=white&style=for-the-badge&labelColor=000000" alt="Git" height="35"/>
-  <img src="https://img.shields.io/badge/GitHub-88001b?logo=github&logoColor=white&style=for-the-badge&labelColor=000000" alt="GitHub" height="35"/>
-  <img src="https://img.shields.io/badge/GitLab-88001b?logo=gitlab&logoColor=white&style=for-the-badge&labelColor=000000" alt="GitLab" height="35"/>
-  <img src="https://img.shields.io/badge/CI%2FCD-88001b?logo=githubactions&logoColor=white&style=for-the-badge&labelColor=000000" alt="CI/CD" height="35"/>
-  <img src="https://img.shields.io/badge/Bash-88001b?logo=gnubash&logoColor=white&style=for-the-badge&labelColor=000000" alt="Bash" height="35"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab" />
+  <img src="https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI/CD" />
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash" />
 </p>
 
+<!-- Hardware & Tools -->
 ### Hardware & Tools
 <p>
-  <img src="https://img.shields.io/badge/Arduino-88001b?logo=arduino&logoColor=white&style=for-the-badge&labelColor=000000" alt="Arduino" height="35"/>
-  <img src="https://img.shields.io/badge/Raspberry%20Pi-88001b?logo=raspberrypi&logoColor=white&style=for-the-badge&labelColor=000000" alt="Raspberry Pi" height="35"/>
-  <img src="https://img.shields.io/badge/ESP32-88001b?logo=espressif&logoColor=white&style=for-the-badge&labelColor=000000" alt="ESP32" height="35"/>
-  <img src="https://img.shields.io/badge/Fusion%20360-88001b?logo=autodesk&logoColor=white&style=for-the-badge&labelColor=000000" alt="Fusion 360" height="35"/>
-  <img src="https://img.shields.io/badge/Docker-88001b?logo=docker&logoColor=white&style=for-the-badge&labelColor=000000" alt="Docker" height="35"/>
-  <img src="https://img.shields.io/badge/Linux-88001b?logo=linux&logoColor=white&style=for-the-badge&labelColor=000000" alt="Linux" height="35"/>
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino" />
+  <img src="https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&logo=raspberry-pi&logoColor=white" alt="Raspberry Pi" />
+  <img src="https://img.shields.io/badge/ESP32-2E9FDF?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP32" />
+  <img src="https://img.shields.io/badge/Fusion%20360-0033A0?style=for-the-badge&logo=autodesk&logoColor=white" alt="Fusion 360" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
 </p>
 
 </div>
@@ -146,26 +159,10 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <br/>
 
-## 🔗 Links
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/whoismrsentry/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-88001b?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000000" alt="LinkedIn" />
-  </a>
-  <a href="https://dev.to/sentrycoderdev" target="_blank">
-    <img src="https://img.shields.io/badge/dev.to-88001b?style=for-the-badge&logo=dev.to&logoColor=white&labelColor=000000" alt="dev.to" />
-  </a>
-  <a href="https://github.com/WhoIsMrSentry" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-88001b?style=for-the-badge&logo=github&logoColor=white&labelColor=000000" alt="GitHub" />
-  </a>
-  <a href="https://instagram.com/whoismrsentry" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-88001b?style=for-the-badge&logo=instagram&logoColor=white&labelColor=000000" alt="Instagram" />
-  </a>
-  <a href="https://www.youtube.com/channel/UCXzt_TAVC_ls0hFLpV_ldMw" target="_blank">
-    <img src="https://img.shields.io/badge/YouTube-88001b?style=for-the-badge&logo=youtube&logoColor=white&labelColor=000000" alt="YouTube" />
-  </a>
-  <br/>
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="profile views" />
+<div align="center" style="margin:16px 0;">
+  <div style="display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,#3b0b0b,#5c0d1a);box-shadow:0 6px 18px rgba(0,0,0,0.4);">
+    <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Total Visitors" height="48" style="vertical-align:middle;" />
+  </div>
 </div>
 
 <br/>

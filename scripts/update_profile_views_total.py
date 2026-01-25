@@ -19,19 +19,28 @@ def fetch_text(url: str) -> str:
 
 def extract_count_from_komarev_svg(svg: str) -> int:
     # Komarev returns an SVG badge; the count is rendered as text.
-    # We'll extract all numeric text nodes and take the largest one.
-    candidates = re.findall(r">\s*([0-9][0-9,]*)\s*<\/text>", svg)
-    if not candidates:
-        # Fallback: any standalone numbers.
-        candidates = re.findall(r"\b([0-9][0-9,]*)\b", svg)
+    # Make extraction resilient: grab any digit groups (allowing commas),
+    # then fall back to previous heuristics if needed.
+    candidates = re.findall(r"[\d,]+", svg)
     values: list[int] = []
     for c in candidates:
         try:
             values.append(int(c.replace(",", "")))
         except ValueError:
             pass
+
+    if not values:
+        # Older fallback: try to capture numbers inside <text> nodes explicitly
+        candidates = re.findall(r">\s*([0-9][0-9,]*)\s*<\/text>", svg)
+        for c in candidates:
+            try:
+                values.append(int(c.replace(",", "")))
+            except ValueError:
+                pass
+
     if not values:
         raise ValueError("Could not parse any numeric count from SVG")
+
     return max(values)
 
 

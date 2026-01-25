@@ -4,8 +4,6 @@
 
 <br/>
 
-## WhoIsMrSentry
-
 <br/>
 <div align="center">
   <h1>Emir Hamurcu</h1>
@@ -13,6 +11,7 @@
   <p><em>"When you rest, you rust."</em></p>
 </div>
 
+<div align="center">
 
 ## 👨‍💻 About
 
@@ -21,7 +20,7 @@ I'm **Emir Hamurcu** — robotics, embedded systems, and edge AI.
 Based in **Hatay, Turkey** — I build systems that run on real hardware, under real constraints.
 
 Focus: the **hardware–software boundary** (debuggable, measurable, deployable).
-
+</div>
 <div align="center">
   <!-- Clean, consistent badges for About section -->
   <div style="display:inline-block;text-align:left;max-width:900px;">
@@ -48,8 +47,11 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <br/>
 
+<div align="center">
 
 ## 🚀 Tech Stack
+
+</div>
 
 <div align="center">
 
@@ -126,7 +128,11 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <br/>
 
+<div align="center">
+
 ## 📊 Stats
+
+</div>
 
 <div align="center">
   <a href="https://github.com/WhoIsMrSentry">
@@ -136,7 +142,11 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <br/>
 
+<div align="center">
+
 ## 🐍 Commit Snake
+
+</div>
 
 <div align="center">
   <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">

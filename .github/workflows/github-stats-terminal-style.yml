@@ -43,8 +43,9 @@ jobs:
           const fs = require('fs');
           const path = require('path');
 
-          function findThemesJson(startDir) {
+          function findThemesFile(startDir) {
             const stack = [startDir];
+            const candidates = new Set(['themes.json', 'themes.ts', 'themes.js']);
             while (stack.length) {
               const dir = stack.pop();
               let entries;
@@ -55,7 +56,7 @@ jobs:
               }
               for (const entry of entries) {
                 const fullPath = path.join(dir, entry.name);
-                if (entry.isFile() && entry.name === 'themes.json') {
+                if (entry.isFile() && candidates.has(entry.name)) {
                   return fullPath;
                 }
                 if (entry.isDirectory() && !entry.name.startsWith('.')) {
@@ -66,23 +67,39 @@ jobs:
             return null;
           }
 
-          const themesPath = findThemesJson('src') || findThemesJson('.') || path.join('src', 'themes.json');
-          if (!fs.existsSync(themesPath)) {
-            throw new Error(`themes.json not found (searched from src and repo root).`);
+          const themesPath = findThemesFile('src') || findThemesFile('.');
+          if (!themesPath || !fs.existsSync(themesPath)) {
+            throw new Error('themes file not found (searched from src and repo root).');
           }
 
-          const themes = JSON.parse(fs.readFileSync(themesPath, 'utf8'));
+          if (themesPath.endsWith('.json')) {
+            const themes = JSON.parse(fs.readFileSync(themesPath, 'utf8'));
 
-          // Keep the existing palette but move background to your README theme.
-          if (!themes.powershell) {
-            throw new Error('themes.json: missing "powershell" theme');
+            // Keep the existing palette but move background to your README theme.
+            if (!themes.powershell) {
+              throw new Error('themes.json: missing "powershell" theme');
+            }
+
+            themes.powershell.back = '#200009';
+            themes.powershell.username = '#88001b';
+
+            fs.writeFileSync(themesPath, JSON.stringify(themes, null, 4) + '\n');
+          } else {
+            let text = fs.readFileSync(themesPath, 'utf8');
+            const blockRegex = /(powershell\s*:\s*\{[\s\S]*?\})/;
+            const match = text.match(blockRegex);
+            if (!match) {
+              throw new Error(`themes file missing "powershell" theme: ${themesPath}`);
+            }
+            let block = match[1];
+            block = block
+              .replace(/(back\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#200009$3')
+              .replace(/(username\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#88001b$3');
+            text = text.replace(blockRegex, block);
+            fs.writeFileSync(themesPath, text);
           }
 
-          themes.powershell.back = '#200009';
-          themes.powershell.username = '#88001b';
-
-          fs.writeFileSync(themesPath, JSON.stringify(themes, null, 4) + '\n');
-          console.log('Patched powershell theme background/username.');
+          console.log(`Patched powershell theme background/username in ${themesPath}.`);
           NODE
 
       - name: Generate stats svg

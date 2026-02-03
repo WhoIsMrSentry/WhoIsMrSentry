@@ -45,7 +45,13 @@ jobs:
 
           function findThemesFile(startDir) {
             const stack = [startDir];
-            const candidates = new Set(['themes.json', 'themes.ts', 'themes.js']);
+            const candidates = new Set([
+              'themes.json',
+              'themes.ts',
+              'themes.js',
+              'themes.config.ts',
+              'themes.config.js'
+            ]);
             while (stack.length) {
               const dir = stack.pop();
               let entries;
@@ -93,8 +99,12 @@ jobs:
             }
             let block = match[1];
             block = block
-              .replace(/(back\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#200009$3')
-              .replace(/(username\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#88001b$3');
+              .replace(/(background\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#200009$3')
+              .replace(/(foreground\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#e6e6e6$3')
+              .replace(/(cursor\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#88001b$3')
+              .replace(/(["']0["']\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#200009$3')
+              .replace(/(["']1["']\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#88001b$3')
+              .replace(/(["']9["']\s*:\s*['\"])([^'\"]*)(['\"])/, '$1#88001b$3');
             text = text.replace(blockRegex, block);
             fs.writeFileSync(themesPath, text);
           }

@@ -2,6 +2,7 @@
 import json
 import re
 import sys
+import time
 import urllib.request
 from pathlib import Path
 
@@ -11,6 +12,8 @@ def fetch_text(url: str) -> str:
         url,
         headers={
             "User-Agent": "WhoIsMrSentry-profile-views-total/1.0",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
         },
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
@@ -18,6 +21,11 @@ def fetch_text(url: str) -> str:
 
 
 def extract_count_from_komarev_svg(svg: str) -> int:
+    # Preferred: Komarev embeds a data-count attribute.
+    m = re.search(r"data-count=\"([0-9][0-9,]*)\"", svg)
+    if m:
+        return int(m.group(1).replace(",", ""))
+
     # Komarev returns an SVG badge; the count is rendered as text.
     # Make extraction resilient: grab any digit groups (allowing commas),
     # then fall back to previous heuristics if needed.
@@ -63,7 +71,11 @@ def main() -> int:
 
     totals = []
     for u in usernames:
-        url = f"https://komarev.com/ghpvc/?username={u}&style=flat-square&color=88001b"
+        cache_bust = int(time.time())
+        url = (
+            f"https://komarev.com/ghpvc/?username={u}"
+            f"&style=flat-square&color=88001b&cb={cache_bust}"
+        )
         svg = fetch_text(url)
         count = extract_count_from_komarev_svg(svg)
         totals.append(count)

@@ -40,7 +40,9 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
       <img src="https://img.shields.io/badge/Robotics%20Projects-2B3A67?style=for-the-badge&logo=github&logoColor=white" alt="Robotics Projects" />
     </p>
     <p style="margin-top:6px;text-align:center;">
-      <img alt="SentryBOT" src="https://img.shields.io/badge/🤖_SentryBOT-Open%20Source-88001b?style=for-the-badge&labelColor=ffffff&logoColor=88001b" height="40" style="display:inline-block;border-radius:6px;" />
+      <a href="https://github.com/WhoIsMrSentry/SentryBOT">
+        <img alt="SentryBOT" src="https://img.shields.io/badge/🤖_SentryBOT-Open%20Source-88001b?style=for-the-badge&labelColor=ffffff&logoColor=88001b" height="40" style="display:inline-block;border-radius:6px;" />
+      </a>
     </p>
   </div>
 </div>

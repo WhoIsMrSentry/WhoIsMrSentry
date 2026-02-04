@@ -165,13 +165,33 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <table align="center" style="margin:16px auto;border-collapse:collapse;">
   <tr>
-    <td align="center" style="padding:0;">
-      <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Total Visitors" height="64" style="display:block;margin:0;" />
+    <td align="center" style="padding:0 10px;">
+      <table align="center" style="margin:0 auto;border-collapse:collapse;">
+        <tr>
+          <td align="center" style="padding:0;">
+            <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Total Visitors (All Time)" height="64" style="display:block;margin:0;" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="padding:0;">
+            <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
+          </td>
+        </tr>
+      </table>
     </td>
-  </tr>
-  <tr>
-    <td align="center" style="padding:0;">
-      <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
+    <td align="center" style="padding:0 10px;">
+      <table align="center" style="margin:0 auto;border-collapse:collapse;">
+        <tr>
+          <td align="center" style="padding:0;">
+            <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/sentrybot_views.json" alt="SentryBOT Views (14d)" height="64" style="display:block;margin:0;" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="padding:0;">
+            <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
 </table>

@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="iko2" src="assets/iko2.gif" />  
+  <img alt="iko2" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/iko2.gif?raw=1" />  
 </div>
 
 <br/>
@@ -171,7 +171,7 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
   </tr>
   <tr>
     <td align="center" style="padding:0;">
-      <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif" height="192" style="display:block;margin:-2px auto 0;" />
+      <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
     </td>
   </tr>
 </table>

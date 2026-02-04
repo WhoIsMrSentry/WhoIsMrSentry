@@ -2,6 +2,7 @@
 import json
 import os
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -17,8 +18,16 @@ def fetch_repo_views(owner: str, repo: str, token: str) -> int:
             "X-GitHub-Api-Version": "2022-11-28",
         },
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(
+            "GitHub API request failed. Make sure your token has access to the target repo "
+            "and includes traffic permission (public_repo for public, repo for private)."
+            f" HTTP {exc.code}: {body}"
+        ) from exc
     count = data.get("count")
     if count is None:
         raise ValueError("GitHub API response missing 'count'")
@@ -39,12 +48,22 @@ def write_shields_endpoint_json(path: Path, count: int) -> None:
 
 
 def main() -> int:
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    token = (
+        os.environ.get("SENTRYBOT_TOKEN")
+        or os.environ.get("GH_PAT")
+        or os.environ.get("GITHUB_TOKEN")
+        or os.environ.get("GH_TOKEN")
+    )
     if not token:
-        print("Missing GITHUB_TOKEN (or GH_TOKEN) in environment.", file=sys.stderr)
+        print(
+            "Missing token. Set SENTRYBOT_TOKEN (recommended) or GH_PAT/GITHUB_TOKEN/GH_TOKEN.",
+            file=sys.stderr,
+        )
         return 1
 
-    count = fetch_repo_views("WhoIsMrSentry", "SentryBOT", token)
+    owner = os.environ.get("SENTRYBOT_OWNER", "WhoIsMrSentry")
+    repo = os.environ.get("SENTRYBOT_REPO", "SentryBOT")
+    count = fetch_repo_views(owner, repo, token)
     out_path = Path("assets") / "sentrybot_views.json"
     write_shields_endpoint_json(out_path, count)
     print(f"Wrote {out_path} with views_14d={count}")

@@ -163,10 +163,10 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <br/>
 
-<div align="center" style="margin:16px 0;">
-  <div style="display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,#3b0b0b,#5c0d1a);box-shadow:0 6px 18px rgba(0,0,0,0.4);line-height:0;">
-    <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Total Visitors" height="64" style="display:block;margin:0;" />
-    <img alt="hollow" src="assets/hollow.gif" height="64" style="display:block;margin:-2px 0 0;" />
+<div align="center" style="margin:16px 0;text-align:center;">
+  <div style="display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,#3b0b0b,#5c0d1a);box-shadow:0 6px 18px rgba(0,0,0,0.4);line-height:0;text-align:center;">
+    <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Total Visitors" height="64" style="display:block;margin:0 auto;" />
+    <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif" height="64" style="display:block;margin:-2px auto 0;" />
   </div>
 </div>
 

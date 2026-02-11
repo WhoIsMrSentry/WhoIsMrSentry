@@ -92,14 +92,53 @@ def get_total_commit_contributions_all_time(login: str) -> int:
     return total
 
 
-def safe_get_total_commits() -> str:
-    """Return total commit contributions as string, or 'N/A' if unavailable."""
+def get_total_contributions_all_time(login: str) -> int:
+        """All contribution types total (the number you see in the contribution graph)."""
+        created_date = get_user_created_date(login)
+
+        today = dt.date.today()
+        total = 0
+
+        q_year = """
+            query($login: String!, $from: DateTime!, $to: DateTime!) {
+                user(login: $login) {
+                    contributionsCollection(from: $from, to: $to) {
+                        contributionCalendar {
+                            totalContributions
+                        }
+                    }
+                }
+            }
+        """
+
+        for year in range(created_date.year, today.year + 1):
+                start = dt.date(year, 1, 1)
+                end = dt.date(year, 12, 31)
+
+                if year == created_date.year:
+                        start = created_date
+                if year == today.year:
+                        end = today
+
+                from_dt = dt.datetime.combine(start, dt.time.min, tzinfo=dt.UTC).isoformat()
+                to_dt = dt.datetime.combine(end, dt.time.max, tzinfo=dt.UTC).isoformat()
+
+                data = graphql(q_year, {"login": login, "from": from_dt, "to": to_dt})
+                total += int(
+                        data["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+                )
+
+        return total
+
+
+def safe_get_total_contributions() -> str:
+    """Return total contributions (all types) as string, or 'N/A' if unavailable."""
     if not GITHUB_TOKEN:
         return "N/A"
     try:
-        return str(get_total_commit_contributions_all_time(USERNAME))
+        return str(get_total_contributions_all_time(USERNAME))
     except Exception as e:
-        print(f"WARN: failed to fetch commit contributions: {e}")
+        print(f"WARN: failed to fetch contributions: {e}")
         return "N/A"
 
 
@@ -143,14 +182,14 @@ def main():
     )
     svg = replace_symbol(svg, "10", inner_10)
 
-    # Repurpose symbol 11 (was Stars) to Commits (GitHub)
-    commits_total = safe_get_total_commits()
+    # Repurpose symbol 11 (was Stars) to Contributions (GitHub all time)
+    contributions_total = safe_get_total_contributions()
 
     inner_11 = (
         '<text x="4.008" y="1.67" class="i">████</text>'
         '<text x="20.04" y="1.67" class="i">████</text>'
-        '<text x="30.059999999999995" y="1.67" class="j">Commits:</text>'
-        f'<text x="39.077999999999996" y="1.67" class="g">{commits_total}</text>'
+        '<text x="30.059999999999995" y="1.67" class="j">Contributions:</text>'
+        f'<text x="47.094" y="1.67" class="g">{contributions_total}</text>'
     )
     svg = replace_symbol(svg, "11", inner_11)
 
@@ -158,7 +197,7 @@ def main():
     print("Updated", SVG_PATH)
     print("Repos(total) =", TOTAL_REPOS_STATIC)
     print("Public repos  =", public_repos)
-    print("Commits       =", commits_total)
+    print("Contributions =", contributions_total)
 
 
 if __name__ == "__main__":

@@ -98,13 +98,15 @@ def safe_get_total_commits() -> str:
         return "N/A"
     try:
         return str(get_total_commit_contributions_all_time(USERNAME))
-    except Exception:
+    except Exception as e:
+        print(f"WARN: failed to fetch commit contributions: {e}")
         return "N/A"
 
 
 def replace_css_prompt_color(svg: str) -> str:
-    # Replace .f color (prompt user) to neon green.
-    return svg.replace(".f{fill:rgb(238,0,238)", ".f{fill:#39FF14")
+    # Replace .f color (prompt user) to neon green (generator may vary the previous value).
+    svg, n = re.subn(r"\.f\{fill:[^;]+", ".f{fill:#39FF14", svg, count=1)
+    return svg
 
 
 def replace_symbol(svg: str, symbol_id: str, new_inner: str) -> str:

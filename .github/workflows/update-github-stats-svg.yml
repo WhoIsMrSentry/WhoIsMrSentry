@@ -2,22 +2,13 @@ name: Update GitHub Stats SVG
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - github_stats.svg
-      - scripts/update_github_stats_svg.py
-      - .github/workflows/update-github-stats-svg.yml
-  schedule:
-    - cron: "0 3 * * *"
+
 
 permissions:
   contents: write
 
 jobs:
   update:
-    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

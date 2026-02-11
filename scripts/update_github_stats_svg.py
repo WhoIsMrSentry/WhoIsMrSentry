@@ -13,6 +13,42 @@ TOTAL_REPOS_STATIC = os.environ.get("TOTAL_REPOS", "46")  # user wants to update
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
+LABEL_X = 30.059999999999995
+# In this SVG template, one monospace character is ~1.002 units wide (see existing x deltas).
+CHAR_W = 1.002
+
+
+def fmt_x(x: float) -> str:
+    s = f"{x:.3f}"
+    return s.rstrip("0").rstrip(".")
+
+
+def value_x_for_label(label: str) -> str:
+    # +1 for a single space between label and value.
+    return fmt_x(LABEL_X + (len(label) + 1) * CHAR_W)
+
+
+def extract_symbol_value(svg: str, symbol_id: str, *, default: str = "N/A") -> str:
+    """Extract the last <text class="g">...</text> value from a symbol block."""
+    m = re.search(rf'<symbol id="{re.escape(symbol_id)}">(.*?)</symbol>', svg)
+    if not m:
+        return default
+    inner = m.group(1)
+    vals = re.findall(r'class="g">([^<]+)</text>', inner)
+    if not vals:
+        return default
+    return vals[-1]
+
+
+def make_stat_line(blocks: list[tuple[str, str]], label: str, value: str) -> str:
+    parts: list[str] = []
+    for x, block_text in blocks:
+        parts.append(f'<text x="{x}" y="1.67" class="i">{block_text}</text>')
+
+    parts.append(f'<text x="{fmt_x(LABEL_X)}" y="1.67" class="j">{label}</text>')
+    parts.append(f'<text x="{value_x_for_label(label)}" y="1.67" class="g">{value}</text>')
+    return "".join(parts)
+
 
 def http_json(url: str, headers: dict | None = None) -> dict:
     req = urllib.request.Request(url, headers=headers or {})
@@ -172,6 +208,12 @@ def main():
 
     svg = replace_css_prompt_color(svg)
 
+    # Preserve generator-computed values for these so we don't add more API calls.
+    os_name = extract_symbol_value(svg, "8", default="GitHub")
+    followers = extract_symbol_value(svg, "12")
+    pull_requests = extract_symbol_value(svg, "13")
+    issues = extract_symbol_value(svg, "14")
+
     public_repos = get_public_repo_count()
 
     # Update "Repos" (symbol 9) value (keep label as Repos)
@@ -185,34 +227,69 @@ def main():
     svg = replace_symbol(svg, "9", inner_9)
 
     # Repurpose symbol 10 (was Gists) to Public Repos
-    inner_10 = (
-        '<text x="4.008" y="1.67" class="i">███</text>'
-        '<text x="21.041999999999998" y="1.67" class="i">███</text>'
-        '<text x="30.059999999999995" y="1.67" class="j">Public Repos:</text>'
-        f'<text x="44.087999999999994" y="1.67" class="g">{public_repos}</text>'
+    inner_10 = make_stat_line(
+        [("4.008", "███"), ("21.041999999999998", "███")],
+        "Public Repos:",
+        str(public_repos),
     )
     svg = replace_symbol(svg, "10", inner_10)
 
     # Repurpose symbol 11 (was Stars) to Contributions (GitHub all time)
     contributions_total = safe_get_total_contributions()
 
-    inner_11 = (
-        '<text x="4.008" y="1.67" class="i">████</text>'
-        '<text x="20.04" y="1.67" class="i">████</text>'
-        '<text x="30.059999999999995" y="1.67" class="j">Contributions:</text>'
-        f'<text x="47.094" y="1.67" class="g">{contributions_total}</text>'
+    inner_11 = make_stat_line(
+        [("4.008", "████"), ("20.04", "████")],
+        "Contributions:",
+        contributions_total,
     )
     svg = replace_symbol(svg, "11", inner_11)
 
     # Repurpose symbol 15 (previously an empty spacer) to Commits (GitHub all time)
     commits_total = safe_get_total_commits()
-    inner_15 = (
-        '<text x="6.012" y="1.67" class="i">██</text>'
-        '<text x="17.034" y="1.67" class="i">█████</text>'
-        '<text x="30.059999999999995" y="1.67" class="j">Commits:</text>'
-        f'<text x="39.078" y="1.67" class="g">{commits_total}</text>'
+    inner_15 = make_stat_line(
+        [("6.012", "██"), ("17.034", "█████")],
+        "Commits:",
+        commits_total,
     )
     svg = replace_symbol(svg, "15", inner_15)
+
+    # Re-layout OS / Followers / Pull Requests / Issues as well (stair/merdiven effect).
+    svg = replace_symbol(
+        svg,
+        "8",
+        make_stat_line(
+            [("4.008", "████"), ("20.04", "████")],
+            "OS:",
+            os_name,
+        ),
+    )
+    svg = replace_symbol(
+        svg,
+        "12",
+        make_stat_line(
+            [("4.008", "█████"), ("19.037999999999997", "█████")],
+            "Followers:",
+            followers,
+        ),
+    )
+    svg = replace_symbol(
+        svg,
+        "13",
+        make_stat_line(
+            [("5.01", "██"), ("8.016", "████"), ("16.032", "███████")],
+            "Pull Requests:",
+            pull_requests,
+        ),
+    )
+    svg = replace_symbol(
+        svg,
+        "14",
+        make_stat_line(
+            [("6.012", "██"), ("17.034", "█████")],
+            "Issues:",
+            issues,
+        ),
+    )
 
     SVG_PATH.write_text(svg, encoding="utf-8")
     print("Updated", SVG_PATH)

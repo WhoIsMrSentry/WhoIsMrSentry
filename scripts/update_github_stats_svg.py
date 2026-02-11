@@ -93,42 +93,53 @@ def get_total_commit_contributions_all_time(login: str) -> int:
 
 
 def get_total_contributions_all_time(login: str) -> int:
-        """All contribution types total (the number you see in the contribution graph)."""
-        created_date = get_user_created_date(login)
+    """All contribution types total (the number you see in the contribution graph)."""
+    created_date = get_user_created_date(login)
 
-        today = dt.date.today()
-        total = 0
+    today = dt.date.today()
+    total = 0
 
-        q_year = """
-            query($login: String!, $from: DateTime!, $to: DateTime!) {
-                user(login: $login) {
-                    contributionsCollection(from: $from, to: $to) {
-                        contributionCalendar {
-                            totalContributions
-                        }
+    q_year = """
+        query($login: String!, $from: DateTime!, $to: DateTime!) {
+            user(login: $login) {
+                contributionsCollection(from: $from, to: $to) {
+                    contributionCalendar {
+                        totalContributions
                     }
                 }
             }
-        """
+        }
+    """
 
-        for year in range(created_date.year, today.year + 1):
-                start = dt.date(year, 1, 1)
-                end = dt.date(year, 12, 31)
+    for year in range(created_date.year, today.year + 1):
+        start = dt.date(year, 1, 1)
+        end = dt.date(year, 12, 31)
 
-                if year == created_date.year:
-                        start = created_date
-                if year == today.year:
-                        end = today
+        if year == created_date.year:
+            start = created_date
+        if year == today.year:
+            end = today
 
-                from_dt = dt.datetime.combine(start, dt.time.min, tzinfo=dt.UTC).isoformat()
-                to_dt = dt.datetime.combine(end, dt.time.max, tzinfo=dt.UTC).isoformat()
+        from_dt = dt.datetime.combine(start, dt.time.min, tzinfo=dt.UTC).isoformat()
+        to_dt = dt.datetime.combine(end, dt.time.max, tzinfo=dt.UTC).isoformat()
 
-                data = graphql(q_year, {"login": login, "from": from_dt, "to": to_dt})
-                total += int(
-                        data["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
-                )
+        data = graphql(q_year, {"login": login, "from": from_dt, "to": to_dt})
+        total += int(
+            data["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+        )
 
-        return total
+    return total
+
+
+def safe_get_total_commits() -> str:
+    """Return total commit contributions (all time) as string, or 'N/A' if unavailable."""
+    if not GITHUB_TOKEN:
+        return "N/A"
+    try:
+        return str(get_total_commit_contributions_all_time(USERNAME))
+    except Exception as e:
+        print(f"WARN: failed to fetch commit contributions: {e}")
+        return "N/A"
 
 
 def safe_get_total_contributions() -> str:
@@ -193,11 +204,22 @@ def main():
     )
     svg = replace_symbol(svg, "11", inner_11)
 
+    # Repurpose symbol 15 (previously an empty spacer) to Commits (GitHub all time)
+    commits_total = safe_get_total_commits()
+    inner_15 = (
+        '<text x="6.012" y="1.67" class="i">██</text>'
+        '<text x="17.034" y="1.67" class="i">█████</text>'
+        '<text x="30.059999999999995" y="1.67" class="j">Commits:</text>'
+        f'<text x="39.078" y="1.67" class="g">{commits_total}</text>'
+    )
+    svg = replace_symbol(svg, "15", inner_15)
+
     SVG_PATH.write_text(svg, encoding="utf-8")
     print("Updated", SVG_PATH)
     print("Repos(total) =", TOTAL_REPOS_STATIC)
     print("Public repos  =", public_repos)
     print("Contributions =", contributions_total)
+    print("Commits       =", commits_total)
 
 
 if __name__ == "__main__":

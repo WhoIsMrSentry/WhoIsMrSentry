@@ -73,6 +73,8 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 ### Frontend & Web
 <p>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white" alt="SvelteKit" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
@@ -100,6 +102,8 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
   <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow" />
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
   <img src="https://img.shields.io/badge/OpenCV-5C2D91?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />
+  <img src="https://img.shields.io/badge/ONNX-4D8FAC?style=for-the-badge&logo=onnx&logoColor=white" alt="ONNX" />
+  <img src="https://img.shields.io/badge/TFLite-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TFLite" />
   <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama" />
   <img src="https://img.shields.io/badge/FAISS-0A66C2?style=for-the-badge&logo=facebook&logoColor=white" alt="FAISS" />
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter" />
@@ -110,6 +114,7 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 <p>
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
   <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab" />
   <img src="https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI/CD" />
   <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash" />
@@ -121,6 +126,17 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
   <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino" />
   <img src="https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&logo=raspberry-pi&logoColor=white" alt="Raspberry Pi" />
   <img src="https://img.shields.io/badge/ESP32-2E9FDF?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP32" />
+  <img src="https://img.shields.io/badge/PlatformIO-2D8B8F?style=for-the-badge&logo=platformio&logoColor=white" alt="PlatformIO" />
+  <img src="https://img.shields.io/badge/STM32-1A6FB4?style=for-the-badge&logo=stmicroelectronics&logoColor=white" alt="STM32" />
+  <img src="https://img.shields.io/badge/CMake-DA3434?style=for-the-badge&logo=cmake&logoColor=white" alt="CMake" />
+  <img src="assets/logos/wsl-badge.png" alt="WSL" height="28" />
+  <img src="https://img.shields.io/badge/VirtualBox-183A6E?style=for-the-badge&logo=virtualbox&logoColor=white" alt="VirtualBox" />
+  <img src="assets/logos/openbci-badge.png" alt="OpenBCI" height="28" />
+  <img src="assets/logos/brainbay-badge.png" alt="BrainBay" height="28" />
+  <img src="assets/logos/neuropype-badge.png" alt="Neuropype" height="28" />
+  <img src="https://img.shields.io/badge/ESP-IDF-2D8B8F?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP-IDF" />
+  <img src="https://img.shields.io/badge/ROS2-2C3E50?style=for-the-badge&logo=ros&logoColor=white" alt="ROS2" />
+  <img src="https://img.shields.io/badge/FreeRTOS-FF6600?style=for-the-badge&logo=freertos&logoColor=white" alt="FreeRTOS" />
   <img src="https://img.shields.io/badge/Fusion%20360-0033A0?style=for-the-badge&logo=autodesk&logoColor=white" alt="Fusion 360" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />

@@ -51,18 +51,22 @@ def get_public_repo_count() -> int:
     return int(data.get("public_repos", 0))
 
 
-def get_total_commit_contributions_all_time() -> int:
+def get_user_created_date(login: str) -> dt.date:
+    q_created = "query($login: String!) { user(login: $login) { createdAt } }"
+    created_at = graphql(q_created, {"login": login})["user"]["createdAt"]
+    return dt.datetime.fromisoformat(created_at.replace("Z", "+00:00")).date()
+
+
+def get_total_commit_contributions_all_time(login: str) -> int:
     # Sum totalCommitContributions year-by-year from account creation to today.
-    q_created = "query { viewer { createdAt } }"
-    created_at = graphql(q_created)["viewer"]["createdAt"]
-    created_date = dt.datetime.fromisoformat(created_at.replace("Z", "+00:00")).date()
+    created_date = get_user_created_date(login)
 
     today = dt.date.today()
     total = 0
 
     q_year = """
-      query($from: DateTime!, $to: DateTime!) {
-        viewer {
+      query($login: String!, $from: DateTime!, $to: DateTime!) {
+        user(login: $login) {
           contributionsCollection(from: $from, to: $to) {
             totalCommitContributions
           }
@@ -73,6 +77,7 @@ def get_total_commit_contributions_all_time() -> int:
     for year in range(created_date.year, today.year + 1):
         start = dt.date(year, 1, 1)
         end = dt.date(year, 12, 31)
+
         if year == created_date.year:
             start = created_date
         if year == today.year:
@@ -81,8 +86,8 @@ def get_total_commit_contributions_all_time() -> int:
         from_dt = dt.datetime.combine(start, dt.time.min, tzinfo=dt.UTC).isoformat()
         to_dt = dt.datetime.combine(end, dt.time.max, tzinfo=dt.UTC).isoformat()
 
-        data = graphql(q_year, {"from": from_dt, "to": to_dt})
-        total += int(data["viewer"]["contributionsCollection"]["totalCommitContributions"])
+        data = graphql(q_year, {"login": login, "from": from_dt, "to": to_dt})
+        total += int(data["user"]["contributionsCollection"]["totalCommitContributions"])
 
     return total
 
@@ -92,7 +97,7 @@ def safe_get_total_commits() -> str:
     if not GITHUB_TOKEN:
         return "N/A"
     try:
-        return str(get_total_commit_contributions_all_time())
+        return str(get_total_commit_contributions_all_time(USERNAME))
     except Exception:
         return "N/A"
 

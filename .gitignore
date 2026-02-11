@@ -10,3 +10,7 @@ folderico-*.ico
 
 # Generator outputs (temporary)
 assets/_gen_*.txt
+
+# Python
+__pycache__/
+*.pyc

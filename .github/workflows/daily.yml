@@ -137,11 +137,21 @@ jobs:
           fi
 
           git commit -m "chore: update github stats svg"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push failed (attempt $i), retrying..."
+            sleep 3
+          done
+          echo "Failed to push after retries."
+          exit 1
 
   profile_views_total:
     name: Update profile_views_total.json
     runs-on: ubuntu-latest
+    needs: github_stats_svg
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -164,11 +174,21 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update total profile views"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push failed (attempt $i), retrying..."
+            sleep 3
+          done
+          echo "Failed to push after retries."
+          exit 1
 
   sentrybot_views:
     name: Update sentrybot_views.json
     runs-on: ubuntu-latest
+    needs: profile_views_total
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -194,7 +214,16 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update SentryBOT views"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push failed (attempt $i), retrying..."
+            sleep 3
+          done
+          echo "Failed to push after retries."
+          exit 1
 
   snake:
     name: Generate commit snake

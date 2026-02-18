@@ -7,7 +7,7 @@
 <br/>
 <div align="center">
   <h1>Emir Hamurcu</h1>
-  <h3>Robotics & AI & Maker & Enthusiast | Software Developer</h3>
+  <h3>Robotics & AI & Maker & Enthusiast | Software Developer/Engineer</h3>
   <p><em>"When you rest, you rust."</em></p>
 </div>
 

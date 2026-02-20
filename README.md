@@ -73,6 +73,21 @@ It is embodied logic.
 
 <div align="center">
 
+## 🏛️ Who Is Mr Sentry?
+
+A builder of constrained intelligence.  
+A designer of mechanical thought.  
+A student of entropy.  
+
+I don't chase trends.  
+I study structure.
+
+</div>
+
+</br>
+
+<div align="center">
+
 ## 🚀 Tech Stack
 
 </div>

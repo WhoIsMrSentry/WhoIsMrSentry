@@ -51,6 +51,28 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 
 <div align="center">
 
+## 🧠 Engineering Philosophy
+
+I don't build projects — I build **systems with intent**.
+
+Engineering, to me, is not only about solving problems.  
+It is about understanding constraints, negotiating with reality,  
+and translating abstract thought into measurable matter.
+
+I operate at the intersection of:
+• cognition and computation  
+• hardware and perception  
+• philosophy and firmware  
+
+A robot is not metal.  
+It is embodied logic.
+
+</div>
+
+</br>
+
+<div align="center">
+
 ## 🚀 Tech Stack
 
 </div>

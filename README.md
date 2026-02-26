@@ -44,6 +44,11 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
         <img alt="SentryBOT" src="https://img.shields.io/badge/🤖_SentryBOT-Open%20Source-88001b?style=for-the-badge&labelColor=ffffff&logoColor=88001b" height="40" style="display:inline-block;border-radius:6px;" />
       </a>
     </p>
+       <p style="margin-top:6px;text-align:center;">
+     <a href="https://buymeacoffee.com/whoismrsentry">
+       <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
+     </a>
+   </p>
   </div>
 </div>
 

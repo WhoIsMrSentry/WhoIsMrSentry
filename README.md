@@ -241,7 +241,7 @@ I study structure.
         </tr>
         <tr>
           <td align="center" style="padding:0;">
-            <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
+            <img alt="grimm" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/grimm.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
           </td>
         </tr>
       </table>

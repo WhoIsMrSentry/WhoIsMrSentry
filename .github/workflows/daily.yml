@@ -264,14 +264,14 @@ jobs:
         with:
           github_user_name: WhoIsMrSentry
           outputs: |
-            dist/snake_dark.svg?palette=github-dark&color_snake=%2388001b&color_dots=%23200009,%2339ff14,%2339ff14,%2339ff14,%2339ff14
+            dist/snake_dark.svg?palette=github-dark&color_snake=%23ff1744&color_dots=%23ff1744,%2339ff14,%2339ff14,%2339ff14,%2339ff14
 
       - name: Generate snake (light)
         uses: Platane/snk@v3
         with:
           github_user_name: WhoIsMrSentry
           outputs: |
-            dist/snake.svg?palette=github-light&color_snake=%2388001b&color_dots=%23200009,%2339ff14,%2339ff14,%2339ff14,%2339ff14
+            dist/snake.svg?palette=github-light&color_snake=%23ff1744&color_dots=%23ff1744,%2339ff14,%2339ff14,%2339ff14,%2339ff14
 
       - name: Patch snake SVGs (background + neon glow)
         run: |
@@ -284,7 +284,8 @@ jobs:
 
           bg = '#200009'
           neon = '#39ff14'
-          snake = '#88001b'
+          neon_red = '#ff1744'
+          snake = '#ff1744'
           glow_id = 'sentry-neon-style'
 
           for source_file in source_files:
@@ -308,8 +309,11 @@ jobs:
                       + f'rect[fill="{neon}"], path[fill="{neon}"]' + '{'
                       + 'filter: drop-shadow(0 0 1px #39ff14) drop-shadow(0 0 5px #39ff14);'
                       + '}'
+                    + f'rect[fill="{neon_red}"], path[fill="{neon_red}"]' + '{'
+                    + 'filter: drop-shadow(0 0 1px #ff1744) drop-shadow(0 0 4px #ff1744);'
+                    + '}'
                       + f'rect[fill="{snake}"], path[fill="{snake}"]' + '{'
-                      + 'filter: drop-shadow(0 0 1px #88001b);'
+                      + 'filter: drop-shadow(0 0 1px #ff1744) drop-shadow(0 0 4px #ff1744);'
                       + '}'
                       + ']]></style>'
                   )

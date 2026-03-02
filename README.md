@@ -126,7 +126,7 @@
 
 <div align="center">
   <!-- Visible after enabling the snake workflow -->
-  <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" style="display:block;margin:0 auto;border:none;outline:none;box-shadow:none;" />
+  <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" style="display:block;margin:0 auto;border:none;outline:none;box-shadow:none;background:#200009;" />
 </div>
 
 <br/>

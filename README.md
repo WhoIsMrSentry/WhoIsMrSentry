@@ -13,6 +13,19 @@
 
 <div align="center">
 
+## 🏛️ Who Is Mr Sentry?
+
+A builder of constrained intelligence.  
+A designer of mechanical thought.  
+A student of entropy.  
+
+I don't chase trends.  
+I study structure.
+
+</div>
+
+<div align="center">
+
 ## 👨‍💻 About
 
 I'm **Emir Hamurcu** — robotics, embedded systems, and edge AI.
@@ -53,43 +66,6 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 </div>
 
 <br/>
-
-<div align="center">
-
-## 🧠 Engineering Philosophy
-
-I don't build projects — I build **systems with intent**.
-
-Engineering, to me, is not only about solving problems.  
-It is about understanding constraints, negotiating with reality,  
-and translating abstract thought into measurable matter.
-
-I operate at the intersection of:
-• cognition and computation  
-• hardware and perception  
-• philosophy and firmware  
-
-A robot is not metal.  
-It is embodied logic.
-
-</div>
-
-</br>
-
-<div align="center">
-
-## 🏛️ Who Is Mr Sentry?
-
-A builder of constrained intelligence.  
-A designer of mechanical thought.  
-A student of entropy.  
-
-I don't chase trends.  
-I study structure.
-
-</div>
-
-</br>
 
 <div align="center">
 
@@ -192,6 +168,11 @@ I study structure.
 
 ## 📊 Stats
 
+</div>
+
+<div align="center">
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&theme=github_dark&hide_border=true&hide=Jupyter%20Notebook" alt="Top Languages" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=WhoIsMrSentry&theme=github_dark" alt="Contributions in the last year" />
 </div>
 
 <div align="center">

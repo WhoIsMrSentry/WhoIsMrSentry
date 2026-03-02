@@ -121,21 +121,11 @@
     <img width="900" alt="GitHub Stats (Terminal Style)" src="github_stats.svg" />
   </a>
 </div>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;border:1px solid #e6ffe6;border-radius:8px;" />
-</div>
-
-
-
-<br/>
-
-<div align="center">
-
-## 🐍 Commit Snake
-
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;" />
 </div>
 
 <div align="center">
-  <table bgcolor="#200009" style="margin:0 auto;border:1px solid #88001b;" cellspacing="0" cellpadding="6">
+  <table bgcolor="#200009" style="margin:0 auto;" cellspacing="0" cellpadding="0">
     <tr>
       <td>
         <!-- Visible after enabling the snake workflow -->

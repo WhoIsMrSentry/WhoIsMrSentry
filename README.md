@@ -147,10 +147,10 @@
 
 <br/>
 
-<table align="center" style="margin:16px auto;border-collapse:collapse;">
+<table align="center" style="margin:16px auto;border-collapse:collapse;width:100%;max-width:920px;table-layout:fixed;">
   <tr>
-    <td align="center" style="padding:0 10px;">
-      <table align="center" style="margin:0 auto;border-collapse:collapse;">
+    <td align="center" style="padding:0 10px;width:50%;vertical-align:top;">
+      <table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;">
         <tr>
           <td align="center" style="padding:0;">
             <img src="https://img.shields.io/badge/Profile%20Views-636-88001b?style=for-the-badge&labelColor=000000" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
@@ -158,13 +158,13 @@
         </tr>
         <tr>
           <td align="center" style="padding:0;">
-            <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
+            <img alt="hollow" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/hollow.gif?raw=1" width="100%" height="320" style="display:block;margin:-2px auto 0;object-fit:cover;" />
           </td>
         </tr>
       </table>
     </td>
-    <td align="center" style="padding:0 10px;">
-      <table align="center" style="margin:0 auto;border-collapse:collapse;">
+    <td align="center" style="padding:0 10px;width:50%;vertical-align:top;">
+      <table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;">
         <tr>
           <td align="center" style="padding:0;">
             <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/sentrybot_views.json" alt="SentryBOT Views (14d)" height="64" style="display:block;margin:0;" />
@@ -172,7 +172,7 @@
         </tr>
         <tr>
           <td align="center" style="padding:0;">
-            <img alt="grimm" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/grimm-1024.gif?raw=1" height="192" style="display:block;margin:-2px auto 0;" />
+            <img alt="grimm" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/grimm-1024.gif?raw=1" width="100%" height="320" style="display:block;margin:-2px auto 0;object-fit:cover;" />
           </td>
         </tr>
       </table>

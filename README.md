@@ -153,7 +153,7 @@
       <table align="center" style="margin:0 auto;border-collapse:collapse;">
         <tr>
           <td align="center" style="padding:0;">
-            <img src="https://img.shields.io/badge/Profile%20Views-0-88001b?style=for-the-badge&labelColor=000000" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
+            <img src="https://img.shields.io/badge/Profile%20Views-636-88001b?style=for-the-badge&labelColor=000000" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
           </td>
         </tr>
         <tr>

@@ -7,33 +7,11 @@
 <br/>
 <div align="center">
   <h1>Emir Hamurcu</h1>
-  <h3>Robotics & AI & Maker & Enthusiast | Software Developer/Engineer</h3>
+  <h3>Robotics & Embedded AI Enthusiast • Software Developer • Maker</h3>
+  <p>Curious builder exploring Edge AI, Embedded Systems, and Computer Vision</p>
   <p><em>"When you rest, you rust."</em></p>
 </div>
 
-<div align="center">
-
-## 🏛️ Who Is Mr Sentry?
-
-A builder of constrained intelligence.  
-A designer of mechanical thought.  
-A student of entropy.  
-
-I don't chase trends.  
-I study structure.
-
-</div>
-
-<div align="center">
-
-## 👨‍💻 About
-
-I'm **Emir Hamurcu** — robotics, embedded systems, and edge AI.
-
-Based in **Hatay, Turkey** — I build systems that run on real hardware, under real constraints.
-
-Focus: the **hardware–software boundary** (debuggable, measurable, deployable).
-</div>
 <div align="center">
   <div style="display:inline-block;text-align:center;max-width:980px;">
     <p>
@@ -52,6 +30,8 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
       <a href="https://github.com/WhoIsMrSentry/SentryBOT">
         <img alt="SentryBOT" src="https://img.shields.io/badge/SentryBOT-Open%20Source-88001b?style=for-the-badge&logo=github&logoColor=white" />
       </a>
+    </p>
+    <p style="margin-top:8px;">
       <a href="https://buymeacoffee.com/whoismrsentry">
         <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-1f2335?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me A Coffee" />
       </a>
@@ -95,19 +75,43 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
   <img src="https://cdn.simpleicons.org/jupyter/ffffff" alt="Jupyter" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
 </p>
 
+### Data & MLOps
+<p>
+  <img src="https://cdn.simpleicons.org/pandas/ffffff" alt="Pandas" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://cdn.simpleicons.org/numpy/ffffff" alt="NumPy" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+</p>
+
 ### Workflow
 <p>
   <img src="https://skillicons.dev/icons?i=git,github,gitlab,githubactions,bash,linux,docker&theme=dark&perline=11" alt="Workflow" />
+</p>
+
+### Testing
+<p>
+  <img src="https://cdn.simpleicons.org/pytest/ffffff" alt="pytest" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://cdn.simpleicons.org/postman/ffffff" alt="Postman" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+</p>
+
+### Build Systems
+<p>
+  <img src="https://cdn.simpleicons.org/cmake/ffffff" alt="CMake" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://cdn.simpleicons.org/bazel/ffffff" alt="Bazel" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://cdn.simpleicons.org/ubuntu/ffffff" alt="Ubuntu" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://cdn.simpleicons.org/platformio/ffffff" alt="PlatformIO" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+</p>
+
+### Robotics & Simulation
+<p>
+  <img src="https://cdn.simpleicons.org/ros/ffffff" alt="ROS2" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gazebo/gazebo-original.svg" alt="Gazebo" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://cdn.simpleicons.org/kicad/ffffff" alt="KiCad" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
 </p>
 
 ### Hardware & Embedded
 <p>
   <img src="https://skillicons.dev/icons?i=arduino,raspberrypi&theme=dark&perline=11" alt="Hardware and Embedded" />
   <img src="https://cdn.simpleicons.org/espressif/ffffff" alt="ESP32" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
-  <img src="https://cdn.simpleicons.org/platformio/ffffff" alt="PlatformIO" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/stmicroelectronics/ffffff" alt="STM32" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
-  <img src="https://cdn.simpleicons.org/ros/ffffff" alt="ROS2" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
-  <img src="https://cdn.simpleicons.org/cmake/ffffff" alt="CMake" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/autodesk/ffffff" alt="Fusion 360" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/virtualbox/ffffff" alt="VirtualBox" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
 </p>
@@ -125,14 +129,15 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 <div align="center">
   <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&border_color=e6ffe6&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
   <br/>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;border:1px solid #e6ffe6;border-radius:8px;" />
-</div>
-
-<div align="center">
+  <div align="center">
   <a href="https://github.com/WhoIsMrSentry">
     <img width="900" alt="GitHub Stats (Terminal Style)" src="github_stats.svg" />
   </a>
 </div>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;border:1px solid #e6ffe6;border-radius:8px;" />
+</div>
+
+
 
 <br/>
 
@@ -161,7 +166,7 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
       <table align="center" style="margin:0 auto;border-collapse:collapse;">
         <tr>
           <td align="center" style="padding:0;">
-            <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Total Visitors (All Time)" height="64" style="display:block;margin:0;" />
+            <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
           </td>
         </tr>
         <tr>

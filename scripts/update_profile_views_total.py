@@ -44,7 +44,7 @@ def extract_count_from_komarev_svg(svg: str) -> int:
 def write_shields_endpoint_json(path: Path, total: int) -> None:
     payload = {
         "schemaVersion": 1,
-        "label": "Total Visitors",
+        "label": "Profile Views",
         "message": str(total),
         "color": "88001b",
         "labelColor": "000000",
@@ -55,8 +55,10 @@ def write_shields_endpoint_json(path: Path, total: int) -> None:
 
 
 def main() -> int:
-    # Current + legacy handles
-    usernames = ["WhoIsMrSentry", "SentryCoderDev"]
+    usernames_raw = os.environ.get("PROFILE_VIEW_USERNAMES", "WhoIsMrSentry")
+    usernames = [u.strip() for u in usernames_raw.split(",") if u.strip()]
+    if not usernames:
+        usernames = ["WhoIsMrSentry"]
 
     totals = []
     for u in usernames:
@@ -72,7 +74,7 @@ def main() -> int:
     total = sum(totals)
     out_path = Path("assets") / "profile_views_total.json"
     write_shields_endpoint_json(out_path, total)
-    print(f"Wrote {out_path} with total={total} (components={totals})")
+    print(f"Wrote {out_path} with total={total} (usernames={usernames}, components={totals})")
     return 0
 
 

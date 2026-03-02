@@ -2,6 +2,7 @@ import datetime as dt
 import json
 import os
 import re
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -51,7 +52,17 @@ def make_stat_line(blocks: list[tuple[str, str]], label: str, value: str) -> str
 
 
 def http_json(url: str, headers: dict | None = None) -> dict:
-    req = urllib.request.Request(url, headers=headers or {})
+    request_headers = {
+        "User-Agent": "whoismrsentry-profile-stats",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    if headers:
+        request_headers.update(headers)
+    if GITHUB_TOKEN:
+        request_headers.setdefault("Authorization", f"Bearer {GITHUB_TOKEN}")
+
+    req = urllib.request.Request(url, headers=request_headers)
     with urllib.request.urlopen(req, timeout=60) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
@@ -82,9 +93,19 @@ def graphql(query: str, variables: dict | None = None) -> dict:
 def get_public_repo_count() -> int:
     data = http_json(
         f"https://api.github.com/users/{USERNAME}",
-        headers={"User-Agent": "whoismrsentry-profile-stats"},
     )
     return int(data.get("public_repos", 0))
+
+
+def safe_get_public_repo_count(fallback: str = "N/A") -> str:
+    try:
+        return str(get_public_repo_count())
+    except urllib.error.HTTPError as e:
+        print(f"WARN: failed to fetch public repos (HTTP {e.code}), using fallback={fallback}")
+        return fallback
+    except Exception as e:
+        print(f"WARN: failed to fetch public repos: {e}, using fallback={fallback}")
+        return fallback
 
 
 def get_user_created_date(login: str) -> dt.date:
@@ -213,8 +234,9 @@ def main():
     followers = extract_symbol_value(svg, "12")
     pull_requests = extract_symbol_value(svg, "13")
     issues = extract_symbol_value(svg, "14")
+    public_repos_fallback = extract_symbol_value(svg, "10", default="N/A")
 
-    public_repos = get_public_repo_count()
+    public_repos = safe_get_public_repo_count(public_repos_fallback)
 
     # Update "Repos" (symbol 9) value (keep label as Repos)
     # Original: <text ... class="j">Repos:</text><text ... class="g">25</text>

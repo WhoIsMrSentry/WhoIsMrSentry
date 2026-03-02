@@ -35,33 +35,27 @@ Based in **Hatay, Turkey** — I build systems that run on real hardware, under 
 Focus: the **hardware–software boundary** (debuggable, measurable, deployable).
 </div>
 <div align="center">
-  <!-- Clean, consistent badges for About section -->
-  <div style="display:inline-block;text-align:left;max-width:900px;">
+  <div style="display:inline-block;text-align:center;max-width:980px;">
     <p>
-      <img src="https://img.shields.io/badge/Embedded%20Systems-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Embedded Systems" />
-      <img src="https://img.shields.io/badge/Embedded%20Linux-2C8EBB?style=for-the-badge&logo=linux&logoColor=white" alt="Embedded Linux" />
-      <img src="https://img.shields.io/badge/Embedded%20Firmware%20(C)-007ACC?style=for-the-badge&logo=c&logoColor=white" alt="Embedded Firmware (C)" />
+      <img src="https://img.shields.io/badge/Embedded%20Systems-1f2335?style=for-the-badge&logo=arduino&logoColor=white" alt="Embedded Systems" />
+      <img src="https://img.shields.io/badge/Embedded%20Linux-1f2335?style=for-the-badge&logo=linux&logoColor=white" alt="Embedded Linux" />
+      <img src="https://img.shields.io/badge/Firmware%20(C)-1f2335?style=for-the-badge&logo=c&logoColor=white" alt="Firmware C" />
+      <img src="https://img.shields.io/badge/Edge%20AI-1f2335?style=for-the-badge&logo=tensorflow&logoColor=white" alt="Edge AI" />
     </p>
     <p>
-      <img src="https://img.shields.io/badge/Edge%20AI%20%26%20Pipelines-6B46C1?style=for-the-badge&logo=tensorflow&logoColor=white" alt="Edge AI & Pipelines" />
-      <img src="https://img.shields.io/badge/Computer%20Vision-5C2D91?style=for-the-badge&logo=opencv&logoColor=white" alt="Computer Vision" />
-      <img src="https://img.shields.io/badge/Mechatronics%20%26%20Robotics-88001b?style=for-the-badge&logo=ros&logoColor=white" alt="Mechatronics & Robotics" />
+      <img src="https://img.shields.io/badge/Computer%20Vision-1f2335?style=for-the-badge&logo=opencv&logoColor=white" alt="Computer Vision" />
+      <img src="https://img.shields.io/badge/Mechatronics-1f2335?style=for-the-badge&logo=ros&logoColor=white" alt="Mechatronics" />
+      <img src="https://img.shields.io/badge/Autonomous%20Systems-1f2335?style=for-the-badge&logo=raspberrypi&logoColor=white" alt="Autonomous Systems" />
+      <img src="https://img.shields.io/badge/Reverse%20Engineering-1f2335?style=for-the-badge&logo=github&logoColor=white" alt="Reverse Engineering" />
     </p>
-    <p>
-      <img src="https://img.shields.io/badge/Autonomous%20Systems-0A7F6F?style=for-the-badge&logo=raspberry-pi&logoColor=white" alt="Autonomous Systems" />
-      <img src="https://img.shields.io/badge/Reverse%20Engineering-0E5A8A?style=for-the-badge&logo=github&logoColor=white" alt="Reverse Engineering" />
-      <img src="https://img.shields.io/badge/Robotics%20Projects-2B3A67?style=for-the-badge&logo=github&logoColor=white" alt="Robotics Projects" />
-    </p>
-    <p style="margin-top:6px;text-align:center;">
+    <p style="margin-top:8px;">
       <a href="https://github.com/WhoIsMrSentry/SentryBOT">
-        <img alt="SentryBOT" src="https://img.shields.io/badge/🤖_SentryBOT-Open%20Source-88001b?style=for-the-badge&labelColor=ffffff&logoColor=88001b" height="40" style="display:inline-block;border-radius:6px;" />
+        <img alt="SentryBOT" src="https://img.shields.io/badge/SentryBOT-Open%20Source-88001b?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
+      <a href="https://buymeacoffee.com/whoismrsentry">
+        <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-1f2335?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me A Coffee" />
       </a>
     </p>
-       <p style="margin-top:6px;text-align:center;">
-     <a href="https://buymeacoffee.com/whoismrsentry">
-       <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
-     </a>
-   </p>
   </div>
 </div>
 
@@ -129,12 +123,12 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 </div>
 
 <div align="center">
-  <table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;max-width:980px;">
+  <table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;max-width:1120px;">
     <tr>
-      <td align="center" style="padding:6px;vertical-align:top;width:42%;">
-        <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook&bg_color=200009&title_color=00ff41&text_color=e6ffe6&border_color=e6ffe6" alt="My Programming Languages" style="width:100%;height:auto;display:block;" />
+      <td align="center" style="padding:6px;vertical-align:top;width:48%;">
+        <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&langs_count=20&hide=Jupyter%20Notebook&bg_color=200009&title_color=00ff41&text_color=e6ffe6&border_color=e6ffe6&card_width=520" alt="My Programming Languages" style="width:100%;height:auto;display:block;" />
       </td>
-      <td align="center" style="padding:6px;vertical-align:top;width:58%;">
+      <td align="center" style="padding:6px;vertical-align:top;width:52%;">
         <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;height:auto;display:block;border:1px solid #e6ffe6;border-radius:8px;" />
       </td>
     </tr>

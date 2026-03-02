@@ -11,7 +11,7 @@
   <p>Curious builder exploring Edge AI, Embedded Systems, and Computer Vision</p>
   <p><em>"When you rest, you rust."</em></p>
 </div>
-
+<br/>
 <div align="center">
   <div style="display:inline-block;text-align:center;max-width:980px;">
     <p>
@@ -75,33 +75,21 @@
   <img src="https://cdn.simpleicons.org/jupyter/ffffff" alt="Jupyter" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
 </p>
 
-### Data & MLOps
-<p>
-  <img src="https://cdn.simpleicons.org/pandas/ffffff" alt="Pandas" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
-  <img src="https://cdn.simpleicons.org/numpy/ffffff" alt="NumPy" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
-</p>
-
 ### Workflow
 <p>
   <img src="https://skillicons.dev/icons?i=git,github,gitlab,githubactions,bash,linux,docker&theme=dark&perline=11" alt="Workflow" />
 </p>
 
-### Testing
+### Tooling, Data & Robotics
 <p>
+  <img src="https://cdn.simpleicons.org/pandas/ffffff" alt="Pandas" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
+  <img src="https://cdn.simpleicons.org/numpy/ffffff" alt="NumPy" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/pytest/ffffff" alt="pytest" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/postman/ffffff" alt="Postman" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
-</p>
-
-### Build Systems
-<p>
   <img src="https://cdn.simpleicons.org/cmake/ffffff" alt="CMake" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/bazel/ffffff" alt="Bazel" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/ubuntu/ffffff" alt="Ubuntu" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/platformio/ffffff" alt="PlatformIO" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
-</p>
-
-### Robotics & Simulation
-<p>
   <img src="https://cdn.simpleicons.org/ros/ffffff" alt="ROS2" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gazebo/gazebo-original.svg" alt="Gazebo" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
   <img src="https://cdn.simpleicons.org/kicad/ffffff" alt="KiCad" height="40" style="background:#1f2335;border-radius:10px;padding:8px;margin:3px;" />
@@ -127,8 +115,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&border_color=e6ffe6&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
-  <br/>
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&hide_border=true&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
   <div align="center">
   <a href="https://github.com/WhoIsMrSentry">
     <img width="900" alt="GitHub Stats (Terminal Style)" src="github_stats.svg" />
@@ -166,7 +153,7 @@
       <table align="center" style="margin:0 auto;border-collapse:collapse;">
         <tr>
           <td align="center" style="padding:0;">
-            <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views_total.json" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
+            <img src="https://img.shields.io/badge/Profile%20Views-0-88001b?style=for-the-badge&labelColor=000000" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
           </td>
         </tr>
         <tr>

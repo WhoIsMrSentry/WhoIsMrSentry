@@ -3,10 +3,6 @@ name: Daily Profile Automation
 on:
   workflow_dispatch:
     inputs:
-      profile_view_usernames:
-        description: "Comma-separated usernames for profile views (default: repository owner)"
-        required: false
-        default: ""
       total_repos:
         description: "Value for TOTAL_REPOS in github_stats.svg"
         required: false
@@ -16,8 +12,8 @@ on:
         required: false
         default: true
         type: boolean
-      run_profile_views_total:
-        description: "Run profile views badge update"
+      run_profile_views_badge:
+        description: "Run Profile Views badge update in README"
         required: false
         default: true
         type: boolean
@@ -178,10 +174,10 @@ jobs:
           echo "Failed to push after retries."
           exit 1
 
-  profile_views_total:
-    name: Update profile_views_total.json
+  profile_views_badge:
+    name: Update Profile Views badge in README
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_dispatch' || inputs.run_profile_views_total }}
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.run_profile_views_badge }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -191,21 +187,19 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate total profile views endpoint
-        env:
-          PROFILE_VIEW_USERNAMES: ${{ github.event_name == 'workflow_dispatch' && inputs.profile_view_usernames != '' && inputs.profile_view_usernames || github.repository_owner }}
-        run: python scripts/update_profile_views_total.py
+      - name: Update Profile Views badge
+        run: python scripts/update_profile_views_badge.py
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/profile_views_total.json
+          git add README.md
           if git diff --staged --quiet; then
             echo "No changes."
             exit 0
           fi
-          git commit -m "chore: update total profile views"
+          git commit -m "chore: update profile views badge"
           for i in 1 2 3; do
             git pull --rebase origin main
             if git push origin HEAD:main; then

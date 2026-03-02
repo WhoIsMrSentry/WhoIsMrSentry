@@ -264,14 +264,43 @@ jobs:
         with:
           github_user_name: WhoIsMrSentry
           outputs: |
-            dist/snake_dark.svg?palette=github-dark&color_snake=#88001b&color_dots=#200009,#2a000c,#3a0010,#520015,#6a0019
+            dist/snake_dark.svg?palette=github-dark&color_snake=#88001b&color_dots=#071a07,#0d330d,#146614,#1fa31f,#39ff14
 
       - name: Generate snake (light)
         uses: Platane/snk@v3
         with:
           github_user_name: WhoIsMrSentry
           outputs: |
-            dist/snake.svg?palette=github-light&color_snake=#88001b&color_dots=#200009,#2a000c,#3a0010,#520015,#6a0019
+            dist/snake.svg?palette=github-light&color_snake=#88001b&color_dots=#071a07,#0d330d,#146614,#1fa31f,#39ff14
+
+      - name: Force snake SVG background (sentry red)
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          files = [Path('dist/snake_dark.svg'), Path('dist/snake.svg')]
+          bg = '#200009'
+
+          for file in files:
+              if not file.exists():
+                  print(f'Skip (missing): {file}')
+                  continue
+
+              text = file.read_text(encoding='utf-8')
+
+              if f'<rect width="100%" height="100%" fill="{bg}"' in text:
+                  print(f'Already patched: {file}')
+                  continue
+
+              close = text.find('>')
+              if close == -1:
+                  raise RuntimeError(f'Invalid SVG: {file}')
+
+              insert = f'\n  <rect width="100%" height="100%" fill="{bg}" />'
+              text = text[:close + 1] + insert + text[close + 1:]
+              file.write_text(text, encoding='utf-8')
+              print(f'Patched background: {file}')
+          PY
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4

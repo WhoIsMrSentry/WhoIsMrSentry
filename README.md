@@ -123,16 +123,9 @@ Focus: the **hardware–software boundary** (debuggable, measurable, deployable)
 </div>
 
 <div align="center">
-  <table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;max-width:1120px;">
-    <tr>
-      <td align="center" style="padding:6px;vertical-align:top;width:48%;">
-        <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&langs_count=20&hide=Jupyter%20Notebook&bg_color=200009&title_color=00ff41&text_color=e6ffe6&border_color=e6ffe6&card_width=520" alt="My Programming Languages" style="width:100%;height:auto;display:block;" />
-      </td>
-      <td align="center" style="padding:6px;vertical-align:top;width:52%;">
-        <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;height:auto;display:block;border:1px solid #e6ffe6;border-radius:8px;" />
-      </td>
-    </tr>
-  </table>
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&border_color=e6ffe6&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
+  <br/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;border:1px solid #e6ffe6;border-radius:8px;" />
 </div>
 
 <div align="center">

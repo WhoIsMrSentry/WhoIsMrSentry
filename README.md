@@ -125,14 +125,8 @@
 </div>
 
 <div align="center">
-  <table bgcolor="#200009" style="margin:0 auto;" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <!-- Visible after enabling the snake workflow -->
-        <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" />
-      </td>
-    </tr>
-  </table>
+  <!-- Visible after enabling the snake workflow -->
+  <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" style="display:block;margin:0 auto;border:none;outline:none;box-shadow:none;" />
 </div>
 
 <br/>

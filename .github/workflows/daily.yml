@@ -273,66 +273,59 @@ jobs:
           outputs: |
             dist/snake.svg?palette=github-light&color_snake=%2388001b&color_dots=%23200009,%2339ff14,%2339ff14,%2339ff14,%2339ff14
 
-      - name: Fix dist permissions
-        run: |
-          sudo chown -R "$USER":"$USER" dist || true
-          chmod -R u+rwX dist || true
-
-      - name: Force snake SVG background (sentry red)
+      - name: Patch snake SVGs (background + neon glow)
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          files = [Path('dist/snake_dark.svg'), Path('dist/snake.svg')]
+          source_files = [Path('dist/snake_dark.svg'), Path('dist/snake.svg')]
+          out_dir = Path('dist_patched')
+          out_dir.mkdir(parents=True, exist_ok=True)
+
           bg = '#200009'
           neon = '#39ff14'
           snake = '#88001b'
           glow_id = 'sentry-neon-style'
 
-          for file in files:
-              if not file.exists():
-                  print(f'Skip (missing): {file}')
+          for source_file in source_files:
+              if not source_file.exists():
+                  print(f'Skip (missing): {source_file}')
                   continue
 
-              text = file.read_text(encoding='utf-8')
-
-              if f'<rect width="100%" height="100%" fill="{bg}"' in text:
-                  print(f'Already patched: {file}')
-                  continue
+              text = source_file.read_text(encoding='utf-8')
 
               close = text.find('>')
               if close == -1:
-                  raise RuntimeError(f'Invalid SVG: {file}')
+                  raise RuntimeError(f'Invalid SVG: {source_file}')
 
-                inserts = []
-                if f'<rect width="100%" height="100%" fill="{bg}"' not in text:
+              inserts = []
+              if f'<rect width="100%" height="100%" fill="{bg}"' not in text:
                   inserts.append(f'  <rect width="100%" height="100%" fill="{bg}" />')
 
-                if glow_id not in text:
+              if glow_id not in text:
                   inserts.append(
-                    '  <style id="' + glow_id + '"><![CDATA['
-                    + f'rect[fill="{neon}"], path[fill="{neon}"]' + '{'
-                    + 'filter: drop-shadow(0 0 1px #39ff14) drop-shadow(0 0 5px #39ff14);'
-                    + '}'
-                    + f'rect[fill="{snake}"], path[fill="{snake}"]' + '{'
-                    + 'filter: drop-shadow(0 0 1px #88001b);'
-                    + '}'
-                    + ']]></style>'
+                      '  <style id="' + glow_id + '"><![CDATA['
+                      + f'rect[fill="{neon}"], path[fill="{neon}"]' + '{'
+                      + 'filter: drop-shadow(0 0 1px #39ff14) drop-shadow(0 0 5px #39ff14);'
+                      + '}'
+                      + f'rect[fill="{snake}"], path[fill="{snake}"]' + '{'
+                      + 'filter: drop-shadow(0 0 1px #88001b);'
+                      + '}'
+                      + ']]></style>'
                   )
 
-                if inserts:
+              if inserts:
                   text = text[:close + 1] + '\n' + '\n'.join(inserts) + text[close + 1:]
 
-                tmp = file.with_suffix('.tmp.svg')
-                tmp.write_text(text, encoding='utf-8')
-                tmp.replace(file)
-              print(f'Patched background: {file}')
+              out_file = out_dir / source_file.name
+              out_file.write_text(text, encoding='utf-8')
+              print(f'Patched SVG: {out_file}')
           PY
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
-          build_dir: dist
+          build_dir: dist_patched
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

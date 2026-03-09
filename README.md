@@ -163,7 +163,7 @@
 
 ### Languages
 <p>
-  <img src="https://skillicons.dev/icons?i=python,cpp,cs,js,ts,html,css&theme=dark&perline=11" alt="Languages" />
+  <img src="https://skillicons.dev/icons?i=python,cpp,c,js,ts,html,css&theme=dark&perline=11" alt="Languages" />
 </p>
 
 ### Frontend

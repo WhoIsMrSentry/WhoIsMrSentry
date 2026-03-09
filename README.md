@@ -43,6 +43,118 @@
 
 <div align="center">
 
+## Build Focus
+
+</div>
+
+<table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;max-width:920px;table-layout:fixed;">
+  <tr>
+    <td style="padding:14px 18px;border:1px solid #2a0b12;background:#120307;vertical-align:top;">
+      <h3 align="center">Embedded Intelligence</h3>
+      <p align="center">Building systems where firmware, sensors, and inference have to work together under real constraints.</p>
+    </td>
+    <td style="padding:14px 18px;border:1px solid #2a0b12;background:#120307;vertical-align:top;">
+      <h3 align="center">Computer Vision in Practice</h3>
+      <p align="center">Working on detection, perception, and optimization pipelines that are useful beyond a notebook demo.</p>
+    </td>
+    <td style="padding:14px 18px;border:1px solid #2a0b12;background:#120307;vertical-align:top;">
+      <h3 align="center">Maker Mindset</h3>
+      <p align="center">Prototyping across software, electronics, and mechanical systems to turn ideas into usable builds.</p>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<div align="center">
+
+## Currently Building
+
+</div>
+
+<div align="center">
+  <table style="margin:0 auto;border-collapse:collapse;width:100%;max-width:920px;table-layout:fixed;">
+    <tr>
+      <td style="padding:18px;border:1px solid #2a0b12;background:#200009;vertical-align:top;">
+        <p><strong>SentryBOT</strong><br/>Open-source robotics platform combining embedded control, vision, and autonomous system design.</p>
+        <p><strong>Edge AI experiments</strong><br/>Testing efficient inference flows for low-power and embedded environments.</p>
+        <p><strong>Vision-driven tooling</strong><br/>Exploring practical CV workflows for robotics, perception, and real-world deployment.</p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br/>
+
+<div align="center">
+
+## Roadmap 2026
+
+</div>
+
+<table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;max-width:920px;table-layout:fixed;">
+  <tr>
+    <td style="padding:16px 18px;border:1px solid #2a0b12;background:#120307;vertical-align:top;width:25%;">
+      <h3 align="center">01</h3>
+      <p align="center"><strong>Scale SentryBOT</strong><br/>Push the platform toward a more complete open-source robotics stack.</p>
+    </td>
+    <td style="padding:16px 18px;border:1px solid #2a0b12;background:#120307;vertical-align:top;width:25%;">
+      <h3 align="center">02</h3>
+      <p align="center"><strong>Deploy Edge AI</strong><br/>Run more vision and inference workloads on constrained hardware.</p>
+    </td>
+    <td style="padding:16px 18px;border:1px solid #2a0b12;background:#120307;vertical-align:top;width:25%;">
+      <h3 align="center">03</h3>
+      <p align="center"><strong>Ship More Builds</strong><br/>Turn experiments into documented, reproducible, real-world projects.</p>
+    </td>
+    <td style="padding:16px 18px;border:1px solid #2a0b12;background:#120307;vertical-align:top;width:25%;">
+      <h3 align="center">04</h3>
+      <p align="center"><strong>Share The Process</strong><br/>Publish more technical notes, demos, and engineering breakdowns.</p>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<div align="center">
+
+## Engineering Principles
+
+</div>
+
+<div align="center">
+  <p>
+    <img src="https://img.shields.io/badge/Prototype%20Fast-88001b?style=for-the-badge&logo=githubactions&logoColor=white" alt="Prototype Fast" />
+    <img src="https://img.shields.io/badge/Test%20in%20Reality-000000?style=for-the-badge&logo=verizon&logoColor=white" alt="Test in Reality" />
+    <img src="https://img.shields.io/badge/Optimize%20for%20Constraints-1f2335?style=for-the-badge&logo=raspberrypi&logoColor=white" alt="Optimize for Constraints" />
+    <img src="https://img.shields.io/badge/Build%20End%20to%20End-88001b?style=for-the-badge&logo=docker&logoColor=white" alt="Build End to End" />
+  </p>
+  <p>From low-level control to deployment details, I prefer systems that survive outside the lab.</p>
+</div>
+
+<br/>
+
+<div align="center">
+
+## Open To Collaborate
+
+</div>
+
+<div align="center">
+  <p>Interested in robotics, embedded AI, computer vision, or open-source hardware/software builds.</p>
+  <p>
+    <a href="https://github.com/WhoIsMrSentry?tab=repositories">
+      <img src="https://img.shields.io/badge/Explore%20My%20Projects-000000?style=for-the-badge&logo=github&logoColor=white" alt="Explore My Projects" />
+    </a>
+    <a href="https://github.com/WhoIsMrSentry/SentryBOT">
+      <img src="https://img.shields.io/badge/Follow%20SentryBOT-88001b?style=for-the-badge&logo=github&logoColor=white" alt="Follow SentryBOT" />
+    </a>
+  </p>
+</div>
+
+<br/>
+
+<div align="center">
+
 ## 🚀 Tech Stack
 
 </div>

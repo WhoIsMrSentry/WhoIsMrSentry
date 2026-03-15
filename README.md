@@ -43,24 +43,6 @@
 
 <div align="center">
 
-## Engineering Principles
-
-</div>
-
-<div align="center">
-  <p>
-    <img src="https://img.shields.io/badge/Prototype%20Fast-88001b?style=for-the-badge&logo=githubactions&logoColor=white" alt="Prototype Fast" />
-    <img src="https://img.shields.io/badge/Test%20in%20Reality-000000?style=for-the-badge&logo=verizon&logoColor=white" alt="Test in Reality" />
-    <img src="https://img.shields.io/badge/Optimize%20for%20Constraints-1f2335?style=for-the-badge&logo=raspberrypi&logoColor=white" alt="Optimize for Constraints" />
-    <img src="https://img.shields.io/badge/Build%20End%20to%20End-88001b?style=for-the-badge&logo=docker&logoColor=white" alt="Build End to End" />
-  </p>
-  <p>From low-level control to deployment details, I prefer systems that survive outside the lab.</p>
-</div>
-
-<br/>
-
-<div align="center">
-
 ## Open To Collaborate
 
 </div>

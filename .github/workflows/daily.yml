@@ -6,7 +6,7 @@ on:
       total_repos:
         description: "Value for TOTAL_REPOS in github_stats.svg"
         required: false
-        default: "46"
+        default: "76"
       run_github_stats_svg:
         description: "Run github_stats.svg update"
         required: false
@@ -146,7 +146,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GHT }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
-          TOTAL_REPOS: ${{ github.event_name == 'workflow_dispatch' && inputs.total_repos || '46' }}
+          TOTAL_REPOS: ${{ github.event_name == 'workflow_dispatch' && inputs.total_repos || '76' }}
         run: |
           python scripts/update_github_stats_svg.py
 

@@ -51,16 +51,26 @@ def build_badge_url(count: int) -> str:
 def update_readme_badge(count: int) -> bool:
     text = README_PATH.read_text(encoding="utf-8")
     new_url = build_badge_url(count)
-
-    pattern = r'(<img\s+src=")[^"]+(" alt="Profile Views \(All Time\)"[^>]*>)'
-    new_text, replaced = re.subn(pattern, rf"\1{new_url}\2", text, count=1)
-    if replaced == 0:
+    tag_pattern = re.compile(r'(<img\b[^>]*\balt="Profile Views \(All Time\)"[^>]*>)', re.IGNORECASE)
+    m = tag_pattern.search(text)
+    if not m:
         raise RuntimeError("Profile Views badge not found in README.md")
 
-    if new_text != text:
-        README_PATH.write_text(new_text, encoding="utf-8")
-        return True
-    return False
+    old_tag = m.group(1)
+
+    # Replace existing src attribute if present, otherwise insert one after '<img'
+    if re.search(r'\bsrc="', old_tag, re.IGNORECASE):
+        new_tag = re.sub(r'\bsrc="[^"]*"', f'src="{new_url}"', old_tag, count=1, flags=re.IGNORECASE)
+    else:
+        # insert src after the '<img'
+        new_tag = old_tag.replace('<img', f'<img src="{new_url}"', 1)
+
+    if new_tag == old_tag:
+        return False
+
+    new_text = text[:m.start(1)] + new_tag + text[m.end(1):]
+    README_PATH.write_text(new_text, encoding="utf-8")
+    return True
 
 
 def main() -> int:

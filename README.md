@@ -52,6 +52,8 @@
   <div style="display:flex;justify-content:center;gap:16px;">
     <img src="https://cdn.simpleicons.org/python/ffffff" alt="Python" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
   <!-- Row 2: 3 -->
   <div style="display:flex;justify-content:center;gap:16px;">
@@ -59,6 +61,8 @@
     <img src="https://cdn.simpleicons.org/cplusplus/ffffff" alt="C++" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://api.iconify.design/simple-icons/csharp.svg?color=%23ffffff" alt="C#" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
   <!-- Row 3: 5 -->
   <div style="display:flex;justify-content:center;gap:16px;">
@@ -68,6 +72,8 @@
     <img src="https://cdn.simpleicons.org/typescript/ffffff" alt="TypeScript" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/bootstrap/ffffff" alt="Bootstrap" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
   <!-- Row 4: 7 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
@@ -79,6 +85,8 @@
     <img src="https://cdn.simpleicons.org/figma/ffffff" alt="Figma" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/postman/ffffff" alt="Postman" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
   <!-- Row 5: 9 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
@@ -92,6 +100,8 @@
     <img src="https://cdn.simpleicons.org/redis/ffffff" alt="Redis" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/supabase/ffffff" alt="Supabase" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
   <!-- Row 6: 11 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
@@ -107,6 +117,8 @@
     <img src="https://cdn.simpleicons.org/pandas/ffffff" alt="Pandas" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/numpy/ffffff" alt="NumPy" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
   <!-- Row 7: 13 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
@@ -124,14 +136,16 @@
     <img src="https://cdn.simpleicons.org/gnubash/ffffff" alt="GNU Bash" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/nginx/ffffff" alt="NGINX" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
   <!-- Row 8: 15 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
-    <img src="https://api.iconify.design/simple-icons/arm.svg?color=%23ffffff" alt="ARM" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/arduino/ffffff" alt="Arduino" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/raspberrypi/ffffff" alt="Raspberry Pi" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/espressif/ffffff" alt="ESP32" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/stmicroelectronics/ffffff" alt="STM32" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/arm.svg?color=%23ffffff" alt="ARM" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://api.iconify.design/simple-icons/nvidia.svg?color=%23ffffff" alt="NVIDIA" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/ros/ffffff" alt="ROS" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/platformio/ffffff" alt="PlatformIO" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
@@ -143,6 +157,8 @@
     <img src="https://cdn.simpleicons.org/googlecloud/ffffff" alt="Google Cloud" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
     <img src="https://cdn.simpleicons.org/virtualbox/ffffff" alt="VirtualBox" style="height:56px;background:#1f2335;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
+  <br/>
+
 
 </div>
 

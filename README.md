@@ -14,28 +14,20 @@
 <br/>
 <div align="center">
   <div style="display:inline-block;text-align:center;max-width:980px;">
-    <p>
-      <img src="https://img.shields.io/badge/Embedded%20Systems-1f2335?style=for-the-badge&logo=arduino&logoColor=white" alt="Embedded Systems" />
-      <img src="https://img.shields.io/badge/Embedded%20Linux-1f2335?style=for-the-badge&logo=linux&logoColor=white" alt="Embedded Linux" />
-      <img src="https://img.shields.io/badge/Firmware%20(C)-1f2335?style=for-the-badge&logo=c&logoColor=white" alt="Firmware C" />
-      <img src="https://img.shields.io/badge/Edge%20AI-1f2335?style=for-the-badge&logo=tensorflow&logoColor=white" alt="Edge AI" />
-    </p>
-    <p>
-      <img src="https://img.shields.io/badge/Computer%20Vision-1f2335?style=for-the-badge&logo=opencv&logoColor=white" alt="Computer Vision" />
-      <img src="https://img.shields.io/badge/Mechatronics-1f2335?style=for-the-badge&logo=ros&logoColor=white" alt="Mechatronics" />
-      <img src="https://img.shields.io/badge/Autonomous%20Systems-1f2335?style=for-the-badge&logo=raspberrypi&logoColor=white" alt="Autonomous Systems" />
-      <img src="https://img.shields.io/badge/Reverse%20Engineering-1f2335?style=for-the-badge&logo=github&logoColor=white" alt="Reverse Engineering" />
-    </p>
-    <p style="margin-top:8px;">
-      <a href="https://github.com/WhoIsMrSentry/SentryBOT">
-        <img alt="SentryBOT" src="https://img.shields.io/badge/SentryBOT-Open%20Source-88001b?style=for-the-badge&logo=github&logoColor=white" />
-      </a>
-    </p>
-    <p style="margin-top:8px;">
-      <a href="https://buymeacoffee.com/whoismrsentry">
-        <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-1f2335?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me A Coffee" />
-      </a>
-    </p>
+    <div style="width:100%;display:flex;justify-content:center;margin:8px 0;">
+      <div style="background:#0f1113;border-radius:10px;padding:12px;width:100%;max-width:900px;box-shadow:0 10px 30px rgba(0,0,0,0.6);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="display:inline-block;width:12px;height:12px;background:#ff5f56;border-radius:50%;"></span>
+          <span style="display:inline-block;width:12px;height:12px;background:#ffbd2e;border-radius:50%;"></span>
+          <span style="display:inline-block;width:12px;height:12px;background:#27c93f;border-radius:50%;"></span>
+          <strong style="color:#9ae66e;margin-left:8px;">root@whoismrsentry:~$</strong>
+        </div>
+        <div style="background:#0b0d0f;padding:12px;border-radius:6px;">
+          <img src="github_stats.svg" alt="GitHub Stats (Terminal Style)" style="width:100%;height:auto;display:block;" />
+        </div>
+      </div>
+    </div>
+    <!-- Removed SentryBOT and Buy Me A Coffee badges as requested -->
   </div>
 </div>
 <br/>
@@ -177,11 +169,7 @@
 
 <div align="center">
   <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&hide_border=true&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
-  <div align="center">
-  <a href="https://github.com/WhoIsMrSentry">
-    <img width="900" alt="GitHub Stats (Terminal Style)" src="github_stats.svg" />
-  </a>
-</div>
+<!-- Duplicate terminal-style GitHub stats removed; single terminal retained above -->
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;" />
 </div>
 

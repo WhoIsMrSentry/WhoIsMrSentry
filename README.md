@@ -8,7 +8,6 @@
 <div align="center">
   <h1>Emir Hamurcu</h1>
   <h3>Robotics & Embedded AI Enthusiast • Software Developer • Maker</h3>
-  <p>Curious builder exploring Edge AI, Embedded Systems, and Computer Vision</p>
   <p><em>"When you rest, you rust."</em></p>
 </div>
 <br/>

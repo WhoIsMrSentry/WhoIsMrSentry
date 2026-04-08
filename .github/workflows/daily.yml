@@ -12,6 +12,11 @@ on:
         required: false
         default: true
         type: boolean
+      run_profile_views_json:
+        description: "Run profile views endpoint update"
+        required: false
+        default: true
+        type: boolean
       run_sentrybot_views:
         description: "Run SentryBOT views badge update"
         required: false
@@ -203,6 +208,44 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update SentryBOT views"
+          for i in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push failed (attempt $i), retrying..."
+            sleep 3
+          done
+          echo "Failed to push after retries."
+          exit 1
+
+  profile_views_json:
+    name: Update profile_views.json
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.run_profile_views_json }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate profile views endpoint
+        run: python scripts/update_profile_views_json.py
+        continue-on-error: true
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/profile_views.json
+          if git diff --staged --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "chore: update profile views endpoint"
           for i in 1 2 3; do
             git pull --rebase origin main
             if git push origin HEAD:main; then

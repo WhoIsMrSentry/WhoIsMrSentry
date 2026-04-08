@@ -186,7 +186,7 @@
       <table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;">
         <tr>
           <td align="center" style="padding:0;">
-            <img src="https://visitor-badge.laobi.icu/badge?page_id=WhoIsMrSentry.WhoIsMrSentry&left_text=Profile%20Views&left_color=000000&right_color=88001b" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
+            <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_views.json" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
           </td>
         </tr>
         <tr>

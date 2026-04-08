@@ -167,7 +167,8 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&hide_border=true&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook,Rust&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&hide_border=true&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
+  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/tech_usage.svg" alt="Repository-based Libraries and Frameworks Usage" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
 <!-- Duplicate terminal-style GitHub stats removed; single terminal retained above -->
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;" />
 </div>
@@ -185,7 +186,7 @@
       <table align="center" style="margin:0 auto;border-collapse:collapse;width:100%;">
         <tr>
           <td align="center" style="padding:0;">
-            <img src="https://img.shields.io/badge/Profile%20Views-636-88001b?style=for-the-badge&labelColor=000000" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
+            <img src="https://visitor-badge.laobi.icu/badge?page_id=WhoIsMrSentry.WhoIsMrSentry&left_text=Profile%20Views&left_color=000000&right_color=88001b" alt="Profile Views (All Time)" height="64" style="display:block;margin:0;" />
           </td>
         </tr>
         <tr>

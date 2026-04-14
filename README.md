@@ -1,5 +1,7 @@
 <div align="center">
-  <img alt="iko2" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/iko2.gif?raw=1" />  
+   <div style="background:#0b0d0f;padding:12px;border-radius:6px;">
+          <img src="github_stats.svg" alt="GitHub Stats (Terminal Style)" style="width:100%;height:auto;display:block;" />
+        </div>
 </div>
 
 <br/>
@@ -20,9 +22,6 @@
           <span style="display:inline-block;width:12px;height:12px;background:#ffbd2e;border-radius:50%;"></span>
           <span style="display:inline-block;width:12px;height:12px;background:#27c93f;border-radius:50%;"></span>
           <strong style="color:#9ae66e;margin-left:8px;">root@whoismrsentry:~$</strong>
-        </div>
-        <div style="background:#0b0d0f;padding:12px;border-radius:6px;">
-          <img src="github_stats.svg" alt="GitHub Stats (Terminal Style)" style="width:100%;height:auto;display:block;" />
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 <div align="center">
+   <strong style="color:#9ae66e;margin-left:8px;">root@whoismrsentry:~$</strong>
    <div style="background:#0b0d0f;padding:12px;border-radius:6px;">
           <img src="github_stats.svg" alt="GitHub Stats (Terminal Style)" style="width:100%;height:auto;display:block;" />
         </div>
@@ -21,7 +22,6 @@
           <span style="display:inline-block;width:12px;height:12px;background:#ff5f56;border-radius:50%;"></span>
           <span style="display:inline-block;width:12px;height:12px;background:#ffbd2e;border-radius:50%;"></span>
           <span style="display:inline-block;width:12px;height:12px;background:#27c93f;border-radius:50%;"></span>
-          <strong style="color:#9ae66e;margin-left:8px;">root@whoismrsentry:~$</strong>
         </div>
       </div>
     </div>

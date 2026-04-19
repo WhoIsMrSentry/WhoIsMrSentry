@@ -1,12 +1,3 @@
-<div align="center">
-   <strong style="color:#9ae66e;margin-left:8px;">root@whoismrsentry:~$</strong>
-   <div style="background:#0b0d0f;padding:12px;border-radius:6px;">
-          <img src="github_stats.svg" alt="GitHub Stats (Terminal Style)" style="width:100%;height:auto;display:block;" />
-        </div>
-</div>
-
-<br/>
-
 <br/>
 <div align="center">
   <h1>Emir Hamurcu</h1>
@@ -24,7 +15,7 @@
 </div>
 <br/>
 <div align="center">
-  <img src="assets/profile_terminal_panel.svg?v=2" alt="Terminal style profile panel" width="100%" />
+  <img src="assets/profile_terminal_panel.svg?v=15" alt="Terminal style profile panel" width="100%" />
 </div>
 <br/>
 

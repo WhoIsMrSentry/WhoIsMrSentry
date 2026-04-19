@@ -15,70 +15,24 @@
 </div>
 <br/>
 <div align="center">
-  <div style="display:inline-block;text-align:center;max-width:980px;">
-    <div style="width:100%;display:flex;justify-content:center;margin:8px 0;">
-      <div style="background:#0f1113;border-radius:10px;padding:12px;width:100%;max-width:900px;box-shadow:0 10px 30px rgba(0,0,0,0.6);">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <span style="display:inline-block;width:12px;height:12px;background:#ff5f56;border-radius:50%;"></span>
-          <span style="display:inline-block;width:12px;height:12px;background:#ffbd2e;border-radius:50%;"></span>
-          <span style="display:inline-block;width:12px;height:12px;background:#27c93f;border-radius:50%;"></span>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
-          <img src="https://img.shields.io/badge/Focus-Robotics%20%26%20Embedded%20AI-88001b?style=for-the-badge&labelColor=000000" alt="Focus: Robotics and Embedded AI" />
-          <img src="https://img.shields.io/badge/Role-Software%20Developer-88001b?style=for-the-badge&labelColor=000000&logo=github&logoColor=white" alt="Role: Software Developer" />
-          <img src="https://img.shields.io/badge/Identity-Maker-88001b?style=for-the-badge&labelColor=000000&logo=arduino&logoColor=white" alt="Identity: Maker" />
-          <img src="https://img.shields.io/badge/Mindset-When%20you%20rest%2C%20you%20rust-88001b?style=for-the-badge&labelColor=000000" alt="Mindset: When you rest, you rust" />
-          <img src="https://img.shields.io/badge/Now-Building%20SentryBOT-88001b?style=for-the-badge&labelColor=000000&logo=githubactions&logoColor=white" alt="Now: Building SentryBOT" />
-          <img src="https://img.shields.io/badge/Status-Open%20to%20Collaboration-88001b?style=for-the-badge&labelColor=000000" alt="Status: Open to Collaboration" />
-          <img src="https://img.shields.io/badge/Languages-TR%20%7C%20EN-88001b?style=for-the-badge&labelColor=000000" alt="Languages: Turkish and English" />
-        </div>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px;">
-          <a href="https://github.com/WhoIsMrSentry?tab=followers">
-            <img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
-          </a>
-          <a href="https://github.com/WhoIsMrSentry?tab=repositories">
-            <img src="https://img.shields.io/github/stars/WhoIsMrSentry?style=for-the-badge&label=Stars&color=88001b&labelColor=000000&logo=github" alt="GitHub Stars" />
-          </a>
-        </div>
-        <div style="height:1px;background:#1f2335;margin:14px 0 12px;"></div>
-        <h3 style="margin:0 0 10px;color:#e6ffe6;">More About Me</h3>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
-          <img src="https://img.shields.io/badge/Domain-Edge%20AI%20%26%20Robotics-88001b?style=for-the-badge&labelColor=000000" alt="Domain: Edge AI and Robotics" />
-          <img src="https://img.shields.io/badge/Specialty-Computer%20Vision-88001b?style=for-the-badge&labelColor=000000&logo=opencv&logoColor=white" alt="Specialty: Computer Vision" />
-          <img src="https://img.shields.io/badge/Systems-Embedded%20%26%20Firmware-88001b?style=for-the-badge&labelColor=000000" alt="Systems: Embedded and Firmware" />
-          <img src="https://img.shields.io/badge/Workflow-Prototype%20to%20Production-88001b?style=for-the-badge&labelColor=000000" alt="Workflow: Prototype to Production" />
-          <img src="https://img.shields.io/badge/Stack-Linux%20First-88001b?style=for-the-badge&labelColor=000000&logo=linux&logoColor=white" alt="Stack: Linux First" />
-          <img src="https://img.shields.io/badge/Mission-Building%20SentryBOT-88001b?style=for-the-badge&labelColor=000000&logo=github&logoColor=white" alt="Mission: Building SentryBOT" />
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;">
-          <div style="flex:1 1 280px;background:#0b0d0f;border:1px solid #1f2335;border-radius:10px;padding:14px;text-align:left;">
-            <h3 style="margin:0 0 10px 0;color:#e6ffe6;">Quick Facts</h3>
-            <p style="margin:0;color:#cfd7cf;line-height:1.6;">I build practical systems that combine software, AI and embedded hardware.</p>
-            <p style="margin:8px 0 0;color:#cfd7cf;line-height:1.6;">My favorite path is turning an idea into a working prototype as fast as possible.</p>
-            <p style="margin:8px 0 0;color:#cfd7cf;line-height:1.6;">I enjoy shipping tools that are useful, measurable and easy to maintain.</p>
-          </div>
-          <div style="flex:1 1 280px;background:#0b0d0f;border:1px solid #1f2335;border-radius:10px;padding:14px;text-align:left;">
-            <h3 style="margin:0 0 10px 0;color:#e6ffe6;">What I Build</h3>
-            <p style="margin:0;color:#cfd7cf;line-height:1.6;">Vision-powered robotics workflows</p>
-            <p style="margin:8px 0 0;color:#cfd7cf;line-height:1.6;">Automation scripts and developer tooling</p>
-            <p style="margin:8px 0 0;color:#cfd7cf;line-height:1.6;">Backend services for AI-enabled products</p>
-          </div>
-        </div>
-        <div style="height:1px;background:#1f2335;margin:14px 0 12px;"></div>
-        <h3 style="margin:0 0 10px;color:#e6ffe6;">Achievement &amp; Proof</h3>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
-          <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FWhoIsMrSentry&query=%24.public_repos&label=Public%20Repos&style=for-the-badge&color=88001b&labelColor=000000&logo=github" alt="Public repositories" />
-          <img src="https://img.shields.io/github/stars/WhoIsMrSentry?style=for-the-badge&label=Total%20Stars&color=88001b&labelColor=000000&logo=github" alt="Total stars" />
-          <img src="https://img.shields.io/github/last-commit/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Last%20Commit&color=88001b&labelColor=000000&logo=git" alt="Last commit" />
-          <img src="https://img.shields.io/github/commit-activity/m/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Monthly%20Commits&color=88001b&labelColor=000000&logo=githubactions&logoColor=white" alt="Monthly commit activity" />
-          <img src="https://img.shields.io/github/issues-pr/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Open%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Open issues and pull requests" />
-          <img src="https://img.shields.io/github/issues-pr-closed/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Closed%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Closed issues and pull requests" />
-        </div>
-      </div>
-    </div>
-    <!-- Removed SentryBOT and Buy Me A Coffee badges as requested -->
-  </div>
+  <img src="assets/profile_terminal_panel.svg" alt="Terminal style profile panel" width="100%" />
 </div>
+<br/>
+
+<div align="center">
+
+## 🏆 Achievement &amp; Proof
+
+<img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
+<img src="https://img.shields.io/github/stars/WhoIsMrSentry?style=for-the-badge&label=Total%20Stars&color=88001b&labelColor=000000&logo=github" alt="Total stars" />
+<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FWhoIsMrSentry&query=%24.public_repos&label=Public%20Repos&style=for-the-badge&color=88001b&labelColor=000000&logo=github" alt="Public repositories" />
+<img src="https://img.shields.io/github/last-commit/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Last%20Commit&color=88001b&labelColor=000000&logo=git" alt="Last commit" />
+<img src="https://img.shields.io/github/commit-activity/m/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Monthly%20Commits&color=88001b&labelColor=000000&logo=githubactions&logoColor=white" alt="Monthly commit activity" />
+<img src="https://img.shields.io/github/issues-pr/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Open%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Open issues and pull requests" />
+<img src="https://img.shields.io/github/issues-pr-closed/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Closed%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Closed issues and pull requests" />
+
+</div>
+
 <br/>
 
 <div align="center">

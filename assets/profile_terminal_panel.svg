@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="620" viewBox="0 0 920 620" role="img" aria-labelledby="title desc">
+  <title id="title">Profile Terminal Panel</title>
+  <desc id="desc">Terminal style profile summary for WhoIsMrSentry.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #0b0d0f; }
+      .border { fill: none; stroke: #1f2335; stroke-width: 2; }
+      .head { fill: #11141a; }
+      .line { stroke: #1f2335; stroke-width: 1; }
+      .title { fill: #39ff14; font: 700 18px "JetBrains Mono", Consolas, monospace; }
+      .section { fill: #e6ffe6; font: 700 30px "JetBrains Mono", Consolas, monospace; }
+      .label { fill: #ff1744; font: 700 15px "JetBrains Mono", Consolas, monospace; }
+      .text { fill: #d7e1d7; font: 500 22px "JetBrains Mono", Consolas, monospace; }
+      .small { fill: #a7b5a7; font: 500 18px "JetBrains Mono", Consolas, monospace; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="920" height="620" rx="16" />
+  <rect class="border" x="1" y="1" width="918" height="618" rx="16" />
+
+  <rect class="head" x="0" y="0" width="920" height="52" rx="16" />
+  <circle cx="28" cy="26" r="8" fill="#ff5f56" />
+  <circle cx="52" cy="26" r="8" fill="#ffbd2e" />
+  <circle cx="76" cy="26" r="8" fill="#27c93f" />
+  <text class="title" x="104" y="33">root@whoismrsentry:~$ ./profile --summary</text>
+
+  <text class="section" x="36" y="92">Identity</text>
+  <text class="label" x="36" y="126">FOCUS</text>
+  <text class="text" x="150" y="126">Robotics and Embedded AI</text>
+
+  <text class="label" x="36" y="158">ROLE</text>
+  <text class="text" x="150" y="158">Software Developer</text>
+
+  <text class="label" x="36" y="190">IDENTITY</text>
+  <text class="text" x="150" y="190">Maker</text>
+
+  <text class="label" x="36" y="222">NOW</text>
+  <text class="text" x="150" y="222">Building SentryBOT</text>
+
+  <text class="label" x="36" y="254">STATUS</text>
+  <text class="text" x="150" y="254">Open to Collaboration</text>
+
+  <text class="label" x="36" y="286">LANGUAGES</text>
+  <text class="text" x="150" y="286">TR | EN</text>
+
+  <line class="line" x1="28" y1="316" x2="892" y2="316" />
+
+  <text class="section" x="36" y="364">More About Me</text>
+  <text class="small" x="36" y="398">- I build practical systems that combine software, AI, and embedded hardware.</text>
+  <text class="small" x="36" y="430">- I enjoy turning ideas into working prototypes quickly and cleanly.</text>
+  <text class="small" x="36" y="462">- I ship measurable tools focused on reliability and maintainability.</text>
+
+  <line class="line" x1="28" y1="488" x2="892" y2="488" />
+
+  <text class="section" x="36" y="536">What I Build</text>
+  <text class="small" x="36" y="568">- Vision-powered robotics workflows</text>
+  <text class="small" x="430" y="568">- Automation scripts and developer tooling</text>
+  <text class="small" x="36" y="598">- Backend services for AI-enabled products</text>
+</svg>

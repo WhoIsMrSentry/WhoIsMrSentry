@@ -12,27 +12,20 @@
   <h1>Emir Hamurcu</h1>
   <h3>Robotics & Embedded AI Enthusiast • Software Developer • Maker</h3>
   <p><em>"When you rest, you rust."</em></p>
+  <br/>
+  <img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/stars/WhoIsMrSentry?style=for-the-badge&label=Total%20Stars&color=88001b&labelColor=000000&logo=github" alt="Total stars" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FWhoIsMrSentry&query=%24.public_repos&label=Public%20Repos&style=for-the-badge&color=88001b&labelColor=000000&logo=github" alt="Public repositories" />
+  <br/>
+  <img src="https://img.shields.io/github/last-commit/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Last%20Commit&color=88001b&labelColor=000000&logo=git" alt="Last commit" />
+  <img src="https://img.shields.io/github/commit-activity/m/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Monthly%20Commits&color=88001b&labelColor=000000&logo=githubactions&logoColor=white" alt="Monthly commit activity" />
+  <img src="https://img.shields.io/github/issues-pr/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Open%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Open issues and pull requests" />
+  <img src="https://img.shields.io/github/issues-pr-closed/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Closed%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Closed issues and pull requests" />
 </div>
 <br/>
 <div align="center">
-  <img src="assets/profile_terminal_panel.svg" alt="Terminal style profile panel" width="100%" />
+  <img src="assets/profile_terminal_panel.svg?v=2" alt="Terminal style profile panel" width="100%" />
 </div>
-<br/>
-
-<div align="center">
-
-## 🏆 Achievement &amp; Proof
-
-<img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
-<img src="https://img.shields.io/github/stars/WhoIsMrSentry?style=for-the-badge&label=Total%20Stars&color=88001b&labelColor=000000&logo=github" alt="Total stars" />
-<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FWhoIsMrSentry&query=%24.public_repos&label=Public%20Repos&style=for-the-badge&color=88001b&labelColor=000000&logo=github" alt="Public repositories" />
-<img src="https://img.shields.io/github/last-commit/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Last%20Commit&color=88001b&labelColor=000000&logo=git" alt="Last commit" />
-<img src="https://img.shields.io/github/commit-activity/m/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Monthly%20Commits&color=88001b&labelColor=000000&logo=githubactions&logoColor=white" alt="Monthly commit activity" />
-<img src="https://img.shields.io/github/issues-pr/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Open%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Open issues and pull requests" />
-<img src="https://img.shields.io/github/issues-pr-closed/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Closed%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Closed issues and pull requests" />
-
-</div>
-
 <br/>
 
 <div align="center">

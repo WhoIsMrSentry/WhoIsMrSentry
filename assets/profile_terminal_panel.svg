@@ -1,61 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="620" viewBox="0 0 920 620" role="img" aria-labelledby="title desc">
-  <title id="title">Profile Terminal Panel</title>
-  <desc id="desc">Terminal style profile summary for WhoIsMrSentry.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="640" viewBox="0 0 920 640" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Profile Terminal Output</title>
+  <desc id="desc">Animated terminal session showing profile summary, about text, and project highlights.</desc>
 
   <defs>
     <style>
-      .bg { fill: #0b0d0f; }
-      .border { fill: none; stroke: #1f2335; stroke-width: 2; }
-      .head { fill: #11141a; }
+      .outer { fill: #200009; }
+      .panel { fill: #0b0d0f; stroke: #88001b; stroke-width: 2; }
+      .head { fill: #121620; }
       .line { stroke: #1f2335; stroke-width: 1; }
-      .title { fill: #39ff14; font: 700 18px "JetBrains Mono", Consolas, monospace; }
-      .section { fill: #e6ffe6; font: 700 30px "JetBrains Mono", Consolas, monospace; }
-      .label { fill: #ff1744; font: 700 15px "JetBrains Mono", Consolas, monospace; }
-      .text { fill: #d7e1d7; font: 500 22px "JetBrains Mono", Consolas, monospace; }
-      .small { fill: #a7b5a7; font: 500 18px "JetBrains Mono", Consolas, monospace; }
+      .prompt { fill: #39ff14; font: 700 18px "JetBrains Mono", Consolas, monospace; }
+      .cmd { fill: #e6ffe6; font: 600 18px "JetBrains Mono", Consolas, monospace; }
+      .out { fill: #c8d5c8; font: 500 16px "JetBrains Mono", Consolas, monospace; }
+      .key { fill: #ff1744; font: 700 16px "JetBrains Mono", Consolas, monospace; }
+      .muted { fill: #98a998; font: 500 15px "JetBrains Mono", Consolas, monospace; }
     </style>
+
+    <clipPath id="clip-cmd1">
+      <rect x="302" y="88" width="0" height="24">
+        <set attributeName="width" to="0" begin="loop.begin" />
+        <animate attributeName="width" from="0" to="250" dur="2s" begin="loop.begin+0.8s" fill="freeze" />
+      </rect>
+    </clipPath>
+
+    <clipPath id="clip-cmd2">
+      <rect x="302" y="351" width="0" height="24">
+        <set attributeName="width" to="0" begin="loop.begin" />
+        <animate attributeName="width" from="0" to="130" dur="1.4s" begin="loop.begin+7.4s" fill="freeze" />
+      </rect>
+    </clipPath>
+
+    <clipPath id="clip-cmd3">
+      <rect x="302" y="501" width="0" height="24">
+        <set attributeName="width" to="0" begin="loop.begin" />
+        <animate attributeName="width" from="0" to="165" dur="1.5s" begin="loop.begin+12.6s" fill="freeze" />
+      </rect>
+    </clipPath>
   </defs>
 
-  <rect class="bg" x="0" y="0" width="920" height="620" rx="16" />
-  <rect class="border" x="1" y="1" width="918" height="618" rx="16" />
+  <rect class="outer" x="0" y="0" width="920" height="640" rx="16" />
+  <rect class="panel" x="22" y="22" width="876" height="596" rx="14" />
+  <rect class="head" x="22" y="22" width="876" height="48" rx="14" />
 
-  <rect class="head" x="0" y="0" width="920" height="52" rx="16" />
-  <circle cx="28" cy="26" r="8" fill="#ff5f56" />
-  <circle cx="52" cy="26" r="8" fill="#ffbd2e" />
-  <circle cx="76" cy="26" r="8" fill="#27c93f" />
-  <text class="title" x="104" y="33">root@whoismrsentry:~$ ./profile --summary</text>
+  <circle cx="46" cy="46" r="7" fill="#ff5f56" />
+  <circle cx="68" cy="46" r="7" fill="#ffbd2e" />
+  <circle cx="90" cy="46" r="7" fill="#27c93f" />
+  <text class="muted" x="116" y="51">terminal session: profile</text>
 
-  <text class="section" x="36" y="92">Identity</text>
-  <text class="label" x="36" y="126">FOCUS</text>
-  <text class="text" x="150" y="126">Robotics and Embedded AI</text>
+  <rect x="0" y="0" width="1" height="1" fill="transparent">
+    <animate id="loop" attributeName="opacity" values="1;1" dur="18s" repeatCount="indefinite" />
+  </rect>
 
-  <text class="label" x="36" y="158">ROLE</text>
-  <text class="text" x="150" y="158">Software Developer</text>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.03;0.03;0.98;0.98" dur="18s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete" />
+    <text class="prompt" x="44" y="106">root@whoismrsentry:~$</text>
+    <text class="cmd" x="302" y="106" clip-path="url(#clip-cmd1)">./profile --summary</text>
+  </g>
 
-  <text class="label" x="36" y="190">IDENTITY</text>
-  <text class="text" x="150" y="190">Maker</text>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.18;0.18;0.98;0.98" dur="18s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete" />
+    <text class="out" x="58" y="138">[profile]</text>
+    <text class="key" x="58" y="166">focus:</text>
+    <text class="out" x="138" y="166">robotics and embedded ai</text>
+    <text class="key" x="58" y="194">role:</text>
+    <text class="out" x="138" y="194">software developer</text>
+    <text class="key" x="58" y="222">identity:</text>
+    <text class="out" x="138" y="222">maker</text>
+    <text class="key" x="58" y="250">status:</text>
+    <text class="out" x="138" y="250">open to collaboration</text>
+    <text class="key" x="58" y="278">languages:</text>
+    <text class="out" x="158" y="278">tr | en</text>
+    <text class="key" x="58" y="306">now:</text>
+    <text class="out" x="138" y="306">building sentrybot</text>
+  </g>
 
-  <text class="label" x="36" y="222">NOW</text>
-  <text class="text" x="150" y="222">Building SentryBOT</text>
+  <line class="line" x1="40" y1="330" x2="880" y2="330" />
 
-  <text class="label" x="36" y="254">STATUS</text>
-  <text class="text" x="150" y="254">Open to Collaboration</text>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.41;0.41;0.98;0.98" dur="18s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete" />
+    <text class="prompt" x="44" y="369">root@whoismrsentry:~$</text>
+    <text class="cmd" x="302" y="369" clip-path="url(#clip-cmd2)">cat about.txt</text>
+  </g>
 
-  <text class="label" x="36" y="286">LANGUAGES</text>
-  <text class="text" x="150" y="286">TR | EN</text>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.51;0.51;0.98;0.98" dur="18s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete" />
+    <text class="out" x="58" y="401">I build edge AI and robotics systems for real-world reliability.</text>
+    <text class="out" x="58" y="429">I turn fast prototypes into maintainable products with clear architecture.</text>
+    <text class="out" x="58" y="457">I optimize for measurable impact: performance, uptime, and developer speed.</text>
+  </g>
 
-  <line class="line" x1="28" y1="316" x2="892" y2="316" />
+  <line class="line" x1="40" y1="480" x2="880" y2="480" />
 
-  <text class="section" x="36" y="364">More About Me</text>
-  <text class="small" x="36" y="398">- I build practical systems that combine software, AI, and embedded hardware.</text>
-  <text class="small" x="36" y="430">- I enjoy turning ideas into working prototypes quickly and cleanly.</text>
-  <text class="small" x="36" y="462">- I ship measurable tools focused on reliability and maintainability.</text>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.70;0.70;0.98;0.98" dur="18s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete" />
+    <text class="prompt" x="44" y="519">root@whoismrsentry:~$</text>
+    <text class="cmd" x="302" y="519" clip-path="url(#clip-cmd3)">cat projects.txt</text>
+  </g>
 
-  <line class="line" x1="28" y1="488" x2="892" y2="488" />
-
-  <text class="section" x="36" y="536">What I Build</text>
-  <text class="small" x="36" y="568">- Vision-powered robotics workflows</text>
-  <text class="small" x="430" y="568">- Automation scripts and developer tooling</text>
-  <text class="small" x="36" y="598">- Backend services for AI-enabled products</text>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.81;0.81;0.98;0.98" dur="18s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete" />
+    <text class="out" x="58" y="551">- SentryBOT: autonomous monitoring stack (vision, control, telemetry).</text>
+    <text class="out" x="58" y="579">- Profile Automation: workflows for stats, badges, and SVG generation.</text>
+    <text class="out" x="58" y="607">- Edge Vision Lab: low-latency pipelines for constrained hardware.</text>
+  </g>
 </svg>

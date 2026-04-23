@@ -14,24 +14,24 @@
 <rect class="bg" x="0" y="0" width="920" height="432"/>
 <rect x="18" y="18" width="884" height="396" rx="12" fill="none" stroke="#88001b" stroke-width="2"/>
 <text x="40" y="56" class="title">Libraries &amp; Frameworks Usage</text>
-<text x="40" y="80" class="sub">@WhoIsMrSentry • 41 repos • dependency/topic based (not bytes)</text>
+<text x="40" y="80" class="sub">@WhoIsMrSentry • 42 repos • dependency/topic based (not bytes)</text>
 <text x="40" y="114" class="section">Top Libraries &amp; Frameworks</text>
 <text x="40" y="138" class="label">OpenCV (7 repos)</text>
 <rect x="395" y="127" width="425" height="10" rx="5" fill="#2a0d18"/>
-<rect x="395" y="127" width="73" height="10" rx="5" fill="#ff1744"/>
-<text x="870" y="138" class="pct">17.1%</text>
+<rect x="395" y="127" width="71" height="10" rx="5" fill="#ff1744"/>
+<text x="870" y="138" class="pct">16.7%</text>
 <text x="40" y="166" class="label">NumPy (5 repos)</text>
 <rect x="395" y="155" width="425" height="10" rx="5" fill="#2a0d18"/>
-<rect x="395" y="155" width="52" height="10" rx="5" fill="#ff1744"/>
-<text x="870" y="166" class="pct">12.2%</text>
+<rect x="395" y="155" width="51" height="10" rx="5" fill="#ff1744"/>
+<text x="870" y="166" class="pct">11.9%</text>
 <text x="40" y="194" class="label">FastAPI (3 repos)</text>
 <rect x="395" y="183" width="425" height="10" rx="5" fill="#2a0d18"/>
-<rect x="395" y="183" width="31" height="10" rx="5" fill="#ff1744"/>
-<text x="870" y="194" class="pct">7.3%</text>
+<rect x="395" y="183" width="30" height="10" rx="5" fill="#ff1744"/>
+<text x="870" y="194" class="pct">7.1%</text>
 <text x="40" y="222" class="label">Vite (2 repos)</text>
 <rect x="395" y="211" width="425" height="10" rx="5" fill="#2a0d18"/>
-<rect x="395" y="211" width="21" height="10" rx="5" fill="#ff1744"/>
-<text x="870" y="222" class="pct">4.9%</text>
+<rect x="395" y="211" width="20" height="10" rx="5" fill="#ff1744"/>
+<text x="870" y="222" class="pct">4.8%</text>
 <text x="40" y="250" class="label">Flask (1 repos)</text>
 <rect x="395" y="239" width="425" height="10" rx="5" fill="#2a0d18"/>
 <rect x="395" y="239" width="10" height="10" rx="5" fill="#ff1744"/>

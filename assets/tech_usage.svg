@@ -20,10 +20,10 @@
 <rect x="395" y="127" width="425" height="10" rx="5" fill="#2a0d18"/>
 <rect x="395" y="127" width="69" height="10" rx="5" fill="#ff1744"/>
 <text x="870" y="138" class="pct">16.3%</text>
-<text x="40" y="166" class="label">NumPy (5 repos)</text>
+<text x="40" y="166" class="label">NumPy (6 repos)</text>
 <rect x="395" y="155" width="425" height="10" rx="5" fill="#2a0d18"/>
-<rect x="395" y="155" width="49" height="10" rx="5" fill="#ff1744"/>
-<text x="870" y="166" class="pct">11.6%</text>
+<rect x="395" y="155" width="59" height="10" rx="5" fill="#ff1744"/>
+<text x="870" y="166" class="pct">14.0%</text>
 <text x="40" y="194" class="label">FastAPI (3 repos)</text>
 <rect x="395" y="183" width="425" height="10" rx="5" fill="#2a0d18"/>
 <rect x="395" y="183" width="30" height="10" rx="5" fill="#ff1744"/>

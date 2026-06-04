@@ -87,6 +87,7 @@ jobs:
           function findThemesFile(startDir) {
             const stack = [startDir];
             const candidates = new Set([
+              'themes.constants.ts',
               'themes.json',
               'themes.ts',
               'themes.js',

@@ -111,7 +111,10 @@ jobs:
             return null;
           }
 
-          const themesPath = findThemesFile('src') || findThemesFile('.');
+          const themesPath =
+            findThemesFile('src/constants') ||
+            findThemesFile('src') ||
+            findThemesFile('.');
           if (!themesPath || !fs.existsSync(themesPath)) throw new Error('themes file not found');
 
           if (themesPath.endsWith('.json')) {

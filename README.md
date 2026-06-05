@@ -6,7 +6,7 @@
   <br/>
   <img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_total_stars.json" alt="Total stars" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FWhoIsMrSentry&query=%24.public_repos&label=Public%20Repos&style=for-the-badge&color=88001b&labelColor=000000&logo=github" alt="Public repositories" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_public_repos.json" alt="Public repositories" />
   <br/>
   <img src="https://img.shields.io/github/last-commit/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Last%20Commit&color=88001b&labelColor=000000&logo=git" alt="Last commit" />
   <img src="https://img.shields.io/github/commit-activity/m/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Monthly%20Commits&color=88001b&labelColor=000000&logo=githubactions&logoColor=white" alt="Monthly commit activity" />

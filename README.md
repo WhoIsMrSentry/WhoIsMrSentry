@@ -10,7 +10,7 @@
   <br/>
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_last_commit.json" alt="Last commit" />
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_monthly_commits.json" alt="Monthly commit activity" />
-  <img src="https://img.shields.io/github/issues-pr/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Open%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Open issues and pull requests" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_open_work_items.json" alt="Open issues and pull requests" />
   <img src="https://img.shields.io/github/issues-pr-closed/WhoIsMrSentry/WhoIsMrSentry?style=for-the-badge&label=Closed%20Issues%20%2B%20PRs&color=88001b&labelColor=000000&logo=github" alt="Closed issues and pull requests" />
 </div>
 <br/>

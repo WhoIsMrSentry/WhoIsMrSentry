@@ -15,7 +15,7 @@
 </div>
 <br/>
 <div align="center">
-  <img src="assets/profile_terminal_panel.svg?v=15" alt="Terminal style profile panel" width="100%" />
+  <img src="assets/profile_terminal_panel.svg?v=16" alt="Terminal style profile panel" width="100%" />
 </div>
 <br/>
 

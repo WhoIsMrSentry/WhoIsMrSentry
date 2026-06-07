@@ -73,6 +73,7 @@ def graphql(query: str, variables: dict | None = None) -> dict:
 
 
 def search_total_count(query: str) -> int:
+    """Return GitHub search totals for issue and pull request queries."""
     encoded_q = urllib.parse.quote(query, safe=":/+")
     data = http_json(f"https://api.github.com/search/issues?q={encoded_q}&per_page=1")
     return int(data.get("total_count", 0))

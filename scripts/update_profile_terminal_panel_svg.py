@@ -151,6 +151,7 @@ def get_total_commit_contributions_all_time() -> int:
 
 
 def format_uptime(created_at: str) -> str:
+    """Render account age in the same style as the animated terminal panel."""
     created = dt.datetime.fromisoformat(created_at.replace("Z", "+00:00"))
     now = dt.datetime.now(dt.UTC)
     total_days = (now - created).days

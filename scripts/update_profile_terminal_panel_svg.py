@@ -197,6 +197,7 @@ def replace_uptime_line(svg: str, uptime_text: str) -> str:
 
 
 def safe_value(name: str, getter, fallback: str) -> str:
+    """Fetch a metric and keep the previous SVG value when the API fails."""
     try:
         value = getter()
         return str(value)

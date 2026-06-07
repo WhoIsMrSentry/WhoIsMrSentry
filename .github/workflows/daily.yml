@@ -147,6 +147,8 @@ jobs:
           console.log(`Patched powershell theme in ${themesPath}`);
           NODE
 
+      # Generator v2 stores themes under src/constants/themes.constants.ts.
+
       - name: Generate stats svg
         working-directory: _generator
         env:

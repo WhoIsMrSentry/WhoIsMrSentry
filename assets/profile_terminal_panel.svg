@@ -109,7 +109,7 @@
     <text class="info" x="350" y="368">OS:</text><text class="txt" x="394" y="368">GitHub</text>
     <text class="info" x="350" y="394">Repos:</text><text class="txt" x="415" y="394">76</text>
     <text class="info" x="350" y="420">Public Repos:</text><text class="txt" x="490" y="420">53</text>
-    <text class="info" x="350" y="446">Contributions:</text><text class="txt" x="501" y="446">2059</text>
+    <text class="info" x="350" y="446">Contributions:</text><text class="txt" x="501" y="446">2067</text>
     <text class="info" x="350" y="472">Followers:</text><text class="txt" x="458" y="472">23</text>
     <text class="info" x="350" y="498">Pull Requests:</text><text class="txt" x="501" y="498">206</text>
     <text class="info" x="350" y="524">Commits:</text><text class="txt" x="436" y="524">1628</text>
@@ -123,7 +123,7 @@
 
   <g opacity="1">
     <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.56;0.56;0.98;0.98" dur="30s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="txt" x="44" y="614">3 years, 30 days</text>
+    <text class="txt" x="44" y="614">3 years, 31 days</text>
   </g>
 
   <g opacity="1">

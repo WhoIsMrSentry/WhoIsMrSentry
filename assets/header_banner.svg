@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-labelledby="banner-title banner-desc">
+  <title id="banner-title">Emir Hamurcu</title>
+  <desc id="banner-desc">Profile header banner</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#88001b"/>
+      <stop offset="55%" stop-color="#4d0012"/>
+      <stop offset="100%" stop-color="#200009"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#88001b" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#39ff14" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="220" fill="url(#bg)"/>
+  <path fill="url(#wave)" opacity="0.9" d="M0,170 C120,140 220,200 360,170 C500,140 620,200 760,170 C840,155 900,165 920,170 L920,220 L0,220 Z"/>
+  <path fill="#88001b" opacity="0.45" d="M0,185 C160,160 280,210 440,185 C600,160 720,210 920,185 L920,220 L0,220 Z"/>
+
+  <text x="460" y="92" text-anchor="middle" fill="#e6ffe6" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">Emir Hamurcu</text>
+  <text x="460" y="128" text-anchor="middle" fill="#e6ffe6" font-family="Segoe UI, Arial, sans-serif" font-size="17" opacity="0.92">Robotics &amp; Embedded AI Enthusiast · Software Developer · Maker</text>
+</svg>

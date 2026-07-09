@@ -1,22 +1,35 @@
-<br/>
 <div align="center">
-  <h1>Emir Hamurcu</h1>
-  <h3>Robotics & Embedded AI Enthusiast • Software Developer • Maker</h3>
-  <p><em>"When you rest, you rust."</em></p>
-  <br/>
-  <img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_total_stars.json" alt="Total stars" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_public_repos.json" alt="Public repositories" />
-  <br/>
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_last_commit.json" alt="Last commit" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_monthly_commits.json" alt="Monthly commit activity" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_open_work_items.json" alt="Open issues and pull requests" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_closed_work_items.json" alt="Closed issues and pull requests" />
-</div>
+
+<table width="100%" style="max-width:920px;border-collapse:collapse;margin:0 auto;">
+  <tr>
+    <td align="center" style="background:linear-gradient(135deg,#88001b 0%,#4d0012 45%,#200009 100%);padding:40px 20px 36px;border-radius:14px;border:2px solid #88001b;">
+      <h1 style="margin:0;color:#e6ffe6;font-family:Segoe UI,Arial,sans-serif;font-size:44px;font-weight:700;letter-spacing:0.5px;">Emir Hamurcu</h1>
+      <p style="margin:14px 0 0;color:#e6ffe6;font-family:Segoe UI,Arial,sans-serif;font-size:17px;opacity:0.9;">Robotics &amp; Embedded AI Enthusiast · Software Developer · Maker</p>
+    </td>
+  </tr>
+</table>
+
 <br/>
-<div align="center">
-  <img src="assets/profile_terminal_panel.svg?v=16" alt="Terminal style profile panel" width="100%" />
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=When+you+rest%2C+you+rust." alt="Typing quote" />
+
+<br/><br/>
+
+<img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_total_stars.json" alt="Total stars" />
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_public_repos.json" alt="Public repositories" />
+<br/>
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_last_commit.json" alt="Last commit" />
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_monthly_commits.json" alt="Monthly commit activity" />
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_open_work_items.json" alt="Open issues and pull requests" />
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_closed_work_items.json" alt="Closed issues and pull requests" />
+
+<br/><br/>
+
+<img src="assets/profile_terminal_panel.svg?v=20" alt="Terminal style profile panel" width="100%" />
+
 </div>
+
 <br/>
 
 <div align="center">
@@ -145,9 +158,6 @@
 
 <br/>
 
-
-<br/>
-
 <div align="center">
 
 ## 📊 Stats
@@ -155,15 +165,12 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=WhoIsMrSentry&layout=compact&langs_count=20&hide=Jupyter%20Notebook,Rust&size_weight=0.5&count_weight=0.5&bg_color=200009&title_color=00ff41&text_color=e6ffe6&hide_border=true&card_width=920" alt="My Programming Languages" style="width:100%;max-width:920px;height:auto;display:block;" />
-  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/tech_usage.svg" alt="Repository-based Libraries and Frameworks Usage" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
-<!-- Duplicate terminal-style GitHub stats removed; single terminal retained above -->
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;" />
+  <img src="https://streak-stats.demolab.com/?user=WhoIsMrSentry&theme=dark&background=200009&border=88001b&stroke=88001b&ring=39FF14&fire=88001b&currStreakLabel=39FF14&sideLabels=e6ffe6&currStreakNum=e6ffe6&sideNums=e6ffe6&dates=e6ffe6" alt="GitHub contribution streak" style="width:100%;max-width:920px;height:auto;display:block;" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
 </div>
 
 <div align="center">
-  <!-- Visible after enabling the snake workflow -->
-  <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" style="display:block;margin:0 auto;border:none;outline:none;box-shadow:none;background:#200009;" />
+  <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" style="display:block;margin:12px auto 0;border:none;outline:none;box-shadow:none;background:#200009;max-width:920px;width:100%;" />
 </div>
 
 <br/>
@@ -203,8 +210,4 @@
 
 <br/>
 
-<!-- Minimal copy, two-color theme (primary: #88001b, secondary: #000000). -->
-<br/>  
-
-
-<br />
+<!-- Sentry theme: primary #88001b · background #200009 · accent #39ff14 -->

@@ -3,6 +3,7 @@ import base64
 import json
 import os
 import re
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -18,6 +19,8 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
 MAX_LIB_ROWS = int(os.environ.get("TECH_USAGE_MAX_LIB_ROWS", "12"))
 REQUEST_TIMEOUT = 30
+MAX_RETRIES = int(os.environ.get("TECH_USAGE_MAX_RETRIES", "6"))
+REQUEST_DELAY = float(os.environ.get("TECH_USAGE_REQUEST_DELAY", "0.35"))
 
 JS_LIKE_LANGUAGES = {
     "JavaScript",
@@ -88,6 +91,36 @@ TOPIC_TECH_MAP = {
 }
 
 RAW_CACHE: dict[tuple[str, str, str, str], str | None] = {}
+API_CACHE: dict[tuple[str, str, str, str], str | None] = {}
+
+
+def _retry_after_seconds(exc: urllib.error.HTTPError, attempt: int) -> float:
+    retry_after = exc.headers.get("Retry-After")
+    if retry_after and retry_after.isdigit():
+        return float(retry_after)
+    return min(2 ** attempt * 2, 60)
+
+
+def urlopen_with_retry(req: urllib.request.Request) -> bytes:
+    last_error: urllib.error.HTTPError | None = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as exc:
+            last_error = exc
+            if exc.code in (403, 429) and attempt < MAX_RETRIES - 1:
+                wait = _retry_after_seconds(exc, attempt)
+                print(
+                    f"WARN: HTTP {exc.code} for {req.full_url}, "
+                    f"retrying in {wait:.0f}s ({attempt + 1}/{MAX_RETRIES})"
+                )
+                time.sleep(wait)
+                continue
+            raise
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("urlopen_with_retry exhausted without response")
 
 
 def http_json(url: str) -> dict | list:
@@ -100,8 +133,8 @@ def http_json(url: str) -> dict | list:
         headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
     req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    payload = urlopen_with_retry(req)
+    return json.loads(payload.decode("utf-8"))
 
 
 def list_owner_repos_api(login: str) -> list[dict]:
@@ -147,8 +180,8 @@ def fetch_text(url: str) -> str:
             "Accept": "text/html,application/xhtml+xml",
         },
     )
-    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    payload = urlopen_with_retry(req)
+    return payload.decode("utf-8", errors="replace")
 
 
 def list_owner_repos_html(login: str) -> list[dict]:
@@ -194,11 +227,41 @@ def list_owner_repos(login: str) -> tuple[list[dict], str]:
         repos = list_owner_repos_api(login)
         return repos, "api"
     except urllib.error.HTTPError as exc:
-        if exc.code != 403:
+        if exc.code not in (403, 429):
             raise
         print("WARN: GitHub API rate limit hit, falling back to HTML/raw source")
         repos = list_owner_repos_html(login)
         return repos, "html"
+
+
+def fetch_repo_file_via_api(owner: str, repo: str, branch: str, rel_path: str) -> str | None:
+    key = (owner, repo, branch, rel_path)
+    if key in API_CACHE:
+        return API_CACHE[key]
+
+    encoded_path = urllib.parse.quote(rel_path, safe="/")
+    url = f"https://api.github.com/repos/{owner}/{repo}/contents/{encoded_path}?ref={branch}"
+
+    try:
+        data = http_json(url)
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            API_CACHE[key] = None
+            return None
+        raise
+
+    if not isinstance(data, dict):
+        API_CACHE[key] = None
+        return None
+
+    content = data.get("content")
+    if not isinstance(content, str):
+        API_CACHE[key] = None
+        return None
+
+    text = base64.b64decode(content).decode("utf-8", errors="replace")
+    API_CACHE[key] = text
+    return text
 
 
 def fetch_raw_repo_file(owner: str, repo: str, branch: str, rel_path: str) -> str | None:
@@ -217,12 +280,12 @@ def fetch_raw_repo_file(owner: str, repo: str, branch: str, rel_path: str) -> st
                 "Accept": "text/plain",
             },
         )
-        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-            text = resp.read().decode("utf-8", errors="replace")
-            RAW_CACHE[key] = text
-            return text
+        payload = urlopen_with_retry(req)
+        text = payload.decode("utf-8", errors="replace")
+        RAW_CACHE[key] = text
+        return text
     except urllib.error.HTTPError as exc:
-        if exc.code in (403, 404):
+        if exc.code in (403, 404, 429):
             RAW_CACHE[key] = None
             return None
         raise
@@ -242,9 +305,17 @@ def branch_candidates(repo: dict) -> list[str]:
 
 def fetch_repo_file(owner: str, repo: str, rel_path: str, branches: list[str]) -> str | None:
     for branch in branches:
+        if GITHUB_TOKEN:
+            content = fetch_repo_file_via_api(owner, repo, branch, rel_path)
+            if content is not None:
+                return content
+
         content = fetch_raw_repo_file(owner, repo, branch, rel_path)
         if content is not None:
             return content
+
+        if REQUEST_DELAY > 0:
+            time.sleep(REQUEST_DELAY)
     return None
 
 
@@ -445,9 +516,11 @@ def main() -> int:
         raise RuntimeError("No repositories found for the user")
 
     tech_counter: Counter = Counter()
-    for repo in repos:
+    for index, repo in enumerate(repos):
         for tech in detect_repo_technologies(repo):
             tech_counter[tech] += 1
+        if REQUEST_DELAY > 0 and index < len(repos) - 1:
+            time.sleep(REQUEST_DELAY)
 
     rows = as_rows(tech_counter, total_repos, MAX_LIB_ROWS)
     svg = build_svg(USERNAME, total_repos, rows)

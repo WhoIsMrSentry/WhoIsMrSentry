@@ -22,12 +22,15 @@ LABEL_X = 350
 CHAR_W = 10.8
 
 STAT_ROWS: tuple[tuple[str, str, int], ...] = (
-    ("Repos:", "repos", 394),
-    ("Public Repos:", "public_repos", 420),
-    ("Contributions:", "contributions", 446),
-    ("Followers:", "followers", 472),
-    ("Pull Requests:", "pull_requests", 498),
-    ("Commits:", "commits", 524),
+    ("Repos:", "repos", 420),
+    ("Public Repos:", "public_repos", 446),
+    ("Contributions:", "contributions", 472),
+    ("Commits:", "commits", 498),
+    ("Pull Requests:", "pull_requests", 524),
+    ("Issues:", "issues", 550),
+    ("Followers:", "followers", 576),
+    ("Stars:", "stars", 602),
+    ("Gists:", "gists", 628),
 )
 
 
@@ -172,8 +175,31 @@ def extract_current_value(svg: str, label: str, y: int) -> str:
     return match.group(1) if match else "N/A"
 
 
+def get_total_stars_count() -> int:
+    total = 0
+    page = 1
+
+    while True:
+        url = (
+            f"https://api.github.com/users/{USERNAME}/repos"
+            f"?type=owner&per_page=100&page={page}"
+        )
+        data = http_json(url)
+        if not isinstance(data, list) or not data:
+            break
+
+        for repo in data:
+            total += int((repo or {}).get("stargazers_count", 0))
+
+        if len(data) < 100:
+            break
+        page += 1
+
+    return total
+
+
 def extract_uptime(svg: str) -> str:
-    match = re.search(r'<text class="txt" x="44" y="614">([^<]*)</text>', svg)
+    match = re.search(r'<text class="txt" x="44" y="706">([^<]*)</text>', svg)
     return match.group(1) if match else "N/A"
 
 
@@ -191,7 +217,7 @@ def replace_stat_line(svg: str, label: str, value: str, y: int) -> str:
 
 
 def replace_uptime_line(svg: str, uptime_text: str) -> str:
-    pattern = r'(<text class="txt" x="44" y="614">)[^<]*(</text>)'
+    pattern = r'(<text class="txt" x="44" y="706">)[^<]*(</text>)'
     new_svg, count = re.subn(pattern, rf"\g<1>{uptime_text}\g<2>", svg, count=1)
     if count != 1:
         raise RuntimeError("Failed to update uptime line")
@@ -210,12 +236,15 @@ def safe_value(name: str, getter, fallback: str) -> str:
 
 def collect_metrics(svg: str) -> dict[str, str]:
     fallbacks = {
-        "repos": extract_current_value(svg, "Repos:", 394),
-        "public_repos": extract_current_value(svg, "Public Repos:", 420),
-        "contributions": extract_current_value(svg, "Contributions:", 446),
-        "followers": extract_current_value(svg, "Followers:", 472),
-        "pull_requests": extract_current_value(svg, "Pull Requests:", 498),
-        "commits": extract_current_value(svg, "Commits:", 524),
+        "repos": extract_current_value(svg, "Repos:", 420),
+        "public_repos": extract_current_value(svg, "Public Repos:", 446),
+        "contributions": extract_current_value(svg, "Contributions:", 472),
+        "commits": extract_current_value(svg, "Commits:", 498),
+        "pull_requests": extract_current_value(svg, "Pull Requests:", 524),
+        "issues": extract_current_value(svg, "Issues:", 550),
+        "followers": extract_current_value(svg, "Followers:", 576),
+        "stars": extract_current_value(svg, "Stars:", 602),
+        "gists": extract_current_value(svg, "Gists:", 628),
         "uptime": extract_uptime(svg),
     }
 
@@ -228,11 +257,13 @@ def collect_metrics(svg: str) -> dict[str, str]:
     if isinstance(profile, dict) and profile:
         public_repos = str(int(profile.get("public_repos", fallbacks["public_repos"])))
         followers = str(int(profile.get("followers", fallbacks["followers"])))
+        gists = str(int(profile.get("public_gists", fallbacks["gists"])))
         created_at = profile.get("created_at")
         uptime = format_uptime(created_at) if created_at else fallbacks["uptime"]
     else:
         public_repos = fallbacks["public_repos"]
         followers = fallbacks["followers"]
+        gists = fallbacks["gists"]
         uptime = fallbacks["uptime"]
 
     contributions = safe_value(
@@ -250,14 +281,27 @@ def collect_metrics(svg: str) -> dict[str, str]:
         lambda: search_total_count(f"type:pr author:{USERNAME}"),
         fallbacks["pull_requests"],
     )
+    issues = safe_value(
+        "issues",
+        lambda: search_total_count(f"type:issue author:{USERNAME}"),
+        fallbacks["issues"],
+    )
+    stars = safe_value(
+        "stars",
+        get_total_stars_count,
+        fallbacks["stars"],
+    )
 
     return {
         "repos": TOTAL_REPOS,
         "public_repos": public_repos,
         "contributions": contributions,
-        "followers": followers,
-        "pull_requests": pull_requests,
         "commits": commits,
+        "pull_requests": pull_requests,
+        "issues": issues,
+        "followers": followers,
+        "stars": stars,
+        "gists": gists,
         "uptime": uptime,
     }
 

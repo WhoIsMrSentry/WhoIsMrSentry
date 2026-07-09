@@ -1,13 +1,6 @@
 <div align="center">
 
-<table width="100%" style="max-width:920px;border-collapse:collapse;margin:0 auto;">
-  <tr>
-    <td align="center" style="background:linear-gradient(135deg,#88001b 0%,#4d0012 45%,#200009 100%);padding:40px 20px 36px;border-radius:14px;border:2px solid #88001b;">
-      <h1 style="margin:0;color:#e6ffe6;font-family:Segoe UI,Arial,sans-serif;font-size:44px;font-weight:700;letter-spacing:0.5px;">Emir Hamurcu</h1>
-      <p style="margin:14px 0 0;color:#e6ffe6;font-family:Segoe UI,Arial,sans-serif;font-size:17px;opacity:0.9;">Robotics &amp; Embedded AI Enthusiast · Software Developer · Maker</p>
-    </td>
-  </tr>
-</table>
+<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/header_banner.svg" width="100%" alt="Emir Hamurcu header banner" />
 
 <br/>
 
@@ -26,7 +19,7 @@
 
 <br/><br/>
 
-<img src="assets/profile_terminal_panel.svg?v=20" alt="Terminal style profile panel" width="100%" />
+<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_terminal_panel.svg" alt="Terminal style profile panel" width="100%" />
 
 </div>
 
@@ -165,7 +158,7 @@
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=WhoIsMrSentry&theme=dark&background=200009&border=88001b&stroke=88001b&ring=39FF14&fire=88001b&currStreakLabel=39FF14&sideLabels=e6ffe6&currStreakNum=e6ffe6&sideNums=e6ffe6&dates=e6ffe6" alt="GitHub contribution streak" style="width:100%;max-width:920px;height:auto;display:block;" />
+  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/streak_stats.svg" alt="GitHub contribution streak" width="100%" style="max-width:920px;height:auto;display:block;" />
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
 </div>
 

@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-labelledby="banner-title banner-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="240" viewBox="0 0 920 240" role="img" aria-labelledby="banner-title banner-desc">
   <title id="banner-title">Emir Hamurcu</title>
   <desc id="banner-desc">Profile header banner</desc>
 
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#88001b"/>
-      <stop offset="55%" stop-color="#4d0012"/>
+      <stop offset="45%" stop-color="#5a0014"/>
       <stop offset="100%" stop-color="#200009"/>
     </linearGradient>
     <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.18"/>
-      <stop offset="50%" stop-color="#88001b" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#39ff14" stop-opacity="0.18"/>
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.22"/>
+      <stop offset="50%" stop-color="#88001b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#39ff14" stop-opacity="0.22"/>
     </linearGradient>
   </defs>
 
-  <rect width="920" height="220" fill="url(#bg)"/>
-  <path fill="url(#wave)" opacity="0.9" d="M0,170 C120,140 220,200 360,170 C500,140 620,200 760,170 C840,155 900,165 920,170 L920,220 L0,220 Z"/>
-  <path fill="#88001b" opacity="0.45" d="M0,185 C160,160 280,210 440,185 C600,160 720,210 920,185 L920,220 L0,220 Z"/>
+  <rect width="920" height="240" rx="14" fill="url(#bg)"/>
+  <rect x="2" y="2" width="916" height="236" rx="12" fill="none" stroke="#88001b" stroke-width="3"/>
+  <rect x="8" y="8" width="904" height="224" rx="10" fill="none" stroke="#39ff14" stroke-width="1" opacity="0.35"/>
 
-  <text x="460" y="92" text-anchor="middle" fill="#e6ffe6" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">Emir Hamurcu</text>
-  <text x="460" y="128" text-anchor="middle" fill="#e6ffe6" font-family="Segoe UI, Arial, sans-serif" font-size="17" opacity="0.92">Robotics &amp; Embedded AI Enthusiast · Software Developer · Maker</text>
+  <path fill="url(#wave)" opacity="0.95" d="M0,178 C130,148 240,208 380,178 C520,148 640,208 780,178 C850,163 900,173 920,178 L920,240 L0,240 Z"/>
+  <path fill="#88001b" opacity="0.5" d="M0,192 C170,167 300,217 460,192 C620,167 740,217 920,192 L920,240 L0,240 Z"/>
+
+  <text x="460" y="98" text-anchor="middle" fill="#e6ffe6" font-family="Segoe UI, Arial, sans-serif" font-size="50" font-weight="700">Emir Hamurcu</text>
+  <text x="460" y="136" text-anchor="middle" fill="#39ff14" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Robotics &amp; Embedded AI Enthusiast</text>
+  <text x="460" y="162" text-anchor="middle" fill="#e6ffe6" font-family="Segoe UI, Arial, sans-serif" font-size="16" opacity="0.92">Software Developer &#183; Maker</text>
 </svg>

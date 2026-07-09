@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="920" height="900" viewBox="0 0 920 900" role="img" aria-labelledby="title desc">
-  <title id="title">Animated Profile Terminal</title>
+  <title id="title">Profile Terminal</title>
   <desc id="desc">Terminal session with whoami, profile summary, neofetch stats, uptime, about and exit.</desc>
 
   <defs>
@@ -16,37 +16,6 @@
       .ascii { fill: #39ff14; font: 500 4.5px Monaco, Consolas, Menlo, monospace; }
       .cursor { fill: #88001b; }
     </style>
-
-    <clipPath id="clip-whoami" clipPathUnits="userSpaceOnUse">
-      <rect x="340" y="86" height="26" width="0">
-        <animate attributeName="width" values="0;0;92;92;0" keyTimes="0;0.02;0.05;0.97;1" dur="40s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-profile" clipPathUnits="userSpaceOnUse">
-      <rect x="340" y="150" height="26" width="0">
-        <animate attributeName="width" values="0;0;210;210;0" keyTimes="0;0.0875;0.145;0.97;1" dur="40s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-neofetch" clipPathUnits="userSpaceOnUse">
-      <rect x="340" y="252" height="26" width="0">
-        <animate attributeName="width" values="0;0;120;120;0" keyTimes="0;0.2;0.2375;0.97;1" dur="40s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-uptime" clipPathUnits="userSpaceOnUse">
-      <rect x="340" y="660" height="26" width="0">
-        <animate attributeName="width" values="0;0;96;96;0" keyTimes="0;0.55;0.5875;0.97;1" dur="40s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-about" clipPathUnits="userSpaceOnUse">
-      <rect x="340" y="722" height="26" width="0">
-        <animate attributeName="width" values="0;0;170;170;0" keyTimes="0;0.625;0.675;0.97;1" dur="40s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-exit" clipPathUnits="userSpaceOnUse">
-      <rect x="340" y="808" height="26" width="0">
-        <animate attributeName="width" values="0;0;52;52;0" keyTimes="0;0.825;0.85;0.97;1" dur="40s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
   </defs>
 
   <rect class="outer" x="0" y="0" width="920" height="900" rx="16"/>
@@ -58,127 +27,87 @@
   <circle cx="68" cy="43" r="7" fill="#ffbd2e"/>
   <circle cx="90" cy="43" r="7" fill="#18c132"/>
 
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.02;0.02;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="prompt" x="44" y="106">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd" x="340" y="106" clip-path="url(#clip-whoami)">whoami</text>
-  </g>
+  <text class="prompt" x="44" y="106">WhoIsMrSentry@github.com:~$</text>
+  <text class="cmd" x="340" y="106">whoami</text>
+  <text class="txt" x="44" y="134">Emir Hamurcu</text>
 
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.05;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="txt" x="44" y="134">Emir Hamurcu</text>
-  </g>
+  <text class="prompt" x="44" y="170">WhoIsMrSentry@github.com:~$</text>
+  <text class="cmd" x="340" y="170">./profile --summary</text>
+  <text class="info" x="44" y="200">Focus:</text><text class="txt" x="126" y="200">Robotics &amp; Embedded AI</text>
+  <text class="info" x="44" y="226">Role:</text><text class="txt" x="126" y="226">Embedded System Developer</text>
+  <text class="info" x="44" y="252">Status:</text><text class="txt" x="126" y="252">Open to Collaboration</text>
 
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0875;0.0875;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="prompt" x="44" y="170">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd" x="340" y="170" clip-path="url(#clip-profile)">./profile --summary</text>
-  </g>
+  <text class="prompt" x="44" y="272">WhoIsMrSentry@github.com:~$</text>
+  <text class="cmd" x="340" y="272">neofetch</text>
 
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.145;0.145;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="info" x="44" y="200">Focus:</text><text class="txt" x="126" y="200">Robotics &amp; Embedded AI</text>
-    <text class="info" x="44" y="226">Role:</text><text class="txt" x="126" y="226">Embedded System Developer</text>
-    <text class="info" x="44" y="252">Status:</text><text class="txt" x="126" y="252">Open to Collaboration</text>
-  </g>
+  <text class="ascii" x="44" y="308" xml:space="preserve">
+    <tspan x="44" dy="0">                               @@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">                         @@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">      @@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">     @@@@@@@@@@@          @@@@@@          @@@@@@          @@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">    @@@@@@@@@@@@                                          @@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">   @@@@@@@@@@@@@                                          @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@@                                        @@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@                                              @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                               @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@@@                                      @@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@@@@@                                  @@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">   @@@@@@@   @@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">   @@@@@@@@     @@@@@@@@@@@@@@              @@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">     @@@@@@@@    @@@@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">      @@@@@@@@     @@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">       @@@@@@@@                               @@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">        -@@@@@@@                              @@@@@@@@@@@@@@@@@@@-</tspan>
+    <tspan x="44" dy="4.5">          @@@@@@@@                            @@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@                  @@@@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">              @@@@@@@@@@@@@@                  @@@@@@@@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">                %@@@@@@@@@@@                  @@@@@@@@@@@%</tspan>
+    <tspan x="44" dy="4.5">                    @@@@@@@@                  @@@@@@@@</tspan>
+    <tspan x="44" dy="4.5">                        @@@                    @@@</tspan>
+  </text>
 
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2;0.2;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="prompt" x="44" y="272">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd" x="340" y="272" clip-path="url(#clip-neofetch)">neofetch</text>
-  </g>
+  <text class="info" x="350" y="312">WhoIsMrSentry @github.com</text>
+  <text class="info" x="350" y="340">--------------------------</text>
+  <text class="info" x="350" y="368">OS:</text><text class="txt" x="394" y="368">GitHub</text>
+  <text class="info" x="350" y="394">Host:</text><text class="txt" x="408" y="394">github.com</text>
+  <text class="info" x="350" y="420">Repos:</text><text class="txt" x="415" y="420">76</text>
+  <text class="info" x="350" y="446">Public Repos:</text><text class="txt" x="490" y="446">59</text>
+  <text class="info" x="350" y="472">Contributions:</text><text class="txt" x="501" y="472">3027</text>
+  <text class="info" x="350" y="498">Commits:</text><text class="txt" x="436" y="498">2571</text>
+  <text class="info" x="350" y="524">Pull Requests:</text><text class="txt" x="501" y="524">217</text>
+  <text class="info" x="350" y="550">Issues:</text><text class="txt" x="416" y="550">0</text>
+  <text class="info" x="350" y="576">Followers:</text><text class="txt" x="458" y="576">23</text>
+  <text class="info" x="350" y="602">Stars:</text><text class="txt" x="410" y="602">18</text>
+  <text class="info" x="350" y="628">Gists:</text><text class="txt" x="404" y="628">0</text>
 
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2375;0.2375;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="ascii" x="44" y="308" xml:space="preserve">
-      <tspan x="44" dy="0">                               @@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">                         @@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">      @@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">     @@@@@@@@@@@          @@@@@@          @@@@@@          @@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">    @@@@@@@@@@@@                                          @@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">   @@@@@@@@@@@@@                                          @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@@                                        @@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@                                              @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                               @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@@@                                      @@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@@@@@                                  @@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">   @@@@@@@   @@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">   @@@@@@@@     @@@@@@@@@@@@@@              @@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">     @@@@@@@@    @@@@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">      @@@@@@@@     @@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">       @@@@@@@@                               @@@@@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">        -@@@@@@@                              @@@@@@@@@@@@@@@@@@@-</tspan>
-      <tspan x="44" dy="4.5">          @@@@@@@@                            @@@@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@                  @@@@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">              @@@@@@@@@@@@@@                  @@@@@@@@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">                %@@@@@@@@@@@                  @@@@@@@@@@@%</tspan>
-      <tspan x="44" dy="4.5">                    @@@@@@@@                  @@@@@@@@</tspan>
-      <tspan x="44" dy="4.5">                        @@@                    @@@</tspan>
-    </text>
+  <text class="prompt" x="44" y="680">WhoIsMrSentry@github.com:~$</text>
+  <text class="cmd" x="340" y="680">uptime</text>
+  <text class="txt" x="44" y="706">3 years, 46 days</text>
 
-    <text class="info" x="350" y="312">WhoIsMrSentry @github.com</text>
-    <text class="info" x="350" y="340">--------------------------</text>
-    <text class="info" x="350" y="368">OS:</text><text class="txt" x="394" y="368">GitHub</text>
-    <text class="info" x="350" y="394">Host:</text><text class="txt" x="408" y="394">github.com</text>
-    <text class="info" x="350" y="420">Repos:</text><text class="txt" x="415" y="420">76</text>
-    <text class="info" x="350" y="446">Public Repos:</text><text class="txt" x="490" y="446">59</text>
-    <text class="info" x="350" y="472">Contributions:</text><text class="txt" x="501" y="472">3027</text>
-    <text class="info" x="350" y="498">Commits:</text><text class="txt" x="436" y="498">2571</text>
-    <text class="info" x="350" y="524">Pull Requests:</text><text class="txt" x="501" y="524">217</text>
-    <text class="info" x="350" y="550">Issues:</text><text class="txt" x="416" y="550">0</text>
-    <text class="info" x="350" y="576">Followers:</text><text class="txt" x="458" y="576">23</text>
-    <text class="info" x="350" y="602">Stars:</text><text class="txt" x="410" y="602">18</text>
-    <text class="info" x="350" y="628">Gists:</text><text class="txt" x="404" y="628">0</text>
-  </g>
+  <text class="prompt" x="44" y="742">WhoIsMrSentry@github.com:~$</text>
+  <text class="cmd" x="340" y="742">cat about.txt</text>
+  <text class="txt" x="44" y="768">Building robotics and edge AI systems with production-first engineering.</text>
+  <text class="txt" x="44" y="794">Focused on reliable automation, maintainable code, and measurable results.</text>
 
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.55;0.55;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="prompt" x="44" y="680">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd" x="340" y="680" clip-path="url(#clip-uptime)">uptime</text>
-  </g>
-
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5875;0.5875;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="txt" x="44" y="706">3 years, 46 days</text>
-  </g>
-
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.625;0.625;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="prompt" x="44" y="742">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd" x="340" y="742" clip-path="url(#clip-about)">cat about.txt</text>
-  </g>
-
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.675;0.675;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="txt" x="44" y="768">Building robotics and edge AI systems with production-first engineering.</text>
-    <text class="txt" x="44" y="794">Focused on reliable automation, maintainable code, and measurable results.</text>
-  </g>
-
-  <g>
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.825;0.825;1" dur="40s" repeatCount="indefinite" calcMode="discrete"/>
-    <text class="prompt" x="44" y="828">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd" x="340" y="828" clip-path="url(#clip-exit)">exit</text>
-  </g>
-
-  <rect class="cursor" x="396" y="810" width="10" height="20">
-    <animate attributeName="opacity" values="1;0;1;0;1;0;1;0;1" keyTimes="0;0.85;0.86;0.87;0.88;0.89;0.90;0.91;1" dur="40s" repeatCount="indefinite"/>
-  </rect>
+  <text class="prompt" x="44" y="828">WhoIsMrSentry@github.com:~$</text>
+  <text class="cmd" x="340" y="828">exit</text>
+  <rect class="cursor" x="396" y="810" width="10" height="20"/>
 </svg>

@@ -100,7 +100,7 @@
 
   <text class="prompt" x="44" y="680">WhoIsMrSentry@github.com:~$</text>
   <text class="cmd" x="340" y="680">uptime</text>
-  <text class="txt" x="44" y="706">3 years, 51 days</text>
+  <text class="txt" x="44" y="706">3 years, 52 days</text>
 
   <text class="prompt" x="44" y="742">WhoIsMrSentry@github.com:~$</text>
   <text class="cmd" x="340" y="742">cat about.txt</text>

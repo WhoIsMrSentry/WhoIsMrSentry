@@ -319,6 +319,16 @@ def main() -> int:
     print(f"Updated {SVG_PATH}")
     for key, value in metrics.items():
         print(f"  {key}: {value}")
+
+    try:
+        import subprocess
+        import sys
+
+        streak_script = Path(__file__).resolve().parent / "update_streak_stats_svg.py"
+        subprocess.run([sys.executable, str(streak_script)], check=False)
+    except Exception as exc:
+        print(f"WARN: streak stats update skipped: {exc}")
+
     return 0
 
 

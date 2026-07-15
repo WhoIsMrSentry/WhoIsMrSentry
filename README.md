@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/header_banner.svg" width="100%" alt="Emir Hamurcu header banner" />
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:88001b,50:5a0014,100:200009&amp;height=240&amp;section=header&amp;text=Emir+Hamurcu&amp;fontSize=50&amp;fontColor=e6ffe6&amp;desc=Robotics+and+Embedded+AI+%C2%B7+Software+Developer+%C2%B7+Maker&amp;descSize=15&amp;descAlignY=64&amp;stroke=39ff14" width="100%" alt="Emir Hamurcu header banner" />
 
 <br/>
 

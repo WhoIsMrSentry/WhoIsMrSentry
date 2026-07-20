@@ -90,17 +90,17 @@
   <text class="info" x="350" y="394">Host:</text><text class="txt" x="408" y="394">github.com</text>
   <text class="info" x="350" y="420">Repos:</text><text class="txt" x="415" y="420">76</text>
   <text class="info" x="350" y="446">Public Repos:</text><text class="txt" x="490" y="446">60</text>
-  <text class="info" x="350" y="472">Contributions:</text><text class="txt" x="501" y="472">3301</text>
+  <text class="info" x="350" y="472">Contributions:</text><text class="txt" x="501" y="472">3323</text>
   <text class="info" x="350" y="498">Commits:</text><text class="txt" x="436" y="498">2825</text>
   <text class="info" x="350" y="524">Pull Requests:</text><text class="txt" x="501" y="524">239</text>
   <text class="info" x="350" y="550">Issues:</text><text class="txt" x="426" y="550">9</text>
-  <text class="info" x="350" y="576">Followers:</text><text class="txt" x="458" y="576">27</text>
+  <text class="info" x="350" y="576">Followers:</text><text class="txt" x="458" y="576">28</text>
   <text class="info" x="350" y="602">Stars:</text><text class="txt" x="415" y="602">18</text>
   <text class="info" x="350" y="628">Gists:</text><text class="txt" x="415" y="628">0</text>
 
   <text class="prompt" x="44" y="680">WhoIsMrSentry@github.com:~$</text>
   <text class="cmd" x="340" y="680">uptime</text>
-  <text class="txt" x="44" y="706">3 years, 57 days</text>
+  <text class="txt" x="44" y="706">3 years, 58 days</text>
 
   <text class="prompt" x="44" y="742">WhoIsMrSentry@github.com:~$</text>
   <text class="cmd" x="340" y="742">cat about.txt</text>

@@ -32,6 +32,11 @@ on:
         required: false
         default: true
         type: boolean
+      run_streak_stats_svg:
+        description: "Run contribution streak svg update"
+        required: false
+        default: true
+        type: boolean
       run_achievement_metrics:
         description: "Run achievement metrics endpoint updates"
         required: false
@@ -224,6 +229,43 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update profile terminal panel svg"
+          for i in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push failed (attempt $i), retrying..."
+            sleep 3
+          done
+          echo "Failed to push after retries."
+          exit 1
+
+  streak_stats_svg:
+    name: Update streak_stats.svg
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.run_streak_stats_svg }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Refresh contribution streak svg
+        run: python scripts/update_streak_stats_svg.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/streak_stats.svg
+          if git diff --staged --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "chore: update streak stats svg"
           for i in 1 2 3; do
             git pull --rebase origin main
             if git push origin HEAD:main; then

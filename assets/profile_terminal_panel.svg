@@ -95,12 +95,12 @@
   <text class="info" x="350" y="524">Pull Requests:</text><text class="txt" x="501" y="524">246</text>
   <text class="info" x="350" y="550">Issues:</text><text class="txt" x="426" y="550">9</text>
   <text class="info" x="350" y="576">Followers:</text><text class="txt" x="458" y="576">22</text>
-  <text class="info" x="350" y="602">Stars:</text><text class="txt" x="415" y="602">15</text>
+  <text class="info" x="350" y="602">Stars:</text><text class="txt" x="415" y="602">16</text>
   <text class="info" x="350" y="628">Gists:</text><text class="txt" x="415" y="628">0</text>
 
   <text class="prompt" x="44" y="680">WhoIsMrSentry@github.com:~$</text>
   <text class="cmd" x="340" y="680">uptime</text>
-  <text class="txt" x="44" y="706">3 years, 82 days</text>
+  <text class="txt" x="44" y="706">3 years, 83 days</text>
 
   <text class="prompt" x="44" y="742">WhoIsMrSentry@github.com:~$</text>
   <text class="cmd" x="340" y="742">cat about.txt</text>

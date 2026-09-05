@@ -112,13 +112,6 @@ jobs:
           cp _generator/github_stats.svg ./github_stats.svg
           python scripts/update_github_stats_svg.py
 
-      - name: Refresh animated terminal panel stats
-        env:
-          GITHUB_TOKEN: ${{ secrets.GHT || secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ github.repository_owner }}
-          TOTAL_REPOS: ${{ (github.event_name == 'workflow_dispatch' && inputs.total_repos) || '76' }}
-        run: python scripts/update_profile_terminal_panel_svg.py
-
       - name: Refresh contribution streak svg
         run: python scripts/update_streak_stats_svg.py
 
@@ -145,6 +138,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GHT || secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
         run: python scripts/update_activity_graph_svg.py
+
+      - name: Refresh animated terminal panel stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHT || secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          TOTAL_REPOS: ${{ (github.event_name == 'workflow_dispatch' && inputs.total_repos) || '76' }}
+        run: python scripts/update_profile_terminal_panel_svg.py
 
       - name: Refresh tech usage svg (Optional)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_tech_usage }}

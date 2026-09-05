@@ -24,112 +24,112 @@
 
   <!-- Row 1: 1 -->
   <div style="display:flex;justify-content:center;gap:16px;">
-    <img src="https://cdn.simpleicons.org/python/ff5f58" alt="Python" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/python/88001b" alt="Python" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 
 
   <!-- Row 2: 3 -->
   <div style="display:flex;justify-content:center;gap:16px;">
-    <img src="https://cdn.simpleicons.org/c/ff5f58" alt="C" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/cplusplus/ff5f58" alt="C++" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://api.iconify.design/simple-icons/csharp.svg?color=%23ff5f58" alt="C#" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/c/88001b" alt="C" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/cplusplus/88001b" alt="C++" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/csharp.svg?color=%2388001b" alt="C#" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 
 
   <!-- Row 3: 5 -->
   <div style="display:flex;justify-content:center;gap:16px;">
-    <img src="https://cdn.simpleicons.org/html5/ff5f58" alt="HTML5" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://api.iconify.design/simple-icons/css3.svg?color=%23ff5f58" alt="CSS3" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/javascript/ff5f58" alt="JavaScript" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/typescript/ff5f58" alt="TypeScript" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/bootstrap/ff5f58" alt="Bootstrap" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/html5/88001b" alt="HTML5" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/css3.svg?color=%2388001b" alt="CSS3" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/javascript/88001b" alt="JavaScript" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/typescript/88001b" alt="TypeScript" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/bootstrap/88001b" alt="Bootstrap" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 
 
   <!-- Row 4: 7 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
-    <img src="https://cdn.simpleicons.org/react/ff5f58" alt="React" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/nextdotjs/ff5f58" alt="Next.js" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/svelte/ff5f58" alt="Svelte" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/vite/ff5f58" alt="Vite" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/tailwindcss/ff5f58" alt="Tailwind CSS" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/figma/ff5f58" alt="Figma" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/postman/ff5f58" alt="Postman" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/react/88001b" alt="React" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/nextdotjs/88001b" alt="Next.js" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/svelte/88001b" alt="Svelte" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/vite/88001b" alt="Vite" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/tailwindcss/88001b" alt="Tailwind CSS" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/figma/88001b" alt="Figma" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/postman/88001b" alt="Postman" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 
 
   <!-- Row 5: 9 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
-    <img src="https://api.iconify.design/simple-icons/amazonaws.svg?color=%23ff5f58" alt="AWS" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/nodedotjs/ff5f58" alt="Node.js" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/express/ff5f58" alt="Express" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/fastapi/ff5f58" alt="FastAPI" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/flask/ff5f58" alt="Flask" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/mongodb/ff5f58" alt="MongoDB" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/postgresql/ff5f58" alt="PostgreSQL" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/redis/ff5f58" alt="Redis" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/supabase/ff5f58" alt="Supabase" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/amazonaws.svg?color=%2388001b" alt="AWS" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/nodedotjs/88001b" alt="Node.js" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/express/88001b" alt="Express" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/fastapi/88001b" alt="FastAPI" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/flask/88001b" alt="Flask" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/mongodb/88001b" alt="MongoDB" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/postgresql/88001b" alt="PostgreSQL" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/redis/88001b" alt="Redis" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/supabase/88001b" alt="Supabase" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 
 
   <!-- Row 6: 11 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
-    <img src="https://api.iconify.design/simple-icons/langchain.svg?color=%23ff5f58" alt="LangChain" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/tensorflow/ff5f58" alt="TensorFlow" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/pytorch/ff5f58" alt="PyTorch" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://api.iconify.design/simple-icons/huggingface.svg?color=%23ff5f58" alt="Hugging Face" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/opencv/ff5f58" alt="OpenCV" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/onnx/ff5f58" alt="ONNX" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/ollama/ff5f58" alt="Ollama" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/meta/ff5f58" alt="Meta" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/jupyter/ff5f58" alt="Jupyter" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/pandas/ff5f58" alt="Pandas" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/numpy/ff5f58" alt="NumPy" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/langchain.svg?color=%2388001b" alt="LangChain" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/tensorflow/88001b" alt="TensorFlow" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/pytorch/88001b" alt="PyTorch" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/huggingface.svg?color=%2388001b" alt="Hugging Face" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/opencv/88001b" alt="OpenCV" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/onnx/88001b" alt="ONNX" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/ollama/88001b" alt="Ollama" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/meta/88001b" alt="Meta" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/jupyter/88001b" alt="Jupyter" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/pandas/88001b" alt="Pandas" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/numpy/88001b" alt="NumPy" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 
 
   <!-- Row 7: 13 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
-    <img src="https://api.iconify.design/simple-icons/terraform.svg?color=%23ff5f58" alt="Terraform" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/git/ff5f58" alt="Git" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/github/ff5f58" alt="GitHub" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/gitlab/ff5f58" alt="GitLab" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/githubactions/ff5f58" alt="GitHub Actions" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/docker/ff5f58" alt="Docker" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/linux/ff5f58" alt="Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/ubuntu/ff5f58" alt="Ubuntu" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/archlinux/ff5f58" alt="Arch Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/kalilinux/ff5f58" alt="Kali Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/garudalinux/ff5f58" alt="Garuda Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/gnubash/ff5f58" alt="GNU Bash" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/nginx/ff5f58" alt="NGINX" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/terraform.svg?color=%2388001b" alt="Terraform" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/git/88001b" alt="Git" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/github/88001b" alt="GitHub" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/gitlab/88001b" alt="GitLab" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/githubactions/88001b" alt="GitHub Actions" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/docker/88001b" alt="Docker" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/linux/88001b" alt="Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/ubuntu/88001b" alt="Ubuntu" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/archlinux/88001b" alt="Arch Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/kalilinux/88001b" alt="Kali Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/garudalinux/88001b" alt="Garuda Linux" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/gnubash/88001b" alt="GNU Bash" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/nginx/88001b" alt="NGINX" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 
 
   <!-- Row 8: 15 -->
   <div style="display:flex;justify-content:center;gap:16px;flex-wrap:nowrap;">
-    <img src="https://cdn.simpleicons.org/arduino/ff5f58" alt="Arduino" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/raspberrypi/ff5f58" alt="Raspberry Pi" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/espressif/ff5f58" alt="ESP32" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/stmicroelectronics/ff5f58" alt="STM32" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://api.iconify.design/simple-icons/arm.svg?color=%23ff5f58" alt="ARM" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://api.iconify.design/simple-icons/nvidia.svg?color=%23ff5f58" alt="NVIDIA" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/ros/ff5f58" alt="ROS" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/platformio/ff5f58" alt="PlatformIO" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/kicad/ff5f58" alt="KiCad" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/autodesk/ff5f58" alt="Fusion 360" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/cmake/ff5f58" alt="CMake" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/bazel/ff5f58" alt="Bazel" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/pytest/ff5f58" alt="pytest" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/googlecloud/ff5f58" alt="Google Cloud" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
-    <img src="https://cdn.simpleicons.org/virtualbox/ff5f58" alt="VirtualBox" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/arduino/88001b" alt="Arduino" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/raspberrypi/88001b" alt="Raspberry Pi" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/espressif/88001b" alt="ESP32" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/stmicroelectronics/88001b" alt="STM32" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/arm.svg?color=%2388001b" alt="ARM" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://api.iconify.design/simple-icons/nvidia.svg?color=%2388001b" alt="NVIDIA" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/ros/88001b" alt="ROS" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/platformio/88001b" alt="PlatformIO" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/kicad/88001b" alt="KiCad" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/autodesk/88001b" alt="Fusion 360" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/cmake/88001b" alt="CMake" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/bazel/88001b" alt="Bazel" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/pytest/88001b" alt="pytest" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/googlecloud/88001b" alt="Google Cloud" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
+    <img src="https://cdn.simpleicons.org/virtualbox/88001b" alt="VirtualBox" style="height:56px;background:#15000a;border:1px solid #88001b;border-radius:10px;padding:10px;object-fit:contain;" />
   </div>
   <br/>
 

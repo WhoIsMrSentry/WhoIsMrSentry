@@ -137,28 +137,14 @@ def get_activity_points() -> list[tuple[int, int]]:
     return fallback[-30:]
 
 
-def build_tech_tree_svg(card_x: int = 44, card_y: int = 336, card_w: int = 832, card_h: int = 500) -> tuple[str, str]:
-    """Build the Tech Stack pine-tree pyramid with 64 inlined SVG symbols in dark terminal crimson #88001b."""
+def build_tech_tree_svg(card_x: int = 44, card_y: int = 336, card_w: int = 832, card_h: int = 500) -> str:
+    """Build the Tech Stack pine-tree pyramid with 64 direct nested SVG icons in dark terminal crimson #88001b."""
     if not TECH_ICONS_PATH.exists():
-        return "", ""
+        return ""
 
     data = json.loads(TECH_ICONS_PATH.read_text(encoding="utf-8"))
     rows = data["rows"]
     symbols = data["symbols"]
-
-    defs = []
-    for slug, paths in sorted(symbols.items()):
-        p_tags = []
-        for p in paths:
-            extra = ""
-            if p.get("fill_rule"):
-                extra += f' fill-rule="{p["fill_rule"]}"'
-            if p.get("clip_rule"):
-                extra += f' clip-rule="{p["clip_rule"]}"'
-            p_tags.append(f'<path d="{p["d"]}"{extra}/>')
-        defs.append(f'<symbol id="icon-{slug}" viewBox="0 0 24 24">{"".join(p_tags)}</symbol>')
-
-    defs_svg = "\n".join(defs)
 
     card_elements = [
         f'<rect class="box-frame" x="{card_x}" y="{card_y}" width="{card_w}" height="{card_h}" rx="8"/>',
@@ -183,11 +169,21 @@ def build_tech_tree_svg(card_x: int = 44, card_y: int = 336, card_w: int = 832, 
             ry += 8
         for c_idx, (alt, slug) in enumerate(row):
             ix = rx0 + c_idx * (icon_size + gap_x)
+            paths = symbols.get(slug, [])
+            path_tags = []
+            for p in paths:
+                extra = ""
+                if p.get("fill_rule"):
+                    extra += f' fill-rule="{p["fill_rule"]}"'
+                if p.get("clip_rule"):
+                    extra += f' clip-rule="{p["clip_rule"]}"'
+                path_tags.append(f'<path d="{p["d"]}" fill="#88001b"{extra}/>')
+            paths_str = "".join(path_tags)
             card_elements.append(
-                f'<g class="tech-icon"><title>{alt}</title><use href="#icon-{slug}" x="{ix:.1f}" y="{ry:.1f}" width="{icon_size}" height="{icon_size}" fill="#88001b"/></g>'
+                f'<g class="tech-icon"><title>{alt}</title><svg x="{ix:.1f}" y="{ry:.1f}" width="{icon_size}" height="{icon_size}" viewBox="0 0 24 24">{paths_str}</svg></g>'
             )
 
-    return defs_svg, "\n    ".join(card_elements)
+    return "\n    ".join(card_elements)
 
 
 def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart_y: int = 1450, chart_w: int = 780, chart_h: int = 86) -> str:
@@ -321,12 +317,12 @@ def generate_terminal_panel_svg() -> str:
     points = get_activity_points()
     peak_count = max(c for _, c in points)
     
-    icon_defs_svg, tech_tree_svg = build_tech_tree_svg(card_x=44, card_y=336, card_w=832, card_h=500)
+    tech_tree_svg = build_tech_tree_svg(card_x=44, card_y=336, card_w=832, card_h=500)
     chart_svg = build_activity_chart(points, chart_x=70, chart_y=1450, chart_w=780, chart_h=86)
     calendar_svg = build_commit_calendar_table(start_x=86, start_y=1718)
 
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="2132" viewBox="0 0 920 2132" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="920" height="2132" viewBox="0 0 920 2132" role="img" aria-labelledby="title desc">
   <title id="title">WhoIsMrSentry Interactive Profile Terminal</title>
   <desc id="desc">Typewriter terminal session with whoami, summary, tech stack tree, neofetch, streak, activity graph, commit calendar, uptime, and bio.</desc>
 
@@ -555,7 +551,6 @@ def generate_terminal_panel_svg() -> str:
         98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
       }}
     </style>
-    {icon_defs_svg}
   </defs>
 
   <!-- Frame and Header -->

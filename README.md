@@ -159,7 +159,7 @@
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/streak_stats.svg" alt="GitHub contribution streak" width="100%" style="max-width:920px;height:auto;display:block;" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=WhoIsMrSentry&bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
+  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/activity_graph.svg" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
 </div>
 
 <div align="center">

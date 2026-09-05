@@ -48,25 +48,46 @@ def write_shields_endpoint_json(path: Path, count: int) -> None:
 
 
 def main() -> int:
-    token = (
-        os.environ.get("SENTRYBOT_TOKEN")
-        or os.environ.get("GH_PAT")
-        or os.environ.get("GITHUB_TOKEN")
-        or os.environ.get("GH_TOKEN")
-    )
-    if not token:
-        print(
-            "Missing token. Set SENTRYBOT_TOKEN (recommended) or GH_PAT/GITHUB_TOKEN/GH_TOKEN.",
-            file=sys.stderr,
-        )
-        return 1
+    tokens = [
+        t for t in [
+            os.environ.get("SENTRYBOT_TOKEN"),
+            os.environ.get("GHT"),
+            os.environ.get("GH_PAT"),
+            os.environ.get("GITHUB_TOKEN"),
+            os.environ.get("GH_TOKEN"),
+        ]
+        if t
+    ]
 
+    out_path = Path("assets") / "sentrybot_views.json"
     owner = os.environ.get("SENTRYBOT_OWNER", "WhoIsMrSentry")
     repo = os.environ.get("SENTRYBOT_REPO", "SentryBOT")
-    count = fetch_repo_views(owner, repo, token)
-    out_path = Path("assets") / "sentrybot_views.json"
-    write_shields_endpoint_json(out_path, count)
-    print(f"Wrote {out_path} with views_14d={count}")
+
+    count = None
+    last_err: Exception | None = None
+
+    for token in tokens:
+        try:
+            count = fetch_repo_views(owner, repo, token)
+            break
+        except Exception as exc:
+            last_err = exc
+
+    if count is not None:
+        write_shields_endpoint_json(out_path, count)
+        print(f"Wrote {out_path} with views_14d={count}")
+        return 0
+
+    print(
+        f"WARN: Could not fetch {owner}/{repo} views ({last_err or 'no token provided'}). "
+        "Preserving previous value if available.",
+        file=sys.stderr,
+    )
+
+    if not out_path.exists():
+        write_shields_endpoint_json(out_path, 0)
+        print(f"Wrote fallback {out_path} with views_14d=0")
+
     return 0
 
 

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="895" height="350" viewBox="0 0 895 350" fill="none">
+  <rect width="895" height="350" rx="8" fill="#200009" />
+  <text x="50%" y="45%" text-anchor="middle" fill="#39ff14" font-family="'Fira Code', monospace" font-size="18" font-weight="bold">WhoIsMrSentry / Activity Graph</text>
+  <text x="50%" y="60%" text-anchor="middle" fill="#e6ffe6" font-family="'Fira Code', monospace" font-size="13">Synced via GitHub Actions</text>
+</svg>

@@ -54,12 +54,23 @@ def write_shields_endpoint_json(path: Path, count: int) -> None:
 
 
 def main() -> int:
-    svg = fetch_text(PROFILE_VIEWS_URL)
-    count = extract_count(svg)
     out_path = Path("assets") / "profile_views.json"
-    write_shields_endpoint_json(out_path, count)
-    print(f"Wrote {out_path} with profile_views={count}")
-    return 0
+    try:
+        svg = fetch_text(PROFILE_VIEWS_URL)
+        count = extract_count(svg)
+        write_shields_endpoint_json(out_path, count)
+        print(f"Wrote {out_path} with profile_views={count}")
+        return 0
+    except Exception as exc:
+        print(
+            f"WARN: Could not fetch profile views from visitor badge ({exc}). "
+            "Preserving previous value if available.",
+            file=sys.stderr,
+        )
+        if not out_path.exists():
+            write_shields_endpoint_json(out_path, 0)
+            print(f"Wrote fallback {out_path} with profile_views=0")
+        return 0
 
 
 if __name__ == "__main__":

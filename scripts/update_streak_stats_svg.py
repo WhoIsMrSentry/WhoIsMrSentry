@@ -67,9 +67,20 @@ def download_streak_svg() -> bytes:
 
 def main() -> int:
     SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
-    SVG_PATH.write_bytes(download_streak_svg())
-    print(f"Updated {SVG_PATH}")
-    return 0
+    try:
+        data = download_streak_svg()
+        SVG_PATH.write_bytes(data)
+        print(f"Updated {SVG_PATH}")
+        return 0
+    except Exception as exc:
+        print(
+            f"WARN: Could not refresh streak stats SVG ({exc}). "
+            "Preserving previous file if available.",
+            file=sys.stderr,
+        )
+        if not SVG_PATH.exists():
+            raise
+        return 0
 
 
 if __name__ == "__main__":

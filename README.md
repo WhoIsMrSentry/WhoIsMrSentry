@@ -8,18 +8,7 @@
 
 <br/><br/>
 
-<img src="https://img.shields.io/github/followers/WhoIsMrSentry?style=for-the-badge&label=Followers&color=88001b&labelColor=000000&logo=github" alt="GitHub Followers" />
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_total_stars.json" alt="Total stars" />
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_public_repos.json" alt="Public repositories" />
-<br/>
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_last_commit.json" alt="Last commit" />
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_monthly_commits.json" alt="Monthly commit activity" />
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_open_work_items.json" alt="Open issues and pull requests" />
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/proof_closed_work_items.json" alt="Closed issues and pull requests" />
-
-<br/><br/>
-
-<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_terminal_panel.svg?v=20260905_terminal_v3" alt="Terminal style profile panel" width="100%" />
+<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/terminal_profile.svg" alt="Terminal style profile panel" width="100%" />
 
 </div>
 

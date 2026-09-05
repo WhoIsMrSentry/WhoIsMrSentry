@@ -17,6 +17,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SVG_PATH = REPO_ROOT / "assets" / "profile_terminal_panel.svg"
+SVG_PATH_NEW = REPO_ROOT / "assets" / "terminal_profile.svg"
 STREAK_PATH = REPO_ROOT / "assets" / "streak_stats.svg"
 ACTIVITY_PATH = REPO_ROOT / "assets" / "activity_graph.svg"
 
@@ -530,7 +531,8 @@ def main() -> int:
     ET.fromstring(svg)
     SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
     SVG_PATH.write_text(svg, encoding="utf-8")
-    print(f"Generated valid interactive terminal SVG at {SVG_PATH}")
+    SVG_PATH_NEW.write_text(svg, encoding="utf-8")
+    print(f"Generated valid interactive terminal SVG at {SVG_PATH} and {SVG_PATH_NEW}")
     return 0
 
 

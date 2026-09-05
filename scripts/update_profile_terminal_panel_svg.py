@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Generate WhoIsMrSentry interactive terminal profile SVG with live stats,
-typewriter animation, streak metrics, 30-day activity graph, and commit snake arena.
+sequential prompt-and-command typewriter animations, neofetch, streak metrics,
+30-day activity graph, and commit calendar matrix table.
 """
 
 from __future__ import annotations
@@ -27,7 +28,7 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GHT") or os.env
 
 def get_streak_metrics() -> dict[str, str]:
     defaults = {
-        "total_contribs": "4,792",
+        "total_contribs": "4,794",
         "current_streak": "257",
         "longest_streak": "257",
         "period": "May 24, 2023 - Present",
@@ -66,7 +67,6 @@ def get_account_uptime() -> str:
 
 def get_activity_points() -> list[tuple[int, int]]:
     """Return 30 days of contribution counts as (day_of_month, count)."""
-    # 1. Try fetching from GraphQL
     query = """
     query($login: String!) {
       user(login: $login) {
@@ -126,7 +126,6 @@ def get_activity_points() -> list[tuple[int, int]]:
     if len(days_data) >= 30:
         return days_data[-30:]
 
-    # Fallback to realistic distribution matching activity graph
     fallback = [
         (6, 7), (7, 7), (8, 5), (9, 7), (10, 7), (11, 7),
         (12, 46), (13, 21), (14, 10), (15, 25), (16, 21), (17, 15),
@@ -137,7 +136,7 @@ def get_activity_points() -> list[tuple[int, int]]:
     return fallback[-30:]
 
 
-def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart_y: int = 450, chart_w: int = 780, chart_h: int = 80) -> str:
+def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart_y: int = 770, chart_w: int = 780, chart_h: int = 86) -> str:
     max_val = max(50, max(c for _, c in points))
     n = len(points)
     step_x = chart_w / (n - 1)
@@ -148,7 +147,7 @@ def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart
         cy = chart_y + chart_h - (count / max_val) * chart_h
         coords.append((cx, cy, count))
 
-    # Spline Path
+    # Path
     path_d = f"M {coords[0][0]:.1f} {coords[0][1]:.1f}"
     for i in range(len(coords) - 1):
         x0, y0, _ = coords[i]
@@ -158,14 +157,12 @@ def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart
 
     area_d = f"{path_d} L {coords[-1][0]:.1f} {chart_y + chart_h:.1f} L {coords[0][0]:.1f} {chart_y + chart_h:.1f} Z"
 
-    # Grid lines for 0, 10, 20, 30, 40, 50
     grid_lines = []
     for v in [0, 10, 20, 30, 40, 50]:
         gy = chart_y + chart_h - (v / 50) * chart_h
         grid_lines.append(f'<line x1="{chart_x}" y1="{gy:.1f}" x2="{chart_x + chart_w}" y2="{gy:.1f}" stroke="#440015" stroke-dasharray="3,3" stroke-width="1"/>')
         grid_lines.append(f'<text x="{chart_x - 8}" y="{gy + 4:.1f}" fill="#a0a0a0" font-family="Monaco, Consolas, monospace" font-size="10" text-anchor="end">{v}</text>')
 
-    # Dots and peak annotation
     dots = []
     peak_count = max(c for _, c in points)
     for i, (cx, cy, cnt) in enumerate(coords):
@@ -175,7 +172,6 @@ def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart
         else:
             dots.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="2.5" fill="#e6ffe6" stroke="#39ff14" stroke-width="1.2"/>')
 
-    # X-axis day labels
     day_labels = []
     for i, (day, _) in enumerate(points):
         cx = chart_x + i * step_x
@@ -198,65 +194,84 @@ def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart
     """
 
 
-def build_snake_arena() -> str:
-    cols = 44
-    rows = 6
+def build_commit_calendar_table(start_x: int = 86, start_y: int = 1018) -> str:
+    """Build a rich contribution heatmap table (weeks x days)."""
+    cols = 40
+    rows = 7
     cell_w = 14
     cell_h = 9
     gap_x = 4
     gap_y = 3
-    start_x = 64
-    start_y = 665
 
-    # Visual contribution pattern
-    pattern = [
-        [0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0],
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1],
-        [0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0],
-        [0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
-        [1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1],
-        [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0],
+    colors = {
+        0: "#2c000e",
+        1: "#5c0018",
+        2: "#88001b",
+        3: "#d6002f",
+        4: "#39ff14",
+    }
+
+    month_labels = [
+        (start_x, "Jun"),
+        (start_x + 10 * (cell_w + gap_x), "Jul"),
+        (start_x + 22 * (cell_w + gap_x), "Aug"),
+        (start_x + 34 * (cell_w + gap_x), "Sep"),
+    ]
+    months_svg = "".join(f'<text x="{mx}" y="{start_y - 6}" fill="#a0a0a0" font-family="Monaco, Consolas, monospace" font-size="10">{ml}</text>' for mx, ml in month_labels)
+
+    day_labels = [
+        (start_y + 1 * (cell_h + gap_y) + 8, "Mon"),
+        (start_y + 3 * (cell_h + gap_y) + 8, "Wed"),
+        (start_y + 5 * (cell_h + gap_y) + 8, "Fri"),
+    ]
+    days_svg = "".join(f'<text x="{start_x - 10}" y="{dy}" fill="#a0a0a0" font-family="Monaco, Consolas, monospace" font-size="9" text-anchor="end">{dl}</text>' for dy, dl in day_labels)
+
+    matrix = [
+        [1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3],
+        [2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 4],
+        [0, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 3],
+        [3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 3, 4],
+        [1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 2, 3],
+        [2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 1, 2],
+        [0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1, 0, 2, 3, 4, 1, 0, 2, 3, 1, 2, 0, 1, 3, 2, 1],
     ]
 
     cells = []
     for r in range(rows):
         for c in range(cols):
-            x = start_x + c * (cell_w + gap_x)
-            y = start_y + r * (cell_h + gap_y)
-            is_active = pattern[r][c]
-            fill = "#ff1744" if is_active else "#4a0015"
-            cells.append(f'<rect x="{x}" y="{y}" width="{cell_w}" height="{cell_h}" rx="2" fill="{fill}"/>')
+            cx = start_x + c * (cell_w + gap_x)
+            cy = start_y + r * (cell_h + gap_y)
+            lvl = matrix[r][c]
+            fill = colors[lvl]
+            stroke = ' stroke="#39ff14" stroke-width="0.8"' if lvl == 4 else ''
+            cells.append(f'<rect x="{cx}" y="{cy}" width="{cell_w}" height="{cell_h}" rx="2" fill="{fill}"{stroke}/>')
 
-    snake_elements = f"""
-      <g class="snake-crawl">
-        <rect x="{start_x + 28 * (cell_w + gap_x)}" y="{start_y + 3 * (cell_h + gap_y)}" width="{cell_w}" height="{cell_h}" rx="2" fill="#39ff14" filter="drop-shadow(0 0 3px #39ff14)"/>
-        <rect x="{start_x + 29 * (cell_w + gap_x)}" y="{start_y + 3 * (cell_h + gap_y)}" width="{cell_w}" height="{cell_h}" rx="2" fill="#39ff14" filter="drop-shadow(0 0 3px #39ff14)"/>
-        <rect x="{start_x + 30 * (cell_w + gap_x)}" y="{start_y + 3 * (cell_h + gap_y)}" width="{cell_w}" height="{cell_h}" rx="2" fill="#39ff14" filter="drop-shadow(0 0 3px #39ff14)"/>
-        <rect x="{start_x + 31 * (cell_w + gap_x)}" y="{start_y + 3 * (cell_h + gap_y)}" width="{cell_w}" height="{cell_h}" rx="2" fill="#39ff14" filter="drop-shadow(0 0 3px #39ff14)"/>
-        <rect x="{start_x + 32 * (cell_w + gap_x)}" y="{start_y + 3 * (cell_h + gap_y)}" width="{cell_w}" height="{cell_h}" rx="2" fill="#39ff14" filter="drop-shadow(0 0 3px #39ff14)"/>
-        <!-- Snake Head -->
-        <rect x="{start_x + 33 * (cell_w + gap_x)}" y="{start_y + 3 * (cell_h + gap_y)}" width="{cell_w}" height="{cell_h}" rx="3" fill="#ffffff" stroke="#39ff14" stroke-width="1.5" filter="drop-shadow(0 0 5px #39ff14)"/>
-      </g>
-      <!-- Blinking Food Dots -->
-      <circle cx="{start_x + 36 * (cell_w + gap_x) + 7}" cy="{start_y + 3 * (cell_h + gap_y) + 4.5}" r="4" fill="#39ff14" class="food-dot"/>
-      <circle cx="{start_x + 12 * (cell_w + gap_x) + 7}" cy="{start_y + 1 * (cell_h + gap_y) + 4.5}" r="4" fill="#39ff14" class="food-dot"/>
-      <circle cx="{start_x + 20 * (cell_w + gap_x) + 7}" cy="{start_y + 4 * (cell_h + gap_y) + 4.5}" r="4" fill="#39ff14" class="food-dot"/>
+    leg_x = start_x + cols * (cell_w + gap_x) - 140
+    leg_y = start_y + rows * (cell_h + gap_y) + 14
+    legend = f"""
+      <text x="{leg_x - 8}" y="{leg_y + 8}" fill="#a0a0a0" font-family="Monaco, Consolas, monospace" font-size="10" text-anchor="end">Less</text>
+      <rect x="{leg_x}" y="{leg_y}" width="11" height="9" rx="2" fill="{colors[0]}"/>
+      <rect x="{leg_x + 15}" y="{leg_y}" width="11" height="9" rx="2" fill="{colors[1]}"/>
+      <rect x="{leg_x + 30}" y="{leg_y}" width="11" height="9" rx="2" fill="{colors[2]}"/>
+      <rect x="{leg_x + 45}" y="{leg_y}" width="11" height="9" rx="2" fill="{colors[3]}"/>
+      <rect x="{leg_x + 60}" y="{leg_y}" width="11" height="9" rx="2" fill="{colors[4]}"/>
+      <text x="{leg_x + 78}" y="{leg_y + 8}" fill="#a0a0a0" font-family="Monaco, Consolas, monospace" font-size="10">More</text>
     """
 
-    return "".join(cells) + snake_elements
+    return months_svg + days_svg + "".join(cells) + legend
 
 
 def generate_terminal_panel_svg() -> str:
     streak = get_streak_metrics()
     uptime = get_account_uptime()
     points = get_activity_points()
-    chart_svg = build_activity_chart(points, chart_x=70, chart_y=450, chart_w=780, chart_h=80)
-    snake_svg = build_snake_arena()
+    chart_svg = build_activity_chart(points, chart_x=70, chart_y=770, chart_w=780, chart_h=86)
+    calendar_svg = build_commit_calendar_table(start_x=86, start_y=1018)
 
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1020" viewBox="0 0 920 1020" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1390" viewBox="0 0 920 1390" role="img" aria-labelledby="title desc">
   <title id="title">WhoIsMrSentry Interactive Profile Terminal</title>
-  <desc id="desc">Animated terminal session executing whoami, summary, streak, activity graph, commit snake, uptime, and bio.</desc>
+  <desc id="desc">Typewriter terminal session with whoami, summary, neofetch, streak, activity graph, commit calendar, uptime, and bio.</desc>
 
   <defs>
     <style>
@@ -268,6 +283,7 @@ def generate_terminal_panel_svg() -> str:
       .cmd {{ fill: #ff5f58; font: 600 16px Monaco, Consolas, Menlo, monospace; }}
       .txt {{ fill: #e6e6e6; font: 500 15px Monaco, Consolas, Menlo, monospace; }}
       .info {{ fill: #ff5f58; font: 600 15px Monaco, Consolas, Menlo, monospace; }}
+      .ascii {{ fill: #39ff14; font: 500 4.2px Monaco, Consolas, Menlo, monospace; }}
       .box-frame {{ fill: #15000a; stroke: #88001b; stroke-width: 1.5; }}
       .box-head {{ fill: #39ff14; font: 700 13px Monaco, Consolas, monospace; }}
       .box-sub {{ fill: #ff5f58; font: 600 12px Monaco, Consolas, monospace; }}
@@ -275,137 +291,201 @@ def generate_terminal_panel_svg() -> str:
       .val-label {{ fill: #a0a0a0; font: 500 12px Monaco, Consolas, monospace; text-anchor: middle; }}
       .val-date {{ fill: #ff5f58; font: 500 11px Monaco, Consolas, monospace; text-anchor: middle; }}
 
-      /* Animation Loop (24s cycle) */
+      /* Animation Loop (28s cycle) */
       @keyframes blink {{
         0%, 49% {{ opacity: 1; }}
         50%, 100% {{ opacity: 0; }}
       }}
 
-      @keyframes snakeMove {{
-        0%, 100% {{ transform: translateX(0px); }}
-        50% {{ transform: translateX(25px); }}
+      /* Base styles: default visible if CSS animations not supported */
+      .pr-1, .pr-2, .pr-3, .pr-4, .pr-5, .pr-6, .pr-7, .pr-8, .pr-9 {{ opacity: 1; }}
+      .out-1, .out-2, .out-3, .out-4, .out-5, .out-6, .out-7, .out-8 {{ opacity: 1; }}
+      .cmd-1, .cmd-2, .cmd-3, .cmd-4, .cmd-5, .cmd-6, .cmd-7, .cmd-8, .cmd-9 {{ clip-path: inset(0 0 0 0); }}
+
+      /* Step 1: whoami */
+      .pr-1 {{ animation: pAnim1 28s infinite; }}
+      @keyframes pAnim1 {{
+        0%, 0.9% {{ opacity: 0; }}
+        1%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
+      }}
+      .cmd-1 {{ animation: cAnim1 28s steps(6, end) infinite; }}
+      @keyframes cAnim1 {{
+        0%, 1.5% {{ clip-path: inset(0 100% 0 0); }}
+        3.5%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      }}
+      .out-1 {{ animation: oAnim1 28s infinite; }}
+      @keyframes oAnim1 {{
+        0%, 4% {{ opacity: 0; transform: translateY(-2px); }}
+        4.6%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
 
-      @keyframes foodGlow {{
-        0%, 100% {{ filter: drop-shadow(0 0 1px #39ff14); }}
-        50% {{ filter: drop-shadow(0 0 4px #39ff14); }}
+      /* Step 2: profile summary */
+      .pr-2 {{ animation: pAnim2 28s infinite; }}
+      @keyframes pAnim2 {{
+        0%, 6% {{ opacity: 0; }}
+        6.4%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
+      }}
+      .cmd-2 {{ animation: cAnim2 28s steps(19, end) infinite; }}
+      @keyframes cAnim2 {{
+        0%, 7% {{ clip-path: inset(0 100% 0 0); }}
+        10%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      }}
+      .out-2 {{ animation: oAnim2 28s infinite; }}
+      @keyframes oAnim2 {{
+        0%, 10.8% {{ opacity: 0; transform: translateY(-2px); }}
+        11.4%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
 
-      /* Typewriter reveals for commands */
-      .cmd-1 {{ animation: tc1 24s steps(6, end) infinite; }}
-      @keyframes tc1 {{
-        0% {{ clip-path: inset(0 100% 0 0); }}
-        2%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      /* Step 3: neofetch */
+      .pr-3 {{ animation: pAnim3 28s infinite; }}
+      @keyframes pAnim3 {{
+        0%, 13% {{ opacity: 0; }}
+        13.5%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
-      .out-1 {{ animation: ro1 24s infinite; }}
-      @keyframes ro1 {{
-        0%, 2% {{ opacity: 0; transform: translateY(-2px); }}
-        3%, 97% {{ opacity: 1; transform: translateY(0); }}
-        98%, 100% {{ opacity: 0; }}
+      .cmd-3 {{ animation: cAnim3 28s steps(8, end) infinite; }}
+      @keyframes cAnim3 {{
+        0%, 14.2% {{ clip-path: inset(0 100% 0 0); }}
+        16.8%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
       }}
-
-      .cmd-2 {{ animation: tc2 24s steps(19, end) infinite; }}
-      @keyframes tc2 {{
-        0%, 4% {{ clip-path: inset(0 100% 0 0); }}
-        6.5%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
-      }}
-      .out-2 {{ animation: ro2 24s infinite; }}
-      @keyframes ro2 {{
-        0%, 6.5% {{ opacity: 0; transform: translateY(-2px); }}
-        7.5%, 97% {{ opacity: 1; transform: translateY(0); }}
-        98%, 100% {{ opacity: 0; }}
+      .out-3 {{ animation: oAnim3 28s infinite; }}
+      @keyframes oAnim3 {{
+        0%, 17.2% {{ opacity: 0; transform: translateY(3px); }}
+        17.8%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
 
-      .cmd-3 {{ animation: tc3 24s steps(16, end) infinite; }}
-      @keyframes tc3 {{
-        0%, 9% {{ clip-path: inset(0 100% 0 0); }}
-        12%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      /* Step 4: profile streak */
+      .pr-4 {{ animation: pAnim4 28s infinite; }}
+      @keyframes pAnim4 {{
+        0%, 21.5% {{ opacity: 0; }}
+        22.1%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
-      .out-3 {{ animation: ro3 24s infinite; }}
-      @keyframes ro3 {{
-        0%, 12% {{ opacity: 0; transform: translateY(4px); }}
-        13.5%, 97% {{ opacity: 1; transform: translateY(0); }}
-        98%, 100% {{ opacity: 0; }}
+      .cmd-4 {{ animation: cAnim4 28s steps(16, end) infinite; }}
+      @keyframes cAnim4 {{
+        0%, 22.8% {{ clip-path: inset(0 100% 0 0); }}
+        26%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
       }}
-
-      .cmd-4 {{ animation: tc4 24s steps(18, end) infinite; }}
-      @keyframes tc4 {{
-        0%, 16% {{ clip-path: inset(0 100% 0 0); }}
-        19%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
-      }}
-      .out-4 {{ animation: ro4 24s infinite; }}
-      @keyframes ro4 {{
-        0%, 19% {{ opacity: 0; transform: translateY(4px); }}
-        20.5%, 97% {{ opacity: 1; transform: translateY(0); }}
-        98%, 100% {{ opacity: 0; }}
+      .out-4 {{ animation: oAnim4 28s infinite; }}
+      @keyframes oAnim4 {{
+        0%, 26.5% {{ opacity: 0; transform: translateY(4px); }}
+        27.1%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
 
-      .cmd-5 {{ animation: tc5 24s steps(16, end) infinite; }}
-      @keyframes tc5 {{
-        0%, 23% {{ clip-path: inset(0 100% 0 0); }}
-        26%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      /* Step 5: profile activity */
+      .pr-5 {{ animation: pAnim5 28s infinite; }}
+      @keyframes pAnim5 {{
+        0%, 30.8% {{ opacity: 0; }}
+        31.4%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
-      .out-5 {{ animation: ro5 24s infinite; }}
-      @keyframes ro5 {{
-        0%, 26% {{ opacity: 0; transform: translateY(4px); }}
-        27.5%, 97% {{ opacity: 1; transform: translateY(0); }}
-        98%, 100% {{ opacity: 0; }}
+      .cmd-5 {{ animation: cAnim5 28s steps(18, end) infinite; }}
+      @keyframes cAnim5 {{
+        0%, 32.1% {{ clip-path: inset(0 100% 0 0); }}
+        35.8%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
       }}
-
-      .cmd-6 {{ animation: tc6 24s steps(6, end) infinite; }}
-      @keyframes tc6 {{
-        0%, 30% {{ clip-path: inset(0 100% 0 0); }}
-        32%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
-      }}
-      .out-6 {{ animation: ro6 24s infinite; }}
-      @keyframes ro6 {{
-        0%, 32% {{ opacity: 0; transform: translateY(-2px); }}
-        33%, 97% {{ opacity: 1; transform: translateY(0); }}
-        98%, 100% {{ opacity: 0; }}
+      .out-5 {{ animation: oAnim5 28s infinite; }}
+      @keyframes oAnim5 {{
+        0%, 36.2% {{ opacity: 0; transform: translateY(4px); }}
+        36.8%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
 
-      .cmd-7 {{ animation: tc7 24s steps(13, end) infinite; }}
-      @keyframes tc7 {{
-        0%, 35% {{ clip-path: inset(0 100% 0 0); }}
-        37.5%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      /* Step 6: profile commits */
+      .pr-6 {{ animation: pAnim6 28s infinite; }}
+      @keyframes pAnim6 {{
+        0%, 40.5% {{ opacity: 0; }}
+        41%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
-      .out-7 {{ animation: ro7 24s infinite; }}
-      @keyframes ro7 {{
-        0%, 37.5% {{ opacity: 0; transform: translateY(-2px); }}
-        38.5%, 97% {{ opacity: 1; transform: translateY(0); }}
-        98%, 100% {{ opacity: 0; }}
+      .cmd-6 {{ animation: cAnim6 28s steps(17, end) infinite; }}
+      @keyframes cAnim6 {{
+        0%, 41.8% {{ clip-path: inset(0 100% 0 0); }}
+        45.2%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      }}
+      .out-6 {{ animation: oAnim6 28s infinite; }}
+      @keyframes oAnim6 {{
+        0%, 45.8% {{ opacity: 0; transform: translateY(4px); }}
+        46.4%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
       }}
 
-      .cmd-8 {{ animation: tc8 24s steps(4, end) infinite; }}
-      @keyframes tc8 {{
-        0%, 41% {{ clip-path: inset(0 100% 0 0); }}
-        43%, 97% {{ clip-path: inset(0 0 0 0); }}
-        98%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      /* Step 7: uptime */
+      .pr-7 {{ animation: pAnim7 28s infinite; }}
+      @keyframes pAnim7 {{
+        0%, 50.2% {{ opacity: 0; }}
+        50.7%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
+      }}
+      .cmd-7 {{ animation: cAnim7 28s steps(6, end) infinite; }}
+      @keyframes cAnim7 {{
+        0%, 51.4% {{ clip-path: inset(0 100% 0 0); }}
+        53.2%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      }}
+      .out-7 {{ animation: oAnim7 28s infinite; }}
+      @keyframes oAnim7 {{
+        0%, 53.8% {{ opacity: 0; transform: translateY(-2px); }}
+        54.3%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
+      }}
+
+      /* Step 8: cat about */
+      .pr-8 {{ animation: pAnim8 28s infinite; }}
+      @keyframes pAnim8 {{
+        0%, 55.8% {{ opacity: 0; }}
+        56.4%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
+      }}
+      .cmd-8 {{ animation: cAnim8 28s steps(13, end) infinite; }}
+      @keyframes cAnim8 {{
+        0%, 57.1% {{ clip-path: inset(0 100% 0 0); }}
+        60%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
+      }}
+      .out-8 {{ animation: oAnim8 28s infinite; }}
+      @keyframes oAnim8 {{
+        0%, 60.5% {{ opacity: 0; transform: translateY(-2px); }}
+        61%, 97.5% {{ opacity: 1; transform: translateY(0); }}
+        98.5%, 100% {{ opacity: 0; }}
+      }}
+
+      /* Step 9: exit */
+      .pr-9 {{ animation: pAnim9 28s infinite; }}
+      @keyframes pAnim9 {{
+        0%, 63% {{ opacity: 0; }}
+        63.5%, 97.5% {{ opacity: 1; }}
+        98.5%, 100% {{ opacity: 0; }}
+      }}
+      .cmd-9 {{ animation: cAnim9 28s steps(4, end) infinite; }}
+      @keyframes cAnim9 {{
+        0%, 64.2% {{ clip-path: inset(0 100% 0 0); }}
+        66%, 97.5% {{ clip-path: inset(0 0 0 0); }}
+        98.5%, 100% {{ clip-path: inset(0 100% 0 0); }}
       }}
 
       .cursor-blink {{
         animation: blink 1s infinite;
       }}
-      .snake-crawl {{
-        animation: snakeMove 3s ease-in-out infinite;
-      }}
-      .food-dot {{
-        animation: foodGlow 1.5s infinite alternate;
-      }}
     </style>
   </defs>
 
   <!-- Frame and Header -->
-  <rect class="outer" x="0" y="0" width="920" height="1020" rx="16"/>
-  <rect class="terminal" x="16" y="16" width="888" height="988" rx="10"/>
-  <rect class="frame" x="16" y="16" width="888" height="988" rx="10"/>
+  <rect class="outer" x="0" y="0" width="920" height="1390" rx="16"/>
+  <rect class="terminal" x="16" y="16" width="888" height="1358" rx="10"/>
+  <rect class="frame" x="16" y="16" width="888" height="1358" rx="10"/>
   <rect class="head" x="16" y="16" width="888" height="40" rx="10"/>
 
   <circle cx="42" cy="36" r="6.5" fill="#ff5f58"/>
@@ -414,112 +494,167 @@ def generate_terminal_panel_svg() -> str:
   <text x="460" y="41" fill="#e6ffe6" font-family="Monaco, Consolas, monospace" font-size="13" font-weight="bold" text-anchor="middle">WhoIsMrSentry@github.com: ~ (bash)</text>
 
   <!-- 1. whoami -->
-  <g>
-    <text class="prompt" x="44" y="86">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-1" x="315" y="86">whoami</text>
+  <g class="pr-1">
+    <text class="prompt" x="44" y="90">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-1" x="315" y="90">whoami</text>
   </g>
   <g class="out-1">
-    <text class="txt" x="44" y="110">Emir Hamurcu</text>
+    <text class="txt" x="44" y="118">Emir Hamurcu</text>
   </g>
 
   <!-- 2. profile summary -->
-  <g>
-    <text class="prompt" x="44" y="142">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-2" x="315" y="142">./profile --summary</text>
+  <g class="pr-2">
+    <text class="prompt" x="44" y="158">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-2" x="315" y="158">./profile --summary</text>
   </g>
   <g class="out-2">
-    <text class="info" x="44" y="166">Focus:</text><text class="txt" x="110" y="166">Robotics &amp; Embedded AI</text>
-    <text class="info" x="44" y="188">Role:</text><text class="txt" x="110" y="188">Software Developer · Embedded AI</text>
-    <text class="info" x="44" y="210">Status:</text><text class="txt" x="110" y="210">Open to Collaboration</text>
+    <text class="info" x="44" y="186">Focus:</text><text class="txt" x="115" y="186">Robotics &amp; Embedded AI</text>
+    <text class="info" x="44" y="210">Role:</text><text class="txt" x="115" y="210">Software Developer · Embedded AI</text>
+    <text class="info" x="44" y="234">Status:</text><text class="txt" x="115" y="234">Open to Collaboration</text>
   </g>
 
-  <!-- 3. profile streak -->
-  <g>
-    <text class="prompt" x="44" y="244">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-3" x="315" y="244">./profile --streak</text>
+  <!-- 3. neofetch -->
+  <g class="pr-3">
+    <text class="prompt" x="44" y="276">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-3" x="315" y="276">neofetch</text>
   </g>
   <g class="out-3">
-    <rect class="box-frame" x="44" y="258" width="832" height="106" rx="8"/>
-    <rect x="44" y="258" width="832" height="26" rx="8" fill="#1b000d"/>
-    <line x1="44" y1="284" x2="876" y2="284" stroke="#88001b" stroke-width="1"/>
-    <text class="box-head" x="60" y="276">⚡ GITHUB CONTRIBUTION STREAK METRICS</text>
+    <text class="ascii" x="44" y="304" xml:space="preserve">
+      <tspan x="44" dy="0">                               @@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">                         @@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">      @@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">     @@@@@@@@@@@          @@@@@@          @@@@@@          @@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">    @@@@@@@@@@@@                                          @@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">   @@@@@@@@@@@@@                                          @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@@                                        @@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@                                              @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                               @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@@@@@                                  @@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">   @@@@@@@   @@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">     @@@@@@@@    @@@@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">      @@@@@@@@     @@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">       @@@@@@@@                               @@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">          @@@@@@@@                            @@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@                  @@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.5">                %@@@@@@@@@@@                  @@@@@@@@@@@%</tspan>
+      <tspan x="44" dy="4.5">                    @@@@@@@@                  @@@@@@@@</tspan>
+    </text>
 
-    <!-- Column 1: Total Contribs -->
-    <text class="val-large" x="180" y="320">{streak['total_contribs']}</text>
-    <text class="val-label" x="180" y="338">Total Contributions</text>
-    <text class="val-date" x="180" y="352">{streak['period']}</text>
-
-    <line x1="320" y1="294" x2="320" y2="354" stroke="#440015" stroke-width="1"/>
-
-    <!-- Column 2: Current Streak Ring & Fire -->
-    <circle cx="460" cy="318" r="28" fill="none" stroke="#39ff14" stroke-width="3.5" stroke-dasharray="140, 36"/>
-    <text class="val-large" x="460" y="326" fill="#39ff14">{streak['current_streak']}</text>
-    <text class="val-label" x="460" y="344" fill="#39ff14">🔥 Current Streak</text>
-    <text class="val-date" x="460" y="356" fill="#39ff14">{streak['dates']}</text>
-
-    <line x1="600" y1="294" x2="600" y2="354" stroke="#440015" stroke-width="1"/>
-
-    <!-- Column 3: Longest Streak -->
-    <text class="val-large" x="740" y="320">{streak['longest_streak']}</text>
-    <text class="val-label" x="740" y="338">Longest Streak</text>
-    <text class="val-date" x="740" y="352">{streak['dates']}</text>
+    <!-- Neofetch Details -->
+    <text class="info" x="350" y="316" font-weight="bold">WhoIsMrSentry @github.com</text>
+    <text class="info" x="350" y="336">--------------------------</text>
+    <text class="info" x="350" y="356">OS:</text><text class="txt" x="390" y="356">GitHub Linux (x86_64)</text>
+    <text class="info" x="350" y="376">Host:</text><text class="txt" x="404" y="376">github.com/WhoIsMrSentry</text>
+    <text class="info" x="350" y="396">Kernel:</text><text class="txt" x="424" y="396">Automation Engine 2.0</text>
+    <text class="info" x="350" y="416">Uptime:</text><text class="txt" x="420" y="416">{uptime}</text>
+    <text class="info" x="350" y="436">Repos:</text><text class="txt" x="415" y="436">76 (60 Public)</text>
+    <text class="info" x="350" y="456">Contributions:</text><text class="txt" x="480" y="456">{streak['total_contribs']}</text>
+    <text class="info" x="350" y="476">Commits:</text><text class="txt" x="425" y="476">2,619+</text>
+    <text class="info" x="350" y="496">Followers / Stars:</text><text class="txt" x="515" y="496">24 / 18</text>
   </g>
 
-  <!-- 4. profile activity -->
-  <g>
-    <text class="prompt" x="44" y="394">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-4" x="315" y="394">./profile --activity</text>
+  <!-- 4. profile streak -->
+  <g class="pr-4">
+    <text class="prompt" x="44" y="540">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-4" x="315" y="540">./profile --streak</text>
   </g>
   <g class="out-4">
-    <rect class="box-frame" x="44" y="408" width="832" height="180" rx="8"/>
-    <rect x="44" y="408" width="832" height="26" rx="8" fill="#1b000d"/>
-    <line x1="44" y1="434" x2="876" y2="434" stroke="#88001b" stroke-width="1"/>
-    <text class="box-head" x="60" y="426">📈 EMIR HAMURCU'S CONTRIBUTION GRAPH (LAST 30 DAYS)</text>
-    <text class="box-sub" x="860" y="426" text-anchor="end">PEAK: 46 COMMITS/DAY  •  STATUS: VERIFIED</text>
+    <rect class="box-frame" x="44" y="556" width="832" height="114" rx="8"/>
+    <rect x="44" y="556" width="832" height="28" rx="8" fill="#1b000d"/>
+    <line x1="44" y1="584" x2="876" y2="584" stroke="#88001b" stroke-width="1"/>
+    <text class="box-head" x="60" y="575">⚡ GITHUB CONTRIBUTION STREAK METRICS</text>
+
+    <!-- Column 1: Total Contribs -->
+    <text class="val-large" x="180" y="622">{streak['total_contribs']}</text>
+    <text class="val-label" x="180" y="642">Total Contributions</text>
+    <text class="val-date" x="180" y="658">{streak['period']}</text>
+
+    <line x1="320" y1="594" x2="320" y2="660" stroke="#440015" stroke-width="1"/>
+
+    <!-- Column 2: Current Streak Ring & Fire -->
+    <circle cx="460" cy="620" r="28" fill="none" stroke="#39ff14" stroke-width="3.5" stroke-dasharray="140, 36"/>
+    <text class="val-large" x="460" y="628" fill="#39ff14">{streak['current_streak']}</text>
+    <text class="val-label" x="460" y="646" fill="#39ff14">🔥 Current Streak</text>
+    <text class="val-date" x="460" y="660" fill="#39ff14">{streak['dates']}</text>
+
+    <line x1="600" y1="594" x2="600" y2="660" stroke="#440015" stroke-width="1"/>
+
+    <!-- Column 3: Longest Streak -->
+    <text class="val-large" x="740" y="622">{streak['longest_streak']}</text>
+    <text class="val-label" x="740" y="642">Longest Streak</text>
+    <text class="val-date" x="740" y="658">{streak['dates']}</text>
+  </g>
+
+  <!-- 5. profile activity -->
+  <g class="pr-5">
+    <text class="prompt" x="44" y="716">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-5" x="315" y="716">./profile --activity</text>
+  </g>
+  <g class="out-5">
+    <rect class="box-frame" x="44" y="732" width="832" height="184" rx="8"/>
+    <rect x="44" y="732" width="832" height="28" rx="8" fill="#1b000d"/>
+    <line x1="44" y1="760" x2="876" y2="760" stroke="#88001b" stroke-width="1"/>
+    <text class="box-head" x="60" y="751">📈 EMIR HAMURCU'S CONTRIBUTION GRAPH (LAST 30 DAYS)</text>
+    <text class="box-sub" x="860" y="751" text-anchor="end">PEAK: 46 COMMITS/DAY  •  STATUS: VERIFIED</text>
     {chart_svg}
   </g>
 
-  <!-- 5. snake commits -->
-  <g>
-    <text class="prompt" x="44" y="618">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-5" x="315" y="618">./snake --commits</text>
-  </g>
-  <g class="out-5">
-    <rect class="box-frame" x="44" y="632" width="832" height="135" rx="8"/>
-    <rect x="44" y="632" width="832" height="26" rx="8" fill="#1b000d"/>
-    <line x1="44" y1="658" x2="876" y2="658" stroke="#88001b" stroke-width="1"/>
-    <text class="box-head" x="60" y="650">🐍 SENTRY RETRO COMMIT SNAKE ARENA</text>
-    <text class="box-sub" x="860" y="650" text-anchor="end">SCORE: {streak['total_contribs']}  •  LENGTH: {streak['current_streak']}  •  STATUS: WINNING</text>
-    {snake_svg}
-    <!-- Snake Progress / Energy Bar -->
-    <rect x="64" y="750" width="792" height="4" rx="2" fill="#39ff14" filter="drop-shadow(0 0 3px #39ff14)"/>
-  </g>
-
-  <!-- 6. uptime -->
-  <g>
-    <text class="prompt" x="44" y="796">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-6" x="315" y="796">uptime</text>
+  <!-- 6. profile commits -->
+  <g class="pr-6">
+    <text class="prompt" x="44" y="962">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-6" x="315" y="962">./profile --commits</text>
   </g>
   <g class="out-6">
-    <text class="txt" x="44" y="820">{uptime}</text>
+    <rect class="box-frame" x="44" y="978" width="832" height="156" rx="8"/>
+    <rect x="44" y="978" width="832" height="28" rx="8" fill="#1b000d"/>
+    <line x1="44" y1="1006" x2="876" y2="1006" stroke="#88001b" stroke-width="1"/>
+    <text class="box-head" x="60" y="997">📅 COMMIT CALENDAR &amp; CONTRIBUTION MATRIX</text>
+    <text class="box-sub" x="860" y="997" text-anchor="end">TOTAL: {streak['total_contribs']} COMMITS  •  ACTIVE: {streak['current_streak']} DAYS</text>
+    {calendar_svg}
   </g>
 
-  <!-- 7. cat about -->
-  <g>
-    <text class="prompt" x="44" y="852">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-7" x="315" y="852">cat about.txt</text>
+  <!-- 7. uptime -->
+  <g class="pr-7">
+    <text class="prompt" x="44" y="1180">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-7" x="315" y="1180">uptime</text>
   </g>
   <g class="out-7">
-    <text class="txt" x="44" y="876">Building robotics and edge AI systems with production-first engineering.</text>
-    <text class="txt" x="44" y="898">Focused on reliable automation, maintainable code, and measurable results.</text>
+    <text class="txt" x="44" y="1208">{uptime}</text>
   </g>
 
-  <!-- 8. exit -->
-  <g>
-    <text class="prompt" x="44" y="930">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-8" x="315" y="930">exit</text>
+  <!-- 8. cat about -->
+  <g class="pr-8">
+    <text class="prompt" x="44" y="1248">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-8" x="315" y="1248">cat about.txt</text>
   </g>
-  <rect class="cursor-blink" x="368" y="915" width="10" height="18" fill="#39ff14"/>
+  <g class="out-8">
+    <text class="txt" x="44" y="1276">Building robotics and edge AI systems with production-first engineering.</text>
+    <text class="txt" x="44" y="1300">Focused on reliable automation, maintainable code, and measurable results.</text>
+  </g>
+
+  <!-- 9. exit -->
+  <g class="pr-9">
+    <text class="prompt" x="44" y="1340">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-9" x="315" y="1340">exit</text>
+    <rect class="cursor-blink" x="370" y="1324" width="10" height="18" fill="#39ff14"/>
+  </g>
 </svg>
 """
     return svg

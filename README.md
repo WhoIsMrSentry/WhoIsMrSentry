@@ -140,21 +140,6 @@
 
 <br/>
 
-<div align="center">
-
-## 📊 Stats
-
-</div>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/streak_stats.svg" alt="GitHub contribution streak" width="100%" style="max-width:920px;height:auto;display:block;" />
-  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/activity_graph.svg?v=20260905" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
-</div>
-
-<div align="center">
-  <img alt="commit snake" src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/output/snake_dark.svg" style="display:block;margin:12px auto 0;border:none;outline:none;box-shadow:none;background:#200009;max-width:920px;width:100%;" />
-</div>
-
 <br/>
 
 <table align="center" style="margin:16px auto;border-collapse:collapse;width:100%;max-width:920px;table-layout:fixed;">

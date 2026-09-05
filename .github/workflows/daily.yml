@@ -140,13 +140,11 @@ jobs:
           PROFILE_REPO_NAME: ${{ github.event.repository.name }}
         run: python scripts/update_achievement_metrics_json.py
 
-      - name: Generate activity graph
-        uses: maurodesouza/github-readme-activity-graph-action@v1
-        with:
-          username: ${{ github.repository_owner }}
-          options: "bg_color=200009&color=e6ffe6&line=00ff41&point=e6ffe6&area=true&area_color=88001b&hide_border=true"
-          output_path: assets/activity_graph.svg
-          token: ${{ secrets.GHT || secrets.GITHUB_TOKEN }}
+      - name: Generate native activity graph
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHT || secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+        run: python scripts/update_activity_graph_svg.py
 
       - name: Refresh tech usage svg (Optional)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_tech_usage }}

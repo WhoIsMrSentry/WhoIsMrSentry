@@ -19,7 +19,7 @@
 
 <br/><br/>
 
-<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_terminal_panel.svg" alt="Terminal style profile panel" width="100%" />
+<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_terminal_panel.svg?v=20260905" alt="Terminal style profile panel" width="100%" />
 
 </div>
 
@@ -159,7 +159,7 @@
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/streak_stats.svg" alt="GitHub contribution streak" width="100%" style="max-width:920px;height:auto;display:block;" />
-  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/activity_graph.svg" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
+  <img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/activity_graph.svg?v=20260905" alt="Contributions in the last year" style="width:100%;max-width:920px;height:auto;display:block;margin-top:12px;" />
 </div>
 
 <div align="center">

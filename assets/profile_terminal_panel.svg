@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="900" viewBox="0 0 920 900" role="img" aria-labelledby="title desc">
-  <title id="title">Profile Terminal</title>
-  <desc id="desc">Terminal session with whoami, profile summary, neofetch stats, uptime, about and exit.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1060" viewBox="0 0 920 1060" role="img" aria-labelledby="title desc">
+  <title id="title">WhoIsMrSentry Interactive Profile Terminal</title>
+  <desc id="desc">Typewriter shell session showcasing whoami, profile summary, neofetch stats, streak metrics, commit snake, uptime, and about.</desc>
 
   <defs>
     <style>
@@ -9,105 +9,247 @@
       .terminal { fill: #200009; }
       .head { fill: #15000a; }
       .frame { fill: none; stroke: #88001b; stroke-width: 2; }
-      .prompt { fill: #39ff14; font: 700 18px Monaco, Consolas, Menlo, monospace; }
-      .cmd { fill: #ff5f58; font: 500 18px Monaco, Consolas, Menlo, monospace; }
-      .txt { fill: #e6e6e6; font: 500 17px Monaco, Consolas, Menlo, monospace; }
-      .info { fill: #ff5f58; font: 500 17px Monaco, Consolas, Menlo, monospace; }
-      .ascii { fill: #39ff14; font: 500 4.5px Monaco, Consolas, Menlo, monospace; }
-      .cursor { fill: #88001b; }
+      .prompt { fill: #39ff14; font: 700 17px Monaco, Consolas, Menlo, monospace; }
+      .cmd { fill: #ff5f58; font: 600 17px Monaco, Consolas, Menlo, monospace; }
+      .txt { fill: #e6e6e6; font: 500 16px Monaco, Consolas, Menlo, monospace; }
+      .info { fill: #ff5f58; font: 600 16px Monaco, Consolas, Menlo, monospace; }
+      .ascii { fill: #39ff14; font: 500 4.2px Monaco, Consolas, Menlo, monospace; }
+      .box-frame { fill: #15000a; stroke: #88001b; stroke-width: 1.5; }
+      .box-header { fill: #39ff14; font: 700 14px Monaco, Consolas, monospace; }
+      .box-metric { fill: #e6ffe6; font: 500 15px Monaco, Consolas, monospace; }
+      .highlight { fill: #39ff14; font-weight: bold; }
+      .accent { fill: #ff5f58; font-weight: bold; }
+
+      /* Typewriter Keyframe Animations */
+      @keyframes typeCmd {
+        from { width: 0; }
+        to { width: 320px; }
+      }
+      @keyframes lineReveal {
+        from { opacity: 0; transform: translateY(-2px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes cursorBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes snakeCrawl {
+        0% { transform: translateX(0px); }
+        50% { transform: translateX(30px); }
+        100% { transform: translateX(0px); }
+      }
+      @keyframes foodGlow {
+        0%, 100% { filter: drop-shadow(0 0 1px #39ff14); }
+        50% { filter: drop-shadow(0 0 4px #39ff14); }
+      }
+
+      /* Sequential Timing */
+      .p-1 { opacity: 0; animation: lineReveal 0.05s 0.2s forwards; }
+      .c-1 { animation: typeCmd 0.35s steps(6, end) 0.35s forwards; }
+      .o-1 { opacity: 0; animation: lineReveal 0.05s 0.8s forwards; }
+
+      .p-2 { opacity: 0; animation: lineReveal 0.05s 1.1s forwards; }
+      .c-2 { animation: typeCmd 0.5s steps(19, end) 1.25s forwards; }
+      .o-2 { opacity: 0; animation: lineReveal 0.05s 1.85s forwards; }
+
+      .p-3 { opacity: 0; animation: lineReveal 0.05s 2.2s forwards; }
+      .c-3 { animation: typeCmd 0.4s steps(8, end) 2.35s forwards; }
+      .o-3 { opacity: 0; animation: lineReveal 0.05s 2.85s forwards; }
+
+      .p-4 { opacity: 0; animation: lineReveal 0.05s 3.8s forwards; }
+      .c-4 { animation: typeCmd 0.45s steps(16, end) 3.95s forwards; }
+      .o-4 { opacity: 0; animation: lineReveal 0.05s 4.5s forwards; }
+
+      .p-5 { opacity: 0; animation: lineReveal 0.05s 5.2s forwards; }
+      .c-5 { animation: typeCmd 0.45s steps(15, end) 5.35s forwards; }
+      .o-5 { opacity: 0; animation: lineReveal 0.05s 5.9s forwards; }
+
+      .p-6 { opacity: 0; animation: lineReveal 0.05s 6.8s forwards; }
+      .c-6 { animation: typeCmd 0.35s steps(6, end) 6.95s forwards; }
+      .o-6 { opacity: 0; animation: lineReveal 0.05s 7.4s forwards; }
+
+      .p-7 { opacity: 0; animation: lineReveal 0.05s 7.7s forwards; }
+      .c-7 { animation: typeCmd 0.4s steps(13, end) 7.85s forwards; }
+      .o-7 { opacity: 0; animation: lineReveal 0.05s 8.35s forwards; }
+
+      .p-8 { opacity: 0; animation: lineReveal 0.05s 8.7s forwards; }
+      .c-8 { animation: typeCmd 0.3s steps(4, end) 8.85s forwards; }
+      
+      .cursor-blink {
+        opacity: 0;
+        animation: lineReveal 0.05s 9.2s forwards, cursorBlink 1s 9.2s infinite;
+      }
+
+      .snake-head {
+        animation: foodGlow 1.5s infinite alternate;
+      }
+      .snake-body {
+        animation: snakeCrawl 4s ease-in-out infinite alternate;
+      }
+      .food-dot {
+        animation: foodGlow 2s infinite alternate;
+      }
     </style>
+
+    <!-- Clip Paths for Typewriter Effect -->
+    <clipPath id="cp-cmd1"><rect class="c-1" x="325" y="80" width="0" height="30"/></clipPath>
+    <clipPath id="cp-cmd2"><rect class="c-2" x="325" y="145" width="0" height="30"/></clipPath>
+    <clipPath id="cp-cmd3"><rect class="c-3" x="325" y="245" width="0" height="30"/></clipPath>
+    <clipPath id="cp-cmd4"><rect class="c-4" x="325" y="525" width="0" height="30"/></clipPath>
+    <clipPath id="cp-cmd5"><rect class="c-5" x="325" y="665" width="0" height="30"/></clipPath>
+    <clipPath id="cp-cmd6"><rect class="c-6" x="325" y="835" width="0" height="30"/></clipPath>
+    <clipPath id="cp-cmd7"><rect class="c-7" x="325" y="900" width="0" height="30"/></clipPath>
+    <clipPath id="cp-cmd8"><rect class="c-8" x="325" y="985" width="0" height="30"/></clipPath>
   </defs>
 
-  <rect class="outer" x="0" y="0" width="920" height="900" rx="16"/>
-  <rect class="terminal" x="22" y="22" width="876" height="856" rx="10"/>
-  <rect class="frame" x="22" y="22" width="876" height="856" rx="10"/>
-  <rect class="head" x="22" y="22" width="876" height="42" rx="10"/>
+  <!-- Terminal Window Background -->
+  <rect class="outer" x="0" y="0" width="920" height="1060" rx="16"/>
+  <rect class="terminal" x="20" y="20" width="880" height="1020" rx="10"/>
+  <rect class="frame" x="20" y="20" width="880" height="1020" rx="10"/>
+  
+  <!-- Header Bar -->
+  <rect class="head" x="20" y="20" width="880" height="42" rx="10"/>
+  <circle cx="44" cy="41" r="7" fill="#ff5f58"/>
+  <circle cx="66" cy="41" r="7" fill="#ffbd2e"/>
+  <circle cx="88" cy="41" r="7" fill="#18c132"/>
+  <text x="460" y="46" fill="#e6ffe6" font-family="Monaco, Consolas, monospace" font-size="13" font-weight="bold" text-anchor="middle">WhoIsMrSentry@github.com: ~ (bash)</text>
 
-  <circle cx="46" cy="43" r="7" fill="#ff5f58"/>
-  <circle cx="68" cy="43" r="7" fill="#ffbd2e"/>
-  <circle cx="90" cy="43" r="7" fill="#18c132"/>
+  <!-- ================= 1. whoami ================= -->
+  <g class="p-1">
+    <text class="prompt" x="44" y="98">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="98" clip-path="url(#cp-cmd1)">whoami</text>
+  </g>
+  <g class="o-1">
+    <text class="txt" x="44" y="124">Emir Hamurcu</text>
+  </g>
 
-  <text class="prompt" x="44" y="106">WhoIsMrSentry@github.com:~$</text>
-  <text class="cmd" x="340" y="106">whoami</text>
-  <text class="txt" x="44" y="134">Emir Hamurcu</text>
+  <!-- ================= 2. ./profile --summary ================= -->
+  <g class="p-2">
+    <text class="prompt" x="44" y="164">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="164" clip-path="url(#cp-cmd2)">./profile --summary</text>
+  </g>
+  <g class="o-2">
+    <text class="info" x="44" y="190">Focus:</text><text class="txt" x="126" y="190">Robotics &amp; Embedded AI</text>
+    <text class="info" x="44" y="214">Role:</text><text class="txt" x="126" y="214">Embedded System Developer</text>
+    <text class="info" x="44" y="238">Status:</text><text class="txt" x="126" y="238">Open to Collaboration</text>
+  </g>
 
-  <text class="prompt" x="44" y="170">WhoIsMrSentry@github.com:~$</text>
-  <text class="cmd" x="340" y="170">./profile --summary</text>
-  <text class="info" x="44" y="200">Focus:</text><text class="txt" x="126" y="200">Robotics &amp; Embedded AI</text>
-  <text class="info" x="44" y="226">Role:</text><text class="txt" x="126" y="226">Embedded System Developer</text>
-  <text class="info" x="44" y="252">Status:</text><text class="txt" x="126" y="252">Open to Collaboration</text>
+  <!-- ================= 3. neofetch ================= -->
+  <g class="p-3">
+    <text class="prompt" x="44" y="266">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="266" clip-path="url(#cp-cmd3)">neofetch</text>
+  </g>
+  <g class="o-3">
+    <!-- ASCII Octocat / Sentry Robot -->
+    <text class="ascii" x="44" y="296" xml:space="preserve">
+      <tspan x="44" dy="0">                               @@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">                         @@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">      @@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">     @@@@@@@@@@@          @@@@@@          @@@@@@          @@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">    @@@@@@@@@@@@                                          @@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">   @@@@@@@@@@@@@                                          @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">  @@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2"> @@@@@@@@@@@@@@@@                                        @@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2"> @@@@@@@@@@@@@                                              @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">@@@@@@@@@@@@@@                                               @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2"> @@@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">  @@@@@@@@@@@@@@@@@@                                  @@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">   @@@@@@@   @@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">     @@@@@@@@    @@@@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">      @@@@@@@@     @@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">       @@@@@@@@                               @@@@@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">          @@@@@@@@                            @@@@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">            @@@@@@@@@@@@@@@@                  @@@@@@@@@@@@@@@@</tspan>
+      <tspan x="44" dy="4.2">                %@@@@@@@@@@@                  @@@@@@@@@@@%</tspan>
+      <tspan x="44" dy="4.2">                    @@@@@@@@                  @@@@@@@@</tspan>
+    </text>
 
-  <text class="prompt" x="44" y="272">WhoIsMrSentry@github.com:~$</text>
-  <text class="cmd" x="340" y="272">neofetch</text>
+    <!-- Neofetch Details -->
+    <text class="info" x="340" y="300">WhoIsMrSentry @github.com</text>
+    <text class="info" x="340" y="322">--------------------------</text>
+    <text class="info" x="340" y="344">OS:</text><text class="txt" x="380" y="344">GitHub</text>
+    <text class="info" x="340" y="366">Host:</text><text class="txt" x="394" y="366">github.com</text>
+    <text class="info" x="340" y="388">Repos:</text><text class="txt" x="400" y="388">76</text>
+    <text class="info" x="340" y="410">Public Repos:</text><text class="txt" x="470" y="410">62</text>
+    <text class="info" x="340" y="432">Contributions:</text><text class="txt" x="480" y="432">4792</text>
+    <text class="info" x="340" y="454">Commits:</text><text class="txt" x="420" y="454">4114</text>
+    <text class="info" x="340" y="476">Pull Requests:</text><text class="txt" x="480" y="476">238</text>
+    <text class="info" x="340" y="498">Followers / Stars:</text><text class="txt" x="515" y="498">23 / 16</text>
+  </g>
 
-  <text class="ascii" x="44" y="308" xml:space="preserve">
-    <tspan x="44" dy="0">                               @@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">                         @@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">      @@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">     @@@@@@@@@@@          @@@@@@          @@@@@@          @@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">    @@@@@@@@@@@@                                          @@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">   @@@@@@@@@@@@@                                          @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@@                                        @@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@                                              @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                               @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@                                                @@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">@@@@@@@@@@@@@@                                              @@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@                                            @@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@                                          @@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5"> @@@@@@@@@@@@@@@@@                                      @@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">  @@@@@@@@@@@@@@@@@@                                  @@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">   @@@@@@@   @@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">   @@@@@@@@     @@@@@@@@@@@@@@              @@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">     @@@@@@@@    @@@@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">      @@@@@@@@     @@@@@@@@@                  @@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">       @@@@@@@@                               @@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">        -@@@@@@@                              @@@@@@@@@@@@@@@@@@@-</tspan>
-    <tspan x="44" dy="4.5">          @@@@@@@@                            @@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">            @@@@@@@@@@@@@@@@                  @@@@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">              @@@@@@@@@@@@@@                  @@@@@@@@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">                %@@@@@@@@@@@                  @@@@@@@@@@@%</tspan>
-    <tspan x="44" dy="4.5">                    @@@@@@@@                  @@@@@@@@</tspan>
-    <tspan x="44" dy="4.5">                        @@@                    @@@</tspan>
-  </text>
+  <!-- ================= 4. ./profile --streak ================= -->
+  <g class="p-4">
+    <text class="prompt" x="44" y="546">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="546" clip-path="url(#cp-cmd4)">./profile --streak</text>
+  </g>
+  <g class="o-4">
+    <rect class="box-frame" x="44" y="562" width="832" height="74" rx="8"/>
+    <text class="box-header" x="64" y="586">⚡ GITHUB CONTRIBUTION STREAK METRICS</text>
+    
+    <text class="box-metric" x="64" y="616">
+      <tspan class="accent">🔥 Current Streak:</tspan> <tspan class="highlight">257 days</tspan> (Active)
+      <tspan dx="25" class="accent">⚡ Longest Streak:</tspan> <tspan class="highlight">257 days</tspan>
+      <tspan dx="25" class="accent">✨ Total Contribs:</tspan> <tspan class="highlight">4,792</tspan>
+    </text>
+  </g>
 
-  <text class="info" x="350" y="312">WhoIsMrSentry @github.com</text>
-  <text class="info" x="350" y="340">--------------------------</text>
-  <text class="info" x="350" y="368">OS:</text><text class="txt" x="394" y="368">GitHub</text>
-  <text class="info" x="350" y="394">Host:</text><text class="txt" x="408" y="394">github.com</text>
-  <text class="info" x="350" y="420">Repos:</text><text class="txt" x="415" y="420">76</text>
-  <text class="info" x="350" y="446">Public Repos:</text><text class="txt" x="490" y="446">62</text>
-  <text class="info" x="350" y="472">Contributions:</text><text class="txt" x="501" y="472">4792</text>
-  <text class="info" x="350" y="498">Commits:</text><text class="txt" x="436" y="498">4114</text>
-  <text class="info" x="350" y="524">Pull Requests:</text><text class="txt" x="501" y="524">250</text>
-  <text class="info" x="350" y="550">Issues:</text><text class="txt" x="426" y="550">9</text>
-  <text class="info" x="350" y="576">Followers:</text><text class="txt" x="458" y="576">23</text>
-  <text class="info" x="350" y="602">Stars:</text><text class="txt" x="415" y="602">16</text>
-  <text class="info" x="350" y="628">Gists:</text><text class="txt" x="415" y="628">0</text>
+  <!-- ================= 5. ./snake --commits ================= -->
+  <g class="p-5">
+    <text class="prompt" x="44" y="684">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="684" clip-path="url(#cp-cmd5)">./snake --commits</text>
+  </g>
+  <g class="o-5">
+    <!-- Snake Game Arena Box -->
+    <rect class="box-frame" x="44" y="700" width="832" height="116" rx="8"/>
+    <rect x="44" y="700" width="832" height="28" rx="8" fill="#1b000d"/>
+    <line x1="44" y1="728" x2="876" y2="728" stroke="#88001b" stroke-width="1"/>
+    
+    <text class="box-header" x="64" y="720">🐍 SENTRY RETRO SNAKE ARENA</text>
+    <text x="856" y="720" fill="#39ff14" font-family="Monaco, monospace" font-size="12" text-anchor="end">
+      SCORE: 4,792  •  LENGTH: 257  •  STATUS: WINNING
+    </text>
 
-  <text class="prompt" x="44" y="680">WhoIsMrSentry@github.com:~$</text>
-  <text class="cmd" x="340" y="680">uptime</text>
-  <text class="txt" x="44" y="706">3 years, 105 days</text>
+    <!-- Grid of Contribution Cells & Crawling Snake -->
+    <rect x="56" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="78" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="100" y="738" width="19" height="14" rx="2" fill="#004d1a" /><rect x="122" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="144" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="166" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="188" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="210" y="738" width="19" height="14" rx="2" fill="#009933" /><rect x="232" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="254" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="276" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="298" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="320" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="342" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="364" y="738" width="19" height="14" rx="2" fill="#004d1a" /><rect x="386" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="408" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="430" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="452" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="474" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="496" y="738" width="19" height="14" rx="2" fill="#39ff14" /><rect x="518" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="540" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="562" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="584" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="606" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="628" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="650" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="672" y="738" width="19" height="14" rx="2" fill="#009933" /><rect x="694" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="716" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="738" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="760" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="782" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="804" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="826" y="738" width="19" height="14" rx="2" fill="#004d1a" /><rect x="848" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="870" y="738" width="19" height="14" rx="2" fill="#2d000d" /><rect x="56" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="78" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="100" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="122" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="144" y="755" width="19" height="14" rx="2" fill="#009933" /><rect x="166" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="188" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="210" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="232" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="254" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="276" y="755" width="19" height="14" rx="2" fill="#39ff14" /><rect x="298" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect class="snake-body" x="320" y="755" width="19" height="14" rx="2" fill="#ff1744" /><rect class="snake-body" x="342" y="755" width="19" height="14" rx="2" fill="#ff1744" /><rect class="snake-body" x="364" y="755" width="19" height="14" rx="2" fill="#ff1744" /><rect class="snake-body" x="386" y="755" width="19" height="14" rx="2" fill="#ff1744" /><rect class="snake-body" x="408" y="755" width="19" height="14" rx="2" fill="#ff1744" /><rect x="430" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="452" y="755" width="19" height="14" rx="2" fill="#004d1a" /><rect x="474" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="496" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="518" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="540" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="562" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="584" y="755" width="19" height="14" rx="2" fill="#009933" /><rect x="606" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="628" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="650" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="672" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="694" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="716" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="738" y="755" width="19" height="14" rx="2" fill="#39ff14" /><rect x="760" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="782" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="804" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="826" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="848" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="870" y="755" width="19" height="14" rx="2" fill="#2d000d" /><rect x="56" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="78" y="772" width="19" height="14" rx="2" fill="#004d1a" /><rect x="100" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="122" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="144" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="166" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="188" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="210" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="232" y="772" width="19" height="14" rx="2" fill="#009933" /><rect x="254" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="276" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="298" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="320" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="342" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="364" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="386" y="772" width="19" height="14" rx="2" fill="#39ff14" /><rect class="snake-body" x="408" y="772" width="19" height="14" rx="2" fill="#ff1744" /><rect class="snake-body" x="430" y="772" width="19" height="14" rx="2" fill="#ff1744" /><rect class="snake-body" x="452" y="772" width="19" height="14" rx="2" fill="#ff1744" /><rect class="snake-head" x="474" y="772" width="19" height="14" rx="2" fill="#39ff14" /><rect x="496" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="518" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="540" y="772" width="19" height="14" rx="2" fill="#004d1a" /><rect x="562" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="584" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="606" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="628" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="650" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="672" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="694" y="772" width="19" height="14" rx="2" fill="#009933" /><rect x="716" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="738" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="760" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="782" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="804" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="826" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="848" y="772" width="19" height="14" rx="2" fill="#39ff14" /><rect x="870" y="772" width="19" height="14" rx="2" fill="#2d000d" /><rect x="56" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="78" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="100" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="122" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="144" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="166" y="789" width="19" height="14" rx="2" fill="#39ff14" /><rect x="188" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="210" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="232" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="254" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="276" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="298" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="320" y="789" width="19" height="14" rx="2" fill="#004d1a" /><rect x="342" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="364" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="386" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="408" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="430" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="452" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="474" y="789" width="19" height="14" rx="2" fill="#009933" /><rect x="496" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="518" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="540" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="562" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="584" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="606" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="628" y="789" width="19" height="14" rx="2" fill="#39ff14" /><rect x="650" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="672" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="694" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="716" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="738" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="760" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect class="food-dot" x="782" y="789" width="19" height="14" rx="2" fill="#004d1a" /><rect x="804" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="826" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="848" y="789" width="19" height="14" rx="2" fill="#2d000d" /><rect x="870" y="789" width="19" height="14" rx="2" fill="#2d000d" />
+  </g>
 
-  <text class="prompt" x="44" y="742">WhoIsMrSentry@github.com:~$</text>
-  <text class="cmd" x="340" y="742">cat about.txt</text>
-  <text class="txt" x="44" y="768">Building robotics and edge AI systems with production-first engineering.</text>
-  <text class="txt" x="44" y="794">Focused on reliable automation, maintainable code, and measurable results.</text>
+  <!-- ================= 6. uptime ================= -->
+  <g class="p-6">
+    <text class="prompt" x="44" y="852">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="852" clip-path="url(#cp-cmd6)">uptime</text>
+  </g>
+  <g class="o-6">
+    <text class="txt" x="44" y="878">3 years, 105 days</text>
+  </g>
 
-  <text class="prompt" x="44" y="828">WhoIsMrSentry@github.com:~$</text>
-  <text class="cmd" x="340" y="828">exit</text>
-  <rect class="cursor" x="396" y="810" width="10" height="20"/>
+  <!-- ================= 7. cat about.txt ================= -->
+  <g class="p-7">
+    <text class="prompt" x="44" y="916">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="916" clip-path="url(#cp-cmd7)">cat about.txt</text>
+  </g>
+  <g class="o-7">
+    <text class="txt" x="44" y="942">Building robotics and edge AI systems with production-first engineering.</text>
+    <text class="txt" x="44" y="966">Focused on reliable automation, maintainable code, and measurable results.</text>
+  </g>
+
+  <!-- ================= 8. exit & Blinking Cursor ================= -->
+  <g class="p-8">
+    <text class="prompt" x="44" y="1004">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd" x="325" y="1004" clip-path="url(#cp-cmd8)">exit</text>
+  </g>
+  <rect class="cursor-blink" x="382" y="987" width="10" height="20" fill="#39ff14"/>
 </svg>

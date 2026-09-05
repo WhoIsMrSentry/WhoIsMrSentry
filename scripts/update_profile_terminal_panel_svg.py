@@ -2,6 +2,7 @@
 """Generate WhoIsMrSentry interactive terminal profile SVG with live stats,
 sequential prompt-and-command typewriter animations, neofetch, streak metrics,
 30-day activity graph, and commit calendar matrix table.
+Completely clean of emojis, with empty line breaks under every command and spacious cards.
 """
 
 from __future__ import annotations
@@ -136,7 +137,7 @@ def get_activity_points() -> list[tuple[int, int]]:
     return fallback[-30:]
 
 
-def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart_y: int = 770, chart_w: int = 780, chart_h: int = 86) -> str:
+def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart_y: int = 896, chart_w: int = 780, chart_h: int = 86) -> str:
     max_val = max(50, max(c for _, c in points))
     n = len(points)
     step_x = chart_w / (n - 1)
@@ -194,8 +195,8 @@ def build_activity_chart(points: list[tuple[int, int]], chart_x: int = 70, chart
     """
 
 
-def build_commit_calendar_table(start_x: int = 86, start_y: int = 1018) -> str:
-    """Build a rich contribution heatmap table (weeks x days)."""
+def build_commit_calendar_table(start_x: int = 86, start_y: int = 1176) -> str:
+    """Build a contribution heatmap table (weeks x days) without any emojis."""
     cols = 40
     rows = 7
     cell_w = 14
@@ -265,11 +266,11 @@ def generate_terminal_panel_svg() -> str:
     streak = get_streak_metrics()
     uptime = get_account_uptime()
     points = get_activity_points()
-    chart_svg = build_activity_chart(points, chart_x=70, chart_y=770, chart_w=780, chart_h=86)
-    calendar_svg = build_commit_calendar_table(start_x=86, start_y=1018)
+    chart_svg = build_activity_chart(points, chart_x=70, chart_y=896, chart_w=780, chart_h=86)
+    calendar_svg = build_commit_calendar_table(start_x=86, start_y=1176)
 
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1390" viewBox="0 0 920 1390" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1600" viewBox="0 0 920 1600" role="img" aria-labelledby="title desc">
   <title id="title">WhoIsMrSentry Interactive Profile Terminal</title>
   <desc id="desc">Typewriter terminal session with whoami, summary, neofetch, streak, activity graph, commit calendar, uptime, and bio.</desc>
 
@@ -287,8 +288,8 @@ def generate_terminal_panel_svg() -> str:
       .box-frame {{ fill: #15000a; stroke: #88001b; stroke-width: 1.5; }}
       .box-head {{ fill: #39ff14; font: 700 13px Monaco, Consolas, monospace; }}
       .box-sub {{ fill: #ff5f58; font: 600 12px Monaco, Consolas, monospace; }}
-      .val-large {{ fill: #ffffff; font: 700 24px Monaco, Consolas, monospace; text-anchor: middle; }}
-      .val-label {{ fill: #a0a0a0; font: 500 12px Monaco, Consolas, monospace; text-anchor: middle; }}
+      .val-large {{ fill: #ffffff; font: 700 28px Monaco, Consolas, monospace; text-anchor: middle; }}
+      .val-label {{ fill: #a0a0a0; font: 500 13px Monaco, Consolas, monospace; text-anchor: middle; }}
       .val-date {{ fill: #ff5f58; font: 500 11px Monaco, Consolas, monospace; text-anchor: middle; }}
 
       /* Animation Loop (28s cycle) */
@@ -483,9 +484,9 @@ def generate_terminal_panel_svg() -> str:
   </defs>
 
   <!-- Frame and Header -->
-  <rect class="outer" x="0" y="0" width="920" height="1390" rx="16"/>
-  <rect class="terminal" x="16" y="16" width="888" height="1358" rx="10"/>
-  <rect class="frame" x="16" y="16" width="888" height="1358" rx="10"/>
+  <rect class="outer" x="0" y="0" width="920" height="1600" rx="16"/>
+  <rect class="terminal" x="16" y="16" width="888" height="1568" rx="10"/>
+  <rect class="frame" x="16" y="16" width="888" height="1568" rx="10"/>
   <rect class="head" x="16" y="16" width="888" height="40" rx="10"/>
 
   <circle cx="42" cy="36" r="6.5" fill="#ff5f58"/>
@@ -495,31 +496,31 @@ def generate_terminal_panel_svg() -> str:
 
   <!-- 1. whoami -->
   <g class="pr-1">
-    <text class="prompt" x="44" y="90">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-1" x="315" y="90">whoami</text>
+    <text class="prompt" x="44" y="92">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-1" x="315" y="92">whoami</text>
   </g>
   <g class="out-1">
-    <text class="txt" x="44" y="118">Emir Hamurcu</text>
+    <text class="txt" x="44" y="122">Emir Hamurcu</text>
   </g>
 
   <!-- 2. profile summary -->
   <g class="pr-2">
-    <text class="prompt" x="44" y="158">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-2" x="315" y="158">./profile --summary</text>
+    <text class="prompt" x="44" y="170">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-2" x="315" y="170">./profile --summary</text>
   </g>
   <g class="out-2">
-    <text class="info" x="44" y="186">Focus:</text><text class="txt" x="115" y="186">Robotics &amp; Embedded AI</text>
-    <text class="info" x="44" y="210">Role:</text><text class="txt" x="115" y="210">Software Developer · Embedded AI</text>
-    <text class="info" x="44" y="234">Status:</text><text class="txt" x="115" y="234">Open to Collaboration</text>
+    <text class="info" x="44" y="200">Focus:</text><text class="txt" x="115" y="200">Robotics &amp; Embedded AI</text>
+    <text class="info" x="44" y="226">Role:</text><text class="txt" x="115" y="226">Software Developer · Embedded AI</text>
+    <text class="info" x="44" y="252">Status:</text><text class="txt" x="115" y="252">Open to Collaboration</text>
   </g>
 
   <!-- 3. neofetch -->
   <g class="pr-3">
-    <text class="prompt" x="44" y="276">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-3" x="315" y="276">neofetch</text>
+    <text class="prompt" x="44" y="300">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-3" x="315" y="300">neofetch</text>
   </g>
   <g class="out-3">
-    <text class="ascii" x="44" y="304" xml:space="preserve">
+    <text class="ascii" x="44" y="332" xml:space="preserve">
       <tspan x="44" dy="0">                               @@@@@@@@@@@@</tspan>
       <tspan x="44" dy="4.5">                         @@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
       <tspan x="44" dy="4.5">                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
@@ -558,102 +559,102 @@ def generate_terminal_panel_svg() -> str:
     </text>
 
     <!-- Neofetch Details -->
-    <text class="info" x="350" y="316" font-weight="bold">WhoIsMrSentry @github.com</text>
-    <text class="info" x="350" y="336">--------------------------</text>
-    <text class="info" x="350" y="356">OS:</text><text class="txt" x="390" y="356">GitHub Linux (x86_64)</text>
-    <text class="info" x="350" y="376">Host:</text><text class="txt" x="404" y="376">github.com/WhoIsMrSentry</text>
-    <text class="info" x="350" y="396">Kernel:</text><text class="txt" x="424" y="396">Automation Engine 2.0</text>
-    <text class="info" x="350" y="416">Uptime:</text><text class="txt" x="420" y="416">{uptime}</text>
-    <text class="info" x="350" y="436">Repos:</text><text class="txt" x="415" y="436">76 (60 Public)</text>
-    <text class="info" x="350" y="456">Contributions:</text><text class="txt" x="480" y="456">{streak['total_contribs']}</text>
-    <text class="info" x="350" y="476">Commits:</text><text class="txt" x="425" y="476">2,619+</text>
-    <text class="info" x="350" y="496">Followers / Stars:</text><text class="txt" x="515" y="496">24 / 18</text>
+    <text class="info" x="350" y="342" font-weight="bold">WhoIsMrSentry @github.com</text>
+    <text class="info" x="350" y="362">--------------------------</text>
+    <text class="info" x="350" y="382">OS:</text><text class="txt" x="390" y="382">GitHub Linux (x86_64)</text>
+    <text class="info" x="350" y="402">Host:</text><text class="txt" x="404" y="402">github.com/WhoIsMrSentry</text>
+    <text class="info" x="350" y="422">Kernel:</text><text class="txt" x="424" y="422">Automation Engine 2.0</text>
+    <text class="info" x="350" y="442">Uptime:</text><text class="txt" x="420" y="442">{uptime}</text>
+    <text class="info" x="350" y="462">Repos:</text><text class="txt" x="415" y="462">76 (60 Public)</text>
+    <text class="info" x="350" y="482">Contributions:</text><text class="txt" x="480" y="482">{streak['total_contribs']}</text>
+    <text class="info" x="350" y="502">Commits:</text><text class="txt" x="425" y="502">2,619+</text>
+    <text class="info" x="350" y="522">Followers / Stars:</text><text class="txt" x="515" y="522">24 / 18</text>
   </g>
 
   <!-- 4. profile streak -->
   <g class="pr-4">
-    <text class="prompt" x="44" y="540">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-4" x="315" y="540">./profile --streak</text>
+    <text class="prompt" x="44" y="586">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-4" x="315" y="586">./profile --streak</text>
   </g>
   <g class="out-4">
-    <rect class="box-frame" x="44" y="556" width="832" height="114" rx="8"/>
-    <rect x="44" y="556" width="832" height="28" rx="8" fill="#1b000d"/>
-    <line x1="44" y1="584" x2="876" y2="584" stroke="#88001b" stroke-width="1"/>
-    <text class="box-head" x="60" y="575">⚡ GITHUB CONTRIBUTION STREAK METRICS</text>
+    <rect class="box-frame" x="44" y="618" width="832" height="154" rx="8"/>
+    <rect x="44" y="618" width="832" height="30" rx="8" fill="#1b000d"/>
+    <line x1="44" y1="648" x2="876" y2="648" stroke="#88001b" stroke-width="1"/>
+    <text class="box-head" x="60" y="638">GITHUB CONTRIBUTION STREAK METRICS</text>
 
     <!-- Column 1: Total Contribs -->
-    <text class="val-large" x="180" y="622">{streak['total_contribs']}</text>
-    <text class="val-label" x="180" y="642">Total Contributions</text>
-    <text class="val-date" x="180" y="658">{streak['period']}</text>
+    <text class="val-large" x="180" y="692">{streak['total_contribs']}</text>
+    <text class="val-label" x="180" y="718">Total Contributions</text>
+    <text class="val-date" x="180" y="740">{streak['period']}</text>
 
-    <line x1="320" y1="594" x2="320" y2="660" stroke="#440015" stroke-width="1"/>
+    <line x1="320" y1="660" x2="320" y2="752" stroke="#440015" stroke-width="1"/>
 
-    <!-- Column 2: Current Streak Ring & Fire -->
-    <circle cx="460" cy="620" r="28" fill="none" stroke="#39ff14" stroke-width="3.5" stroke-dasharray="140, 36"/>
-    <text class="val-large" x="460" y="628" fill="#39ff14">{streak['current_streak']}</text>
-    <text class="val-label" x="460" y="646" fill="#39ff14">🔥 Current Streak</text>
-    <text class="val-date" x="460" y="660" fill="#39ff14">{streak['dates']}</text>
+    <!-- Column 2: Current Streak Ring -->
+    <circle cx="460" cy="692" r="28" fill="none" stroke="#39ff14" stroke-width="3.5" stroke-dasharray="146, 36"/>
+    <text class="val-large" x="460" y="700" fill="#39ff14">{streak['current_streak']}</text>
+    <text class="val-label" x="460" y="732" fill="#39ff14">Current Streak (Active)</text>
+    <text class="val-date" x="460" y="750" fill="#39ff14">{streak['dates']}</text>
 
-    <line x1="600" y1="594" x2="600" y2="660" stroke="#440015" stroke-width="1"/>
+    <line x1="600" y1="660" x2="600" y2="752" stroke="#440015" stroke-width="1"/>
 
     <!-- Column 3: Longest Streak -->
-    <text class="val-large" x="740" y="622">{streak['longest_streak']}</text>
-    <text class="val-label" x="740" y="642">Longest Streak</text>
-    <text class="val-date" x="740" y="658">{streak['dates']}</text>
+    <text class="val-large" x="740" y="692">{streak['longest_streak']}</text>
+    <text class="val-label" x="740" y="718">Longest Streak</text>
+    <text class="val-date" x="740" y="740">{streak['dates']}</text>
   </g>
 
   <!-- 5. profile activity -->
   <g class="pr-5">
-    <text class="prompt" x="44" y="716">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-5" x="315" y="716">./profile --activity</text>
+    <text class="prompt" x="44" y="828">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-5" x="315" y="828">./profile --activity</text>
   </g>
   <g class="out-5">
-    <rect class="box-frame" x="44" y="732" width="832" height="184" rx="8"/>
-    <rect x="44" y="732" width="832" height="28" rx="8" fill="#1b000d"/>
-    <line x1="44" y1="760" x2="876" y2="760" stroke="#88001b" stroke-width="1"/>
-    <text class="box-head" x="60" y="751">📈 EMIR HAMURCU'S CONTRIBUTION GRAPH (LAST 30 DAYS)</text>
-    <text class="box-sub" x="860" y="751" text-anchor="end">PEAK: 46 COMMITS/DAY  •  STATUS: VERIFIED</text>
+    <rect class="box-frame" x="44" y="860" width="832" height="190" rx="8"/>
+    <rect x="44" y="860" width="832" height="30" rx="8" fill="#1b000d"/>
+    <line x1="44" y1="890" x2="876" y2="890" stroke="#88001b" stroke-width="1"/>
+    <text class="box-head" x="60" y="880">EMIR HAMURCU'S CONTRIBUTION GRAPH (LAST 30 DAYS)</text>
+    <text class="box-sub" x="860" y="880" text-anchor="end">PEAK: 46 COMMITS/DAY | STATUS: VERIFIED</text>
     {chart_svg}
   </g>
 
   <!-- 6. profile commits -->
   <g class="pr-6">
-    <text class="prompt" x="44" y="962">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-6" x="315" y="962">./profile --commits</text>
+    <text class="prompt" x="44" y="1106">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-6" x="315" y="1106">./profile --commits</text>
   </g>
   <g class="out-6">
-    <rect class="box-frame" x="44" y="978" width="832" height="156" rx="8"/>
-    <rect x="44" y="978" width="832" height="28" rx="8" fill="#1b000d"/>
-    <line x1="44" y1="1006" x2="876" y2="1006" stroke="#88001b" stroke-width="1"/>
-    <text class="box-head" x="60" y="997">📅 COMMIT CALENDAR &amp; CONTRIBUTION MATRIX</text>
-    <text class="box-sub" x="860" y="997" text-anchor="end">TOTAL: {streak['total_contribs']} COMMITS  •  ACTIVE: {streak['current_streak']} DAYS</text>
+    <rect class="box-frame" x="44" y="1138" width="832" height="160" rx="8"/>
+    <rect x="44" y="1138" width="832" height="30" rx="8" fill="#1b000d"/>
+    <line x1="44" y1="1168" x2="876" y2="1168" stroke="#88001b" stroke-width="1"/>
+    <text class="box-head" x="60" y="1158">COMMIT CALENDAR &amp; CONTRIBUTION MATRIX</text>
+    <text class="box-sub" x="860" y="1158" text-anchor="end">TOTAL: {streak['total_contribs']} COMMITS | ACTIVE: {streak['current_streak']} DAYS</text>
     {calendar_svg}
   </g>
 
   <!-- 7. uptime -->
   <g class="pr-7">
-    <text class="prompt" x="44" y="1180">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-7" x="315" y="1180">uptime</text>
+    <text class="prompt" x="44" y="1354">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-7" x="315" y="1354">uptime</text>
   </g>
   <g class="out-7">
-    <text class="txt" x="44" y="1208">{uptime}</text>
+    <text class="txt" x="44" y="1382">{uptime}</text>
   </g>
 
   <!-- 8. cat about -->
   <g class="pr-8">
-    <text class="prompt" x="44" y="1248">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-8" x="315" y="1248">cat about.txt</text>
+    <text class="prompt" x="44" y="1430">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-8" x="315" y="1430">cat about.txt</text>
   </g>
   <g class="out-8">
-    <text class="txt" x="44" y="1276">Building robotics and edge AI systems with production-first engineering.</text>
-    <text class="txt" x="44" y="1300">Focused on reliable automation, maintainable code, and measurable results.</text>
+    <text class="txt" x="44" y="1460">Building robotics and edge AI systems with production-first engineering.</text>
+    <text class="txt" x="44" y="1486">Focused on reliable automation, maintainable code, and measurable results.</text>
   </g>
 
   <!-- 9. exit -->
   <g class="pr-9">
-    <text class="prompt" x="44" y="1340">WhoIsMrSentry@github.com:~$</text>
-    <text class="cmd cmd-9" x="315" y="1340">exit</text>
-    <rect class="cursor-blink" x="370" y="1324" width="10" height="18" fill="#39ff14"/>
+    <text class="prompt" x="44" y="1534">WhoIsMrSentry@github.com:~$</text>
+    <text class="cmd cmd-9" x="315" y="1534">exit</text>
+    <rect class="cursor-blink" x="370" y="1518" width="10" height="18" fill="#39ff14"/>
   </g>
 </svg>
 """

@@ -8,7 +8,7 @@
 
 <br/><br/>
 
-<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/terminal_profile.svg" alt="Terminal style profile panel" width="100%" />
+<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/terminal_profile.svg?v=20260905_fixed_v1" alt="Terminal style profile panel" width="100%" />
 
 </div>
 

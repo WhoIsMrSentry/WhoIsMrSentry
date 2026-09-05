@@ -19,7 +19,7 @@
 
 <br/><br/>
 
-<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_terminal_panel.svg?v=20260905_terminal" alt="Terminal style profile panel" width="100%" />
+<img src="https://raw.githubusercontent.com/WhoIsMrSentry/WhoIsMrSentry/main/assets/profile_terminal_panel.svg?v=20260905_terminal_v3" alt="Terminal style profile panel" width="100%" />
 
 </div>
 
